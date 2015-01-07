@@ -12,8 +12,7 @@ namespace VGame.UnitTest
     {
         [UnityEditor.MenuItem("VGame/Test")]
         public static void Run()
-        {
-            UnityTest.Batch.RunUnitTests();
+        {            
             
         }
 
@@ -21,7 +20,7 @@ namespace VGame.UnitTest
         [Test]
         public void MainTest()
         {
-            Assert.Fail();
+            //Assert.Fail();
         }
     }
 }
