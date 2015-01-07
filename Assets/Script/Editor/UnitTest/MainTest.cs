@@ -5,10 +5,10 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Linq;
 
-namespace VGame.UnitTest
+namespace VGame
 {
     [TestFixture]
-    public class MainTests
+    public class UnitTest
     {
         [UnityEditor.MenuItem("VGame/Test")]
         public static void Run()
