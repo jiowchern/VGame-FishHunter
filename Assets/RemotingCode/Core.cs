@@ -5,12 +5,11 @@ using System.Text;
 
 namespace VGame.Project.FishHunter
 {
-    public class Core :Regulus.Utility.ICore
+    public class Center : Regulus.Utility.ICore
     {
         Regulus.Utility.Updater _Updater;
-        Hall _Hall;
-
-        public Core()
+        Hall _Hall;        
+        public Center()
         {
             _Updater = new Regulus.Utility.Updater();
             _Hall = new Hall();

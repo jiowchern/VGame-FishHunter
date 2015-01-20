@@ -33,7 +33,7 @@ public class Console : MonoBehaviour
         GUILayout.BeginVertical();
 
         _ScrollView = GUILayout.BeginScrollView(_ScrollView, GUILayout.Width(Screen.width / 2), GUILayout.Height(Screen.height * 0.9f));
-        var messages = _Messages.ToArray();
+
         foreach(var message in _Messages)
         {
             GUILayout.Label(message);

@@ -10,11 +10,11 @@ public class Client : MonoBehaviour
     public MODE Mode;
     public Console Console;
 
-    VGame.Project.FishHunter.Core _Standalong;
+    VGame.Project.FishHunter.Center _Standalong;
     Regulus.Utility.Updater _Updater;
 	public Client()
     {
-        _Standalong = new VGame.Project.FishHunter.Core();
+        _Standalong = new VGame.Project.FishHunter.Center();
         _Updater = new Regulus.Utility.Updater();
     }
 	void Start () {
@@ -29,6 +29,7 @@ public class Client : MonoBehaviour
     private void _ModeSelector(Regulus.Framework.GameModeSelector<VGame.Project.FishHunter.IUser> selector)
     {
         selector.AddFactoty("Standalong", new VGame.Project.FishHunter.StandalongUserFactory(_Standalong));
+        selector.AddFactoty("Remoting", new VGame.Project.FishHunter.RemotingUserFactory());
 
         Regulus.Framework.UserProvider<VGame.Project.FishHunter.IUser> provider = null;
         if(this.Mode == Client.MODE.STANDALONG)
