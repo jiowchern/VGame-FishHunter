@@ -10,11 +10,14 @@ public class Client : MonoBehaviour
     public MODE Mode;
     public Console Console;
 
-    VGame.Project.FishHunter.Center _Standalong;
+    
     Regulus.Utility.Updater _Updater;
+
+
+    VGame.Project.FishHunter.DummyStandalong _Standalong;
 	public Client()
     {
-        _Standalong = new VGame.Project.FishHunter.Center();
+        _Standalong = new VGame.Project.FishHunter.DummyStandalong();
         _Updater = new Regulus.Utility.Updater();
     }
 	void Start () {
@@ -22,8 +25,6 @@ public class Client : MonoBehaviour
         client.ModeSelectorEvent += _ModeSelector;
         _Updater.Add(client);
         _Updater.Add(_Standalong);
-        
-        
     }
 
     private void _ModeSelector(Regulus.Framework.GameModeSelector<VGame.Project.FishHunter.IUser> selector)
