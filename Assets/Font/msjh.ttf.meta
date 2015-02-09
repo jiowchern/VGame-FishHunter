@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e21c115fde5cde54e9b5de223bdbc71b
+TrueTypeFontImporter:
+  serializedVersion: 2
+  fontSize: 16
+  forceTextureCase: 3
+  characterSpacing: 1
+  characterPadding: 0
+  includeFontData: 1
+  use2xBehaviour: 0
+  fontNames: []
+  customCharacters: ' ABC'
+  fontRenderingMode: 0
+  userData: 
