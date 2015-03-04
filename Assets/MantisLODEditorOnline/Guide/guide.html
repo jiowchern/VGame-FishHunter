@@ -1,0 +1,155 @@
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: template [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : Green Creative
+Description: One column, with top naviagation
+Version    : 1.0
+Released   : 20081222
+-->
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Mesh Online - Polygon Reduction Tool for Unity</title>
+</head>
+
+<body>
+    <div id="page">
+		
+        <div id="header">
+        	<div id="headerTitle">Mesh Online</div>
+            <div id="headerSubText">We contribute professional mesh simplification solution for Unity.</div>
+            
+        </div>
+        <div class="contentTitle"><h1>About the online version</h1></div>
+        <div class="contentText">
+          <p>The online version is free now, means that you can use our online mesh simplification service for free, note that the speed may vary greatly when users are using the online service simultaneously.</p>
+          <p>&nbsp;</p>
+	  <p>The online version is suitable for beginner indie developers, the maximum number of vertices per mesh is 65000, so you can not simplify huge 3d models with this version. If you have a huge 3d model, you have to export a low polygon version(less than 65000 vertices per mesh) with your design tool(Blender, LightWave3D, 3DS MAX, Maya etc.), then use the online version to make LOD from within Unity's editor.</p>
+          <p>&nbsp;</p>
+	  <p>We recommend the standalone version for Unity Free users, and the standard version for Unity Pro users, they are more productive and can simplify huge 3d models directly.</p>
+          <p>&nbsp;</p>
+	  <p>We reserve the rights of any changes of the free service in future.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Introduction</h1></div>
+        <div class="contentText">
+          <p>Mantis LOD Editor is an editor extensions plugin which helps you to make LOD within Unity.</p>
+          <p>Our product can generate high quality LOD version with very low number of triangles, this is very important for mobile games, no other products can achieve this.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Features</h1></div>
+        <div class="contentText">
+          <p>1. Generate LOD levels for both static meshes and skinned meshes. (All Version)</p>
+          <p>2. Protect uv boundaries and material boundaries automatically. (All Version)</p>
+          <p>3. Protect all open boundaries or smartly merge some smooth parts of open boundaries. (All Version)</p>
+          <p>4. Super fast, it can simplify 50,000 triangles per second. (Standard Version)</p>
+          <p>5. Preview final effect in real time. (Standard Version)</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to install?</h1></div>
+        <div class="contentText">
+          <p>Standard Version: Copy the subdirectories of Editor and Plugins to your project’s assets path, restart Unity Pro.</p>
+          <p>Online Version: Copy the subdirectory of Editor to your project’s assets path.</p>
+          <p>Trial Version: Unzip MantisLODEditorOnlineTrial.zip, then copy MantisLODEditorTrial.cs to the subdirectory of Editor of your project’s assets path, if the subdirectory of Editor does not exist, please create it manually, then copy MantisLODEditorTrial.cs there.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Tutorial Videos</h1></div>
+        <div class="contentText">
+          <p>When installed, we have prepared four tutorial videos for you to start with, the following tutorial videos will show you how to use Mantis LOD Editor step by step, no matter which version you are using.</p>
+          <p>Video 1: <a href="http://youtu.be/tZpxddu18k4">Make LOD for a static model using the standard version.</a>(Watch online on Youtube)</p>
+          <p>Video 2: <a href="http://youtu.be/-OT5pMNArj8">Make LOD for a skinned model using the standard version.</a>(Watch online on Youtube)</p>
+          <p>Video 3: <a href="http://youtu.be/DFmtWhb4gIA">Make LOD for a big static model using the online version.</a>(Watch online on Youtube)</p>
+          <p>Video 4: <a href="http://youtu.be/kYTQgwGnSIU">Make LOD for a skinned model using the standalone version and Unity Free.</a>(Watch online on Youtube) <strong>new</strong></p>
+          <p>All Videos Package: <a href="http://www.mesh-online.net/youtube.7z">Download the HD version(1360x768) of all the videos(Format:7z,Size:46.5MB).</a> <strong>new</strong></p>
+        </div>
+        <div class="contentTitle"><h1>How to optimize all meshes in a game object?</h1></div>
+        <div class="contentText">
+          <p>When you select a game object, if it has any meshes, the interface of Mantis LOD Editor will automatically appear in the inspector window.</p>
+          <p>By default, help information shows below each control, you can hide them at any time if you are familiar with the interface.</p>
+          <p>Drag the slider will change the qualities of all meshes in the game object simultaneously; if you select a separate mesh in the game object, drag the slider will only change the quality of this mesh.</p>
+          <p>The game object will be reverted automatically when it lost focus, been disabled or been destroyed.</p>
+          <p>Don't forget to click the 'Save Current Mesh' bar to save the optimized meshes to disk before you leave the interface, otherwise, all your works will lose.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to make LOD?</h1></div>
+        <div class="contentText">
+		   <p>Make sure you have optimized the game object and saved the optimized meshes with different qualities to disk.</p>
+		   <p>To make LOD, you need to clone several instances of the game object, then select an instance. The mesh filter or the skinned mesh renderer has a mesh property, you can see it in the inspector window, carefully drag one of the saved mesh with a certain quality from the project window to this mesh property in the inspector window, the instance will automatically become a LOD version of that quality.</p>
+          <p>Repeat the above operation, until each instance has different quality, if you don't know how to operate, please watch the tutorial videos to learn.</p>
+          <p>You may drag the LOD version to the project window to save it as a prefab for future use.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to use the LOD?</h1></div>
+        <div class="contentText">
+		   <p>After you have made LOD for a game object, you'd better save it as a prefab. Unity3d has excellent documents of how to make and use built-in LOD system in Unity Pro.</p>
+          <p>If you are using a free version of Unity, you can switch the LOD versions by distance yourself via a piece of script.</p>
+		   <p>Here's the code(C#):</p>
+		   <p>float distance = Vector3.Distance(Camera.main.transform.position, gameObject.transform.position);</p>
+		   <p>Here's the code(Unity Script):</p>
+		   <p>var distance = Vector3.Distance(Camera.main.transform.position, gameObject.transform.position);</p>
+		   <p>After you have calculated the distance to the main camera, you can easily switch LOD versions by enable or disable their renderers by script.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Introduction of Mantis LOD Editor - Standalone Version <strong>new</strong></h1></div>
+        <div class="contentText">
+          <p>Mantis LOD Editor - Standalone Version are multiple platform standalone applications which help you to simplify your 3d models while remaining all animation/rigs, it can simplify huge 3d models as you wish!</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to install?</h1></div>
+        <div class="contentText">
+          <p>It’s green software, no need to install, just unzip the package anywhere.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to run?</h1></div>
+        <div class="contentText">
+          <p>It can run on Windows(XP/7/8) and OSX(10.8/10.9), to run the standalone version, your machine must full support OpenGL 2.0, if you are using a virtual machine, we recommend VirtualBox, their OpenGL driver for Windows 7 has been approved okay to run the standalone version.</p>
+          <p>&nbsp;</p>
+          <p>On Windows, go to the Win32 subdirectory, double click MantisLODEditor.exe to launch.</p>
+          <p>&nbsp;</p>
+          <p>On Mac OS X, go to the Mac subdirectory, double click MantisLODEditor.app to launch.</p>
+          <p>&nbsp;</p>
+          <p>The trial version has full functions except that you cannot save to disk.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Which 3d format does it support?</h1></div>
+        <div class="contentText">
+            <p>It can import FBX, DAE, OBJ, DXF and 3DS files and export FBX, DAE, OBJ and DXF files, we recommend FBX format.</p>
+          <p>&nbsp;</p>
+          <p>Both static and skinned 3d models are supported, if you have troubles with some formats, please convert your 3d model to FBX format with Autodesk’s free converting tool.</p>
+          <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How can I specify the file format when saving with the standalone version?</h1></div>
+        <div class="contentText">
+            <p>You may select specific format when saving your model, the extension will change automaticly, this is a new feature of version 1.1.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Can I simplify multiple parts of 3d model with different qualities?</h1></div>
+        <div class="contentText">
+            <p>Just select the parts you want to simplify with certain quality, then drag the slide bar or type the quality number to simplify them, repeat untill you are satisfied with all parts, this is a new feature of version 1.1.</p>
+            <p>&nbsp;</p>
+            <p>If you select nothing, simplification will apply to all parts.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>How to buy the full version?</h1></div>
+        <div class="contentText">
+            <p>The standalone version has been included in Mantis LOD Editor 2.0 package, users can free upgrade to version 2.0 to get it.</p>
+            <p>&nbsp;</p>
+            <p>But if you are using Unity Free or you are not using Unity, you may just want to buy the standalone version, we sell the standalone version on FastSpring’s Digital Market, Apple's Mac App Store and Autodesk's Exchange Store, go to <a href="http://www.mesh-online.net/download.html">the download page</a> to see details.</p>
+            <p>&nbsp;</p>
+        </div>
+        <div class="contentTitle"><h1>Learn more</h1></div>
+        <div class="contentText">
+          <p>If you still have doubts, visit <a href="http://www.mesh-online.net/">our web site</a> to learn more.</p>
+        </div>
+</div>
+        <div id="footer"><a href="http://www.aszx.net">web development</a> by <a href="http://www.bryantsmith.com">bryant smith</a></div>
+</body>
+</html>
