@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace VGame.Project.FishHunter
+{
+    using VGame.Extension;
+    public class FishSet : UnityEngine.MonoBehaviour
+    {
+        Regulus.Collection.QuadTree<FishBounds> _Set;
+
+        public FishSet ()
+        {
+            _Set = new Regulus.Collection.QuadTree<FishBounds>( new Regulus.CustomType.Size(100,100) , 1000);
+        }
+        public void Add(FishBounds fishOutline)
+        {
+            _Set.Insert(fishOutline);
+        }
+
+        public FishBounds[] Query(Regulus.CustomType.Rect rect)
+        {
+            return _Set.Query(rect).ToArray();
+        }
+
+        internal static FishBounds[] Query(UnityEngine.Camera camera , UnityEngine.Bounds bounds)
+        {
+            var set = GameScore.FindObjectOfType<FishSet>();
+            return set.Query(camera.ToRect(bounds));
+        }
+    }
+}
