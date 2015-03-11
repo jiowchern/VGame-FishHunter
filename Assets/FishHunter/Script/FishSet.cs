@@ -24,9 +24,9 @@ namespace VGame.Project.FishHunter
             return _Set.Query(rect).ToArray();
         }
 
-        internal static FishBounds[] Query(UnityEngine.Camera camera , UnityEngine.Bounds bounds)
+        internal static FishBounds[] Find(UnityEngine.Camera camera , UnityEngine.Bounds bounds)
         {
-            var set = GameScore.FindObjectOfType<FishSet>();
+            var set = UnityEngine.GameObject.FindObjectOfType<FishSet>();
             return set.Query(camera.ToRect(bounds));
         }
     }

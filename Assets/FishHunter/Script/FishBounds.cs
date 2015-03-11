@@ -9,7 +9,8 @@ namespace VGame.Project.FishHunter
     {
         
         Regulus.CustomType.Rect _Bounds;
-
+        public delegate bool AreaCallback(UnityEngine.Collider2D collider );
+        public event AreaCallback RequestHitEvent;
         public FishBounds(Regulus.CustomType.Rect bounds)
         {
             SetBounds(bounds);
@@ -42,6 +43,13 @@ namespace VGame.Project.FishHunter
             }
         }
 
-        
+
+
+        internal bool IsHit(UnityEngine.Collider2D collider)
+        {
+            return RequestHitEvent(collider);
+        }
+
+
     }
 }

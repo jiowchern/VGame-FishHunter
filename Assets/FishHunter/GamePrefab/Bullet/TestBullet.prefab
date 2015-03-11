@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 1, z: 0}
   Collider: {fileID: 6074374}
+  ViewChecker: {fileID: 21208794}
 --- !u!212 &21208794
 SpriteRenderer:
   m_ObjectHideFlags: 1
