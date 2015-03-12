@@ -36,4 +36,24 @@ public class PerformBuilder
         Debug.Log(string.Format("Path: \"{0}\"", path)); 
         BuildPipeline.BuildPlayer(scenes, path, BuildTarget.Android, BuildOptions.None); 
     }
+
+    public static void BuildWindows64()
+    {
+        string[] scenes = GetBuildScenes();
+        string path = WindowsPath( "/output/" + PlayerSettings.productName +".exe"); ;
+        Debug.Log(string.Format("Path: \"{0}\"", path));
+        BuildPipeline.BuildPlayer(scenes, path, BuildTarget.StandaloneWindows64 , BuildOptions.None);
+    }
+
+    private static string WindowsPath(string name)
+    {
+
+        
+        string dirPath = Application.dataPath + name;
+        if (!System.IO.Directory.Exists(dirPath))
+        {
+            System.IO.Directory.CreateDirectory(dirPath);
+        }
+        return dirPath;
+    }
 }
