@@ -6,4 +6,4 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/FishHunter/Scene/Test/TestFishStage.unity
+    path: Assets/FishHunter/Scene/Test/Empty.unity

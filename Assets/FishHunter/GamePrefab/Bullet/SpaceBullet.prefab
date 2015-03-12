@@ -63,6 +63,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Collider: {fileID: 6054498}
   ViewChecker: {fileID: 21251612}
+  BoomBullet: {fileID: 163940, guid: 63e33d5d11f1d324f9755e9fdb297f40, type: 2}
 --- !u!212 &21251612
 SpriteRenderer:
   m_ObjectHideFlags: 1

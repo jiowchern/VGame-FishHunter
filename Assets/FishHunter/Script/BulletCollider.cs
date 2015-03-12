@@ -9,6 +9,8 @@ public class BulletCollider : MonoBehaviour
     public PolygonCollider2D Collider;
 
     public Renderer ViewChecker;
+
+    public GameObject BoomBullet;
 	// Use this for initialization
 	void Start () 
     {
@@ -40,7 +42,16 @@ public class BulletCollider : MonoBehaviour
             }
 
             if(hit)
+            {
+                if(BoomBullet != null)
+                {
+                    var boom = GameObject.Instantiate(BoomBullet);
+                    boom.transform.position = transform.position;
+                }
+                
                 GameObject.Destroy(gameObject);
+            }
+                
         }
 
         if(ViewChecker.isVisible == false)
