@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 using System.Collections;
 using VGame.Extension;
 public abstract class FishCollider : MonoBehaviour 
@@ -6,13 +7,17 @@ public abstract class FishCollider : MonoBehaviour
     public Transform Root;
          
     VGame.Project.FishHunter.FishBounds _Bounds;
-    public PolygonCollider2D Collider;
+
+
+    Regulus.CustomType.Polygon _Polygon;
+    
     protected abstract Bounds _GetBounds();
 
 	public FishCollider()
     {
-
-        
+        _Polygon = new Regulus.CustomType.Polygon();
+        _Polygon.BuildEdges();
+     
     }
 	void Start () 
     {
@@ -23,9 +28,11 @@ public abstract class FishCollider : MonoBehaviour
         _Bounds.RequestHitEvent += _Hit;
 	}
 
-    private bool _Hit(Collider2D collider)
+    private bool _Hit(Regulus.CustomType.Polygon collider)
     {
-        if (collider.IsTouching(_GetCollider()))
+        var fishPolygon  = _GetCollider();
+        var result = Regulus.CustomType.Polygon.Collision(collider, fishPolygon , new Regulus.CustomType.Vector2(0,0));
+        if (result.Intersect || result.WillIntersect)
         {
             transform.position = UnityEngine.Random.onUnitSphere * 10;
             return true;
@@ -33,16 +40,44 @@ public abstract class FishCollider : MonoBehaviour
         return false;
     }
 
-    private Collider2D _GetCollider()
+    private Regulus.CustomType.Polygon _GetCollider()
     {
         
         var boxs = gameObject.GetComponentsInChildren<BoxCollider>();
-        foreach(var box in boxs)
-        {
+        Vector2[] points = _GetVectors(boxs);
+        var paths = AForge.Math.Geometry.GrahamConvexHull.FindHull(points.ToList()).ToArray();
 
+        _SetPolygon(_Polygon, paths);
+        return _Polygon;
+    }
+
+    private void _SetPolygon(Regulus.CustomType.Polygon polygon, Vector2[] paths)
+    {
+        polygon.Points.Clear();
+        foreach(var p in paths)
+        {
+            polygon.Points.Add( new Regulus.CustomType.Vector2(p.x , p.y));
         }
 
-        return Collider;
+        polygon.BuildEdges();
+    }
+
+    
+
+    private Vector2[] _GetVectors(BoxCollider[] boxs)
+    {
+        System.Collections.Generic.List<Vector2> points = new System.Collections.Generic.List<Vector2>();
+        foreach(var box in boxs)
+        {
+            var vectors = _GetVector(box);
+            points.AddRange(vectors);
+        }
+        return points.ToArray();
+    }
+    private Vector2[] _GetVector(BoxCollider box)
+    {
+
+        return (from vec in box.bounds.GetVectors() select (Vector2)CameraHelper.Middle.GetScreenPoint( vec) ).ToArray();
     }
 	
 	// Update is called once per frame
@@ -80,11 +115,28 @@ public abstract class FishCollider : MonoBehaviour
     {
         
 
-        var bounds = _Bounds.Bounds;
+        /*var bounds = _Bounds.Bounds;
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Right, bounds.Top), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Left, bounds.Bottom), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Right, bounds.Bottom), new Vector2(bounds.Left, bounds.Bottom), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Right, bounds.Bottom), new Vector2(bounds.Right, bounds.Top), Color.black);
+
+        var length = _Polygon.Points.Count;
+        for (int i = 0; i < length - 1; ++i)
+        {
+            var path1 = _Polygon.Points[i];
+            var path2 = _Polygon.Points[i + 1];
+
+            GUIHelper.DrawLine(new Vector2(path1.X, path1.Y), new Vector2(path2.X, path2.Y), Color.yellow);
+        }
+
+        if (length > 1)
+        {
+            var path1 = _Polygon.Points[length - 1];
+            var path2 = _Polygon.Points[0];
+            GUIHelper.DrawLine(new Vector2(path1.X, path1.Y), new Vector2(path2.X, path2.Y), Color.yellow);
+        }*/
+            
         
     }
 
@@ -106,4 +158,6 @@ public abstract class FishCollider : MonoBehaviour
 
         Gizmos.color = prevColor;*/
     }
+
+
 }

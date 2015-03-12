@@ -455,9 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _maxLatitudeSide: 5
-  _maxLatitudeUp: 1
-  _smoothRate: .00200000009
+  _maxLatitudeSide: 2
+  _maxLatitudeUp: 2
+  _smoothRate: .0500000007
 --- !u!114 &795244188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -470,8 +470,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _maximumDistance: 10
-  _tetherPosition: {x: 0, y: 5, z: 5}
+  _maximumDistance: 30
+  _tetherPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &795244191
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,7 +483,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb541a7bf4d841a8a655dc685b730bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 2
+  _weight: 1
   _minDistance: 1
   _maxDistance: 10
   _comfortDistance: 1
@@ -979,7 +979,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d58bbc0a88c271a4c81762945c83353c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selectTexture: {fileID: 2800000, guid: 928be703400f4eb48af2f94d55bf3f74, type: 3}
+  selectTexture: {fileID: 0}
 --- !u!114 &1415113469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -991,8 +991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97103d9a37143b648b214a7d1c7c4468, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 119372, guid: 0f3add04fe9cd7545ba11fb74fba8286, type: 2}
-  Direction: {x: 0, y: 50, z: 0}
+  Bullet: {fileID: 0}
+  Direction: {x: 0, y: 0, z: 0}
 --- !u!1 &1430798882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1040,7 +1040,6 @@ GameObject:
   - 65: {fileID: 1447778667}
   - 23: {fileID: 1447778666}
   - 114: {fileID: 1447778665}
-  - 114: {fileID: 1447778670}
   - 114: {fileID: 1447778671}
   - 114: {fileID: 1447778672}
   - 114: {fileID: 1447778675}
@@ -1123,21 +1122,6 @@ Transform:
   - {fileID: 1957868981}
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!114 &1447778670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1447778664}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b50d9a19ad91a4e51ae1bebb0dcc1e01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 1
-  _maxLatitudeSide: 5
-  _maxLatitudeUp: 1
-  _smoothRate: .0500000007
 --- !u!114 &1447778671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1177,8 +1161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _maximumDistance: 10
-  _tetherPosition: {x: 0, y: 5, z: 0}
+  _maximumDistance: 30
+  _tetherPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &1447778673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1174,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bb541a7bf4d841a8a655dc685b730bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weight: 2
+  _weight: 1
   _minDistance: 1
   _maxDistance: 10
   _comfortDistance: 1

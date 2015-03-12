@@ -39,5 +39,10 @@ namespace VGame.Extension
             var vp = camera.WorldToViewportPoint(boundPoint);
             return new Vector3(Screen.width * vp.x, Screen.height * (1 - vp.y), 0);
         }
+
+        public static Vector3 GetScreenPoint(this Camera camera, Vector3 world_point)
+        {
+            return _GetScreenPoint(camera, world_point);
+        }
     }
 }
