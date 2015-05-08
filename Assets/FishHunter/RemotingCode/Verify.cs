@@ -12,15 +12,15 @@ namespace VGame.Project.FishHunter
         public delegate void DoneCallback(Data.Account account);
         public event DoneCallback DoneEvent;
 
-        IStorage _Storage;
-        public Verify(IStorage storage)
+        IAccountFinder _Storage;
+        public Verify(IAccountFinder storage)
         {
             _Storage = storage;
         }
         Regulus.Remoting.Value<bool> IVerify.Login(string id, string password)
         {
             Regulus.Remoting.Value<bool> returnValue = new Regulus.Remoting.Value<bool>();
-            var val = _Storage.FindAccount(id);
+            var val = _Storage.FindAccountByName(id);
             val.OnValue += (account) =>
             {
                 var found = account != null;

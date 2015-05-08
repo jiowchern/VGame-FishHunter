@@ -13,11 +13,30 @@ public class Client : MonoBehaviour
     
     Regulus.Utility.Updater _Updater;
 
+    public VGame.Project.FishHunter.IUser User { get; private set; }
 
-    VGame.Project.FishHunter.DummyStandalong _Standalong;
+    public delegate void InitialDoneCallback();
+    event InitialDoneCallback _InitialDoneEvent;
+    public event InitialDoneCallback InitialDoneEvent 
+    {
+        add
+        {
+            if (User != null)
+                value();
+
+            _InitialDoneEvent += value;
+        }
+
+        remove
+        {
+            _InitialDoneEvent -= value;
+        }
+    }
+
+    VGame.Project.FishHunter.Play.DummyStandalong _Standalong;
 	public Client()
     {
-        _Standalong = new VGame.Project.FishHunter.DummyStandalong();
+        _Standalong = new VGame.Project.FishHunter.Play.DummyStandalong();
         _Updater = new Regulus.Utility.Updater();
     }
 	void Start () {
@@ -42,8 +61,10 @@ public class Client : MonoBehaviour
             provider = selector.CreateUserProvider("Remoting");                
         }
 
-        provider.Spawn("1");
+        User = provider.Spawn("1");
         provider.Select("1");
+        if (_InitialDoneEvent != null)
+            _InitialDoneEvent();
     }
 	
 	

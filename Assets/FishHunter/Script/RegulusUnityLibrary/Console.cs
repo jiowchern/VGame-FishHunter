@@ -13,14 +13,18 @@ public class Console : MonoBehaviour
     string _LastMessage;
     public string _Input;
     
-    
-	// Use this for initialization
-	void Start () 
+    public Console()
     {
-        _Messages = new System.Collections.Generic.Queue<string>();        
+        _Messages = new System.Collections.Generic.Queue<string>();
         _Input = "";
         _LastMessage = "";
         _ScrollView = Vector2.zero;
+    }
+	// Use this for initialization
+	void Start () 
+    {
+        
+        
 	}
 
     void OnGUI()

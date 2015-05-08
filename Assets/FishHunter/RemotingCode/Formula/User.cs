@@ -7,22 +7,23 @@ namespace VGame.Project.FishHunter.Formula
 {
     class User : Regulus.Game.IUser
     {
-        IStorage _Storage;
+        
         Regulus.Utility.StageMachine _Machine;
         Regulus.Remoting.ISoulBinder _Binder;
         Data.Account _Account;
-        public User(Regulus.Remoting.ISoulBinder binder)
-        {
-            _Storage = new DummyStorage();
+        private User(Regulus.Remoting.ISoulBinder binder)
+        {            
             _Machine = new Regulus.Utility.StageMachine();
             _Binder = binder;
         }
+
+        public User(Regulus.Remoting.ISoulBinder binder, StorageController _Controller) : this(binder)
+        {                        
+            this._Controller = _Controller;
+        }
         void Regulus.Game.IUser.OnKick(Guid id)
         {
-            if (_Account != null && _Account.Id == id)
-            {
-                _QuitEvent();
-            }
+            
         }
 
         event Regulus.Game.OnNewUser _VerifySuccessEvent;
@@ -33,6 +34,8 @@ namespace VGame.Project.FishHunter.Formula
         }
 
         event Regulus.Game.OnQuit _QuitEvent;
+        
+        private StorageController _Controller;
         event Regulus.Game.OnQuit Regulus.Game.IUser.QuitEvent
         {
             add { _QuitEvent += value; }
@@ -53,15 +56,15 @@ namespace VGame.Project.FishHunter.Formula
         private void _ToVerify()
         {
             _Account = null;
-            var verify = new VGame.Project.FishHunter.Verify(_Storage);
-            var stage = new VGame.Project.FishHunter.Stage.Verify(_Binder, verify);
-            stage.DoneEvent += _VerifySuccess;
-            _Machine.Push(stage);
+            var verify = new VGame.Project.FishHunter.Verify(_Controller.AccountFinder);
+            var stage = new VGame.Project.FishHunter.Stage.Verify(_Binder, verify);            
+            stage.DoneEvent += _VerifySuccess;                        
+            _Machine.Push(stage);            
         }
 
         private void _VerifySuccess(Data.Account account)
         {
-            if(account.IsGameServer())
+            if(account.IsFormulaQueryer())
             {
                 _Account = account;
                 _VerifySuccessEvent(_Account.Id);
@@ -73,20 +76,13 @@ namespace VGame.Project.FishHunter.Formula
             }
         }
 
+        
         private void _ToFishStage()
         {            
-            var stage = new VGame.Project.FishHunter.Stage.QueryFishStage(_Binder);
-            stage.DoneEvent += _ToFormula;
+            var stage = new VGame.Project.FishHunter.Stage.FormulaStage(_Binder);
+            stage.DoneEvent += () => { _QuitEvent(); };
             _Machine.Push(stage);
         }
-
-        private void _ToFormula(long account , int stage_id ,HitBase formula)
-        {
-            var stage = new VGame.Project.FishHunter.Stage.Formula(_Binder, account, stage_id, formula);
-            stage.DoneEvent += _ToFishStage;
-            _Machine.Push(stage);
-        }
-
         
 
         void Regulus.Framework.ILaunched.Shutdown()
