@@ -16,7 +16,7 @@ namespace VGame.Project.FishHunter
         }
         public void Add(FishBounds fishOutline)
         {
-            _Set.Insert(fishOutline);
+            _Set.Insert(fishOutline);            
         }
 
         public FishBounds[] Query(Regulus.CustomType.Rect rect)
@@ -28,6 +28,11 @@ namespace VGame.Project.FishHunter
         {
             var set = UnityEngine.GameObject.FindObjectOfType<FishSet>();
             return set.Query(camera.ToRect(bounds));
+        }
+
+        internal void Remove(FishBounds _Bounds)
+        {
+            _Set.Remove(_Bounds);
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Client : MonoBehaviour 
 {
+    public static Client Instance { get { return GameObject.FindObjectOfType<Client>(); } }
     public enum MODE
     {
         STANDALONG,REMOTING
@@ -75,6 +76,8 @@ public class Client : MonoBehaviour
 
     void OnDestroy()
     {
+        if (User.Remoting.OnlineProvider.Ghosts.Length > 0)
+            User.Remoting.OnlineProvider.Ghosts[0].Disconnect();
         _Updater.Shutdown();
     }
 }

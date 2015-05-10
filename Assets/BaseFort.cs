@@ -4,10 +4,25 @@ using System.Collections;
 public class BaseFort : MonoBehaviour {
 
     public GameObject Bullet;
+    private VGame.Project.FishHunter.IPlayer _Player;
+
+
+    public BaseFort()
+    {
+        
+    }
 	// Use this for initialization
-	void Start () {
-	
+	void Start () 
+    {
+
+        if (Client.Instance != null)
+            Client.Instance.User.PlayerProvider.Supply += _PlayerSupply;
 	}
+
+    private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)
+    {
+        _Player = obj;
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -16,11 +31,16 @@ public class BaseFort : MonoBehaviour {
         {
             var touchPosition = Input.mousePosition;
             var dir = _GetDirection(touchPosition);
-            _SpawnBullet(dir);
 
-            //_SpawnBulletLookAt(touchPosition);
+            _Player.RequestBullet().OnValue += (bullet) => 
+            {
+                if (bullet != 0)
+                    _SpawnBullet(bullet , dir);
+            };
+            
         }
 	}
+    
 
     private void _SpawnBulletLookAt(Vector3 touchPosition)
     {
@@ -41,10 +61,12 @@ public class BaseFort : MonoBehaviour {
         instance.transform.LookAt(ray.GetPoint(-1000) , Vector3.forward);
     }
 
-    private void _SpawnBullet(Vector3 dir)
+    private void _SpawnBullet(int id,Vector3 dir)
     {
         var instance = GameObject.Instantiate(Bullet);
-
+        var collider = instance.GetComponent<BulletCollider>();
+        collider.Id = id;
+        collider.Mode = BulletCollider.MODE.TRIGGER;
         _SetRotation(dir, instance);
 
         _SetPosition(instance);

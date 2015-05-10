@@ -81,7 +81,7 @@ public class LoginHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-	
+        _Machine.Update();
 	}
     
 }

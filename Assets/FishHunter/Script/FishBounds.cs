@@ -7,12 +7,13 @@ namespace VGame.Project.FishHunter
 {
     public class FishBounds :  Regulus.Collection.IQuadObject
     {
-        
+        int _Id;
         Regulus.CustomType.Rect _Bounds;
         public delegate bool AreaCallback(Regulus.CustomType.Polygon collider );
         public event AreaCallback RequestHitEvent;
-        public FishBounds(Regulus.CustomType.Rect bounds)
+        public FishBounds(int id,Regulus.CustomType.Rect bounds)
         {
+            _Id = id;
             SetBounds(bounds);
         }
         Regulus.CustomType.Rect Regulus.Collection.IQuadObject.Bounds
@@ -26,6 +27,7 @@ namespace VGame.Project.FishHunter
         }
 
         event EventHandler _BoundsChanged;
+        
         event EventHandler Regulus.Collection.IQuadObject.BoundsChanged
         {
             add { _BoundsChanged += value; }
@@ -53,5 +55,7 @@ namespace VGame.Project.FishHunter
         }
 
 
+
+        public int Id { get { return _Id; } }
     }
 }

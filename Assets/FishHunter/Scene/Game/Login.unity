@@ -256,6 +256,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b3dd5728cf8e6409ab2d2425c33cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Account: {fileID: 1315925429}
+  Password: {fileID: 910002921}
+  IP: {fileID: 63883733}
+  Port: {fileID: 1913953988}
 --- !u!114 &77336098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,7 +602,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 474687320}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 77336097}
+        m_MethodName: Verify
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
+            Culture=neutral, PublicKeyToken=null
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &474687320

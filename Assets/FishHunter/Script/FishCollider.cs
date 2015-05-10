@@ -8,33 +8,64 @@ public abstract class FishCollider : MonoBehaviour
          
     VGame.Project.FishHunter.FishBounds _Bounds;
 
-
+    
     Regulus.CustomType.Polygon _Polygon;
     
     protected abstract Bounds _GetBounds();
-
+    static int _Sn;
+    int _Id;
+    private VGame.Project.FishHunter.IPlayer _Player;
 	public FishCollider()
     {
+        _Id = ++_Sn;
         _Polygon = new Regulus.CustomType.Polygon();
         _Polygon.BuildEdges();
      
     }
 	void Start () 
     {
-        _Bounds = new VGame.Project.FishHunter.FishBounds(_UpdateBounds());
+        
+        _Bounds = new VGame.Project.FishHunter.FishBounds(_Id , _UpdateBounds());
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         set.Add(_Bounds);
 
         _Bounds.RequestHitEvent += _Hit;
+
+        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
 	}
+
+    void OnDestroy()
+    {
+        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+        if (set != null)
+            set.Remove(_Bounds);
+        if (Client.Instance != null)
+            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;        
+        _Player.DeathFishEvent -= _Player_DeathFishEvent;
+    }
+    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    {
+        _Player = obj;
+        _Player.DeathFishEvent += _Player_DeathFishEvent;
+    }
+
+    void _Player_DeathFishEvent(int obj)
+    {
+        if (obj == _Id)
+            _Dead();
+    }
+
+    private void _Dead()
+    {        
+        GameObject.Destroy(gameObject);
+    }
 
     private bool _Hit(Regulus.CustomType.Polygon collider)
     {
         var fishPolygon  = _GetCollider();
         var result = Regulus.CustomType.Polygon.Collision(collider, fishPolygon , new Regulus.CustomType.Vector2(0,0));
         if (result.Intersect || result.WillIntersect)
-        {
-            transform.position = UnityEngine.Random.onUnitSphere * 10;
+        {            
             return true;
         }
         return false;
