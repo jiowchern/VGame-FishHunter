@@ -33,7 +33,7 @@ public class BulletCollider : MonoBehaviour
     {
         _Player = obj;
     }
-	
+    
 	// Update is called once per frame
 	void Update () 
     {
@@ -45,36 +45,22 @@ public class BulletCollider : MonoBehaviour
 
         if(fishs.Length > 0)
         {
-            
 
-            bool hit = false;
-            var bulletCollider= Collider.ToRegulusPolygon();
-            foreach(var fish in fishs)
-            {
-                if (fish.IsHit(bulletCollider))
-                {
-                    hit = true;                    
-                }
-                    
-            }
 
-            
+            bool hit = _HitDetection(fishs);
 
             if(hit)
             {
                 if (Mode == MODE.DAMAGER)
-                    _Player.Hit(Id , (from f in fishs select f.Id).ToArray());
-
-                if(BoomBullet != null)
                 {
-                    var boom = GameObject.Instantiate(BoomBullet);
-                    var collider = boom.GetComponent<BulletCollider>();
-                    collider.Id = Id;
-                    collider.Mode = MODE.DAMAGER;
-                    boom.transform.position = transform.position;
+                    _HitRequest(fishs);
                 }
-                
-                GameObject.Destroy(gameObject);
+                else if (Mode == MODE.TRIGGER)
+                {
+                    GameObject.Destroy(gameObject);
+                    _SpawnBoom();
+                }
+                    
             }
                 
         }
@@ -86,5 +72,45 @@ public class BulletCollider : MonoBehaviour
 
 
 	}
+    bool _Requested;
+    private void _HitRequest(VGame.Project.FishHunter.FishBounds[] fishs)
+    {
+        if (_Requested)
+            return;
+        _Requested = true;
+        _Player.Hit(Id, (from f in fishs select f.Id).ToArray()).OnValue += (count) =>
+        {
+            _Requested = false;
+            if (count > 0)
+                GameObject.Destroy(gameObject);
+        };
+    }
+
+    private void _SpawnBoom()
+    {
+        if (BoomBullet != null)
+        {
+            var boom = GameObject.Instantiate(BoomBullet);
+            var collider = boom.GetComponent<BulletCollider>();
+            collider.Id = Id;
+            collider.Mode = MODE.DAMAGER;
+            boom.transform.position = transform.position;
+        }
+    }
+
+    private bool _HitDetection(VGame.Project.FishHunter.FishBounds[] fishs)
+    {
+        bool hit = false;
+        var bulletCollider = Collider.ToRegulusPolygon();
+        foreach (var fish in fishs)
+        {
+            if (fish.IsHit(bulletCollider))
+            {
+                hit = true;
+            }
+
+        }
+        return hit;
+    }
 }
 

@@ -43,12 +43,11 @@ GameObject:
   - 4: {fileID: 451636}
   - 95: {fileID: 9551632}
   - 114: {fileID: 11451638}
-  - 114: {fileID: 11478088}
-  - 114: {fileID: 11431996}
-  - 114: {fileID: 11499410}
-  - 114: {fileID: 11482520}
-  - 114: {fileID: 11409758}
   - 114: {fileID: 11490452}
+  - 114: {fileID: 11463138}
+  - 114: {fileID: 11428668}
+  - 114: {fileID: 11450862}
+  - 114: {fileID: 11429664}
   m_Layer: 8
   m_Name: Fish-50_A1_A2_B1_B2_D1_
   m_TagString: Untagged
@@ -608,23 +607,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &11409758
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c589e228a3db54ba7830738331a921c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 1
-  _minRadius: 3
-  _maxRadius: 7.5
-  _drawNeighbors: 0
-  _angleCos: .699999988
---- !u!114 &11431996
+--- !u!114 &11428668
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -636,9 +619,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _maxLatitudeSide: 2
-  _maxLatitudeUp: 2
+  _maxLatitudeSide: 50
+  _maxLatitudeUp: .0500000007
   _smoothRate: .0500000007
+--- !u!114 &11429664
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50453e73dd6aaaf4da8564a85480d801, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11450862
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31e793789488245609c7ee2d806c6d32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weight: 1
+  _maximumDistance: 30
+  _tetherPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11451632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -694,7 +702,7 @@ MonoBehaviour:
   uvAnimationTileX: 3
   uvAnimationTileY: 1
   framesPerSecond: 1
---- !u!114 &11478088
+--- !u!114 &11463138
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -705,25 +713,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34aad387412a902469b9756ff2cec658, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Root: {fileID: 451636}
+  Root: {fileID: 451660}
   SkinnedMesh: {fileID: 13751632}
---- !u!114 &11482520
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb541a7bf4d841a8a655dc685b730bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 1
-  _minDistance: 1
-  _maxDistance: 10
-  _comfortDistance: 1
-  _multiplierInsideComfortDistance: 1
-  _vehicleRadiusImpact: 0
 --- !u!114 &11490452
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -745,20 +736,6 @@ MonoBehaviour:
     m_Bits: 0
   _drawGizmos: 0
   _preAllocateSize: 30
---- !u!114 &11499410
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 151636}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e793789488245609c7ee2d806c6d32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 1
-  _maximumDistance: 30
-  _tetherPosition: {x: 0, y: 0, z: 0}
 --- !u!137 &13751632
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

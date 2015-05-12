@@ -54,6 +54,7 @@ public class LoginHandler : MonoBehaviour {
     private void _ToConnectFail()
     {
         throw new System.Exception("_ToConnectFail");
+        _ToConnect();
     }
 
     
@@ -71,6 +72,7 @@ public class LoginHandler : MonoBehaviour {
     private void _ToVerifyFail()
     {
         throw new System.Exception("_ToVerifyFail");
+        _ToConnect();
     }
 
     private void _ToLoadPlay()

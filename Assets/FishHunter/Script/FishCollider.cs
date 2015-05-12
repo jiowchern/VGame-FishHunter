@@ -12,36 +12,47 @@ public abstract class FishCollider : MonoBehaviour
     Regulus.CustomType.Polygon _Polygon;
     
     protected abstract Bounds _GetBounds();
-    static int _Sn;
+    
     int _Id;
     private VGame.Project.FishHunter.IPlayer _Player;
+    public delegate void DeadCallback();
+    public event DeadCallback DeadEvent;
 	public FishCollider()
-    {
-        _Id = ++_Sn;
+    {        
         _Polygon = new Regulus.CustomType.Polygon();
         _Polygon.BuildEdges();
      
     }
+
 	void Start () 
     {
         
-        _Bounds = new VGame.Project.FishHunter.FishBounds(_Id , _UpdateBounds());
-        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
-        set.Add(_Bounds);
-
-        _Bounds.RequestHitEvent += _Hit;
-
-        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
 	}
 
-    void OnDestroy()
+    public void Initial(int id)
     {
+        _Id = id;
+        DeadEvent = null;
+
+        _Bounds = new VGame.Project.FishHunter.FishBounds(_Id, _UpdateBounds());
+        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+        set.Add(_Bounds);
+        _Bounds.RequestHitEvent += _Hit;
+        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;       
+    }
+    void Release()
+    {
+        _Bounds.RequestHitEvent -= _Hit;
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         if (set != null)
             set.Remove(_Bounds);
         if (Client.Instance != null)
-            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;        
+            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;
         _Player.DeathFishEvent -= _Player_DeathFishEvent;
+    }
+    void OnDestroy()
+    {
+        
     }
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
     {
@@ -56,8 +67,12 @@ public abstract class FishCollider : MonoBehaviour
     }
 
     private void _Dead()
-    {        
-        GameObject.Destroy(gameObject);
+    {
+        gameObject.GetComponent<FishCollider>().Release();
+        GameObjectPool.Instance.Destroy(gameObject);        
+        
+        if (DeadEvent != null)
+            DeadEvent();
     }
 
     private bool _Hit(Regulus.CustomType.Polygon collider)
