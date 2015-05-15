@@ -71,6 +71,8 @@ public class GameObjectPool : MonoBehaviour
             var catacjObject = _GetCatcheObject(instance);
             catacjObject.Disable();
         }
+
+        
     }
     System.Collections.Generic.Dictionary<GameObject, Catche > _Pool;
 
@@ -83,6 +85,11 @@ public class GameObjectPool : MonoBehaviour
     {
 	    
 	}
+
+    void OnDestroy()
+    {
+        
+    }
 
 
     public void Destroy(GameObject instance)

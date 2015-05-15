@@ -5,23 +5,30 @@ public class UIMoney : MonoBehaviour {
 
     public UnityEngine.UI.Text Money;
     VGame.Project.FishHunter.IPlayer _Player;
+    Client _Client;
 	// Use this for initialization
 	void Start () {
 	
         if(Client.Instance)
         {
             Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
+
+            _Client = Client.Instance;
         }
 	}
 
     void OnDestroy()
     {
-        if (Client.Instance != null)
-        {
-            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;
-            if (_Player != null)
+
+        _Release();
+        
+    }
+
+    private void _Release()
+    {
+        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        if (_Player != null)
             _Player.MoneyEvent -= _Player_MoneyEvent;
-        }
     }
 
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
@@ -39,4 +46,16 @@ public class UIMoney : MonoBehaviour {
 	void Update () {
 	
 	}
+
+
+    public void Quit()
+    {
+        if(_Player != null)
+        {
+            _Release();
+            _Player.Quit();
+            
+        }
+        Application.LoadLevel("Login");
+    }
 }

@@ -12,7 +12,7 @@ public class Client : MonoBehaviour
     public Console Console;
 
     
-    Regulus.Utility.Updater _Updater;
+    Regulus.Utility.CenterOfUpdateable _Updater;
 
     public VGame.Project.FishHunter.IUser User { get; private set; }
 
@@ -38,7 +38,7 @@ public class Client : MonoBehaviour
 	public Client()
     {
         _Standalong = new VGame.Project.FishHunter.Play.DummyStandalong();
-        _Updater = new Regulus.Utility.Updater();
+        _Updater = new Regulus.Utility.CenterOfUpdateable();
     }
 	void Start () {
         var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
@@ -71,7 +71,7 @@ public class Client : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        _Updater.Update();
+        _Updater.Working();
 	}
 
     void OnDestroy()

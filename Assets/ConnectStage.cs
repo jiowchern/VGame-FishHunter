@@ -28,7 +28,7 @@ namespace Assets
         }
         void Regulus.Utility.IStage.Enter()
         {
-            _Provider.Supply += _Connect;
+            _Provider.Supply += _Connect;            
         }
 
         private void _Connect(Regulus.Utility.IConnect obj)

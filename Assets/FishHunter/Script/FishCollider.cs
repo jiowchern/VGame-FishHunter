@@ -17,6 +17,7 @@ public abstract class FishCollider : MonoBehaviour
     private VGame.Project.FishHunter.IPlayer _Player;
     public delegate void DeadCallback();
     public event DeadCallback DeadEvent;
+    private Client _Client;
 	public FishCollider()
     {        
         _Polygon = new Regulus.CustomType.Polygon();
@@ -38,21 +39,21 @@ public abstract class FishCollider : MonoBehaviour
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         set.Add(_Bounds);
         _Bounds.RequestHitEvent += _Hit;
-        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;       
+        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
+        _Client = Client.Instance;
     }
     void Release()
     {
         _Bounds.RequestHitEvent -= _Hit;
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         if (set != null)
-            set.Remove(_Bounds);
-        if (Client.Instance != null)
-            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+            set.Remove(_Bounds);        
+            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
         _Player.DeathFishEvent -= _Player_DeathFishEvent;
     }
     void OnDestroy()
     {
-        
+        Release();
     }
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
     {

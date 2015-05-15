@@ -16,8 +16,18 @@ public class BaseFort : MonoBehaviour {
     {
 
         if (Client.Instance != null)
+        {
+
             Client.Instance.User.PlayerProvider.Supply += _PlayerSupply;
+            _Client = Client.Instance;
+        }
+            
 	}
+
+    void OnDestroy()
+    {
+        _Client.User.PlayerProvider.Supply -= _PlayerSupply;
+    }
 
     private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)
     {
@@ -94,4 +104,6 @@ public class BaseFort : MonoBehaviour {
         var dir = vector3 - CameraHelper.Front.WorldToScreenPoint(transform.position);        
         return dir;
     }
+
+    public Client _Client { get; set; }
 }

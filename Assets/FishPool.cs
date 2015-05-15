@@ -12,6 +12,7 @@ public class FishPool : MonoBehaviour
     {
         if(Client.Instance != null)
         {
+            _Client = Client.Instance;
             Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
         }
         
@@ -19,8 +20,8 @@ public class FishPool : MonoBehaviour
 
     void OnDestroy()
     {
-        if (Client.Instance != null)
-            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        
+        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
     }
 
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
@@ -66,4 +67,6 @@ public class FishPool : MonoBehaviour
     {
 	    
 	}
+
+    public Client _Client { get; set; }
 }

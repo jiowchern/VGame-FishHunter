@@ -20,13 +20,17 @@ public class BulletCollider : MonoBehaviour
 	void Start () 
     {
         if(Client.Instance!=null)
+        {
+            _Client = Client.Instance;
             Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
+        }
+            
 	}
 
     void OnDestroy()
     {
         if (Client.Instance != null)
-            Client.Instance.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
     }
 
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
@@ -112,5 +116,7 @@ public class BulletCollider : MonoBehaviour
         }
         return hit;
     }
+
+    public Client _Client { get; set; }
 }
 

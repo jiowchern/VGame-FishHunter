@@ -42,7 +42,7 @@ namespace Assets
 
         void Regulus.Utility.IStage.Leave()
         {
-            
+            _Provider.Supply -= _Provider_Supply;
         }
 
         void Regulus.Utility.IStage.Update()

@@ -43,18 +43,25 @@ public class LoginHandler : MonoBehaviour {
 
     private void _ToConnect()
     {
-        var stage = new ConnectStage(_Ip, _Port , _User.Remoting.ConnectProvider);
+        if(_User.Remoting.OnlineProvider.Ghosts.Length > 0)
+        {
+            _ToVerify();
+        }
+        else 
+        {
+            var stage = new ConnectStage(_Ip, _Port, _User.Remoting.ConnectProvider);
 
-        stage.SuccessEvent += _ToVerify;
-        stage.FailEvent += _ToConnectFail;
+            stage.SuccessEvent += _ToVerify;
+            stage.FailEvent += _ToConnectFail;
 
-        _Machine.Push(stage);
+            _Machine.Push(stage);
+        }
+        
     }
 
     private void _ToConnectFail()
     {
-        throw new System.Exception("_ToConnectFail");
-        _ToConnect();
+        throw new System.Exception("_ToConnectFail");        
     }
 
     
@@ -71,12 +78,12 @@ public class LoginHandler : MonoBehaviour {
 
     private void _ToVerifyFail()
     {
-        throw new System.Exception("_ToVerifyFail");
-        _ToConnect();
+        throw new System.Exception("_ToVerifyFail");        
     }
 
     private void _ToLoadPlay()
     {
+        _Machine.Termination();
         Application.LoadLevel(NextScene);
     }
 	
