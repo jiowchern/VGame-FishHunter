@@ -31,7 +31,7 @@ PlayerSettings:
   iosShowActivityIndicatorOnLoading: -1
   androidShowActivityIndicatorOnLoading: -1
   iosAppInBackgroundBehavior: 0
-  displayResolutionDialog: 0
+  displayResolutionDialog: 1
   allowedAutorotateToPortrait: 1
   allowedAutorotateToPortraitUpsideDown: 1
   allowedAutorotateToLandscapeRight: 1
@@ -59,7 +59,7 @@ PlayerSettings:
   xboxEnableFitness: 0
   visibleInBackground: 0
   macFullscreenMode: 2
-  d3d9FullscreenMode: 1
+  d3d9FullscreenMode: 0
   d3d11FullscreenMode: 1
   xboxSpeechDB: 0
   xboxEnableHeadOrientation: 0
@@ -86,7 +86,7 @@ PlayerSettings:
   AndroidMinSdkVersion: 10
   AndroidPreferredInstallLocation: 1
   aotOptions: 
-  apiCompatibilityLevel: 2
+  apiCompatibilityLevel: 1
   iPhoneStrippingLevel: 0
   iPhoneScriptCallOptimization: 0
   ForceInternetPermission: 0

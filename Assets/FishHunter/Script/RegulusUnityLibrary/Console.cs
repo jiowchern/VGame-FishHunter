@@ -30,6 +30,7 @@ public class Console : MonoBehaviour
     void OnGUI()
     {
         GUILayout.Window(0, new Rect(0, 0, Screen.width / 2, Screen.height) , _WindowHandler, Title); 
+        //GUILayout.Window(0, new Rect(0, 0, 500  / 2, 500), _WindowHandler, Title); 
     }
     Vector2 _ScrollView;
     private void _WindowHandler(int id)

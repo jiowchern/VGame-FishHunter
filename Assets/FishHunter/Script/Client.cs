@@ -75,7 +75,7 @@ public class Client : MonoBehaviour
 	}
 
     void OnDestroy()
-    {
+    {    
         if (User.Remoting.OnlineProvider.Ghosts.Length > 0)
             User.Remoting.OnlineProvider.Ghosts[0].Disconnect();
         _Updater.Shutdown();

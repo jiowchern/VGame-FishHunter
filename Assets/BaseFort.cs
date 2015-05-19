@@ -6,10 +6,10 @@ public class BaseFort : MonoBehaviour {
     public GameObject Bullet;
     private VGame.Project.FishHunter.IPlayer _Player;
 
-
+    bool _Enable;
     public BaseFort()
     {
-        
+        _Enable = true;
     }
 	// Use this for initialization
 	void Start () 
@@ -26,6 +26,7 @@ public class BaseFort : MonoBehaviour {
 
     void OnDestroy()
     {
+        _Enable = false;
         _Client.User.PlayerProvider.Supply -= _PlayerSupply;
     }
 
@@ -37,14 +38,14 @@ public class BaseFort : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && _Player != null)
         {
             var touchPosition = Input.mousePosition;
             var dir = _GetDirection(touchPosition);
 
             _Player.RequestBullet().OnValue += (bullet) => 
             {
-                if (bullet != 0)
+                if (bullet != 0 && _Enable)
                     _SpawnBullet(bullet , dir);
             };
             

@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FishPool : MonoBehaviour 
 {
+
+    bool _Enable;
     public int Limit;
     int _CurrentCount;
     VGame.Project.FishHunter.IPlayer _Player;
@@ -10,6 +12,7 @@ public class FishPool : MonoBehaviour
 	// Use this for initialization
 	void Start () 
     {
+        _Enable = true;
         if(Client.Instance != null)
         {
             _Client = Client.Instance;
@@ -20,7 +23,7 @@ public class FishPool : MonoBehaviour
 
     void OnDestroy()
     {
-        
+        _Enable = false;
         _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
     }
 
@@ -47,13 +50,16 @@ public class FishPool : MonoBehaviour
 
     void FishPool_OnValue(short id)
     {
-        
-        var fish = GameObjectPool.Instance.Instantiate(Fish);
-        var collider = fish.GetComponent<FishCollider>();
-        collider.Initial(id); 
-        collider.DeadEvent += collider_DeadEvent;
+        if(_Enable )
+        {
+            var fish = GameObjectPool.Instance.Instantiate(Fish);
+            var collider = fish.GetComponent<FishCollider>();
+            collider.Initial(id);
+            collider.DeadEvent += collider_DeadEvent;
 
-        fish.transform.position = UnityEngine.Random.insideUnitSphere * 15;
+            fish.transform.position = UnityEngine.Random.insideUnitSphere * 15;
+        }
+        
     }
 
     void collider_DeadEvent()

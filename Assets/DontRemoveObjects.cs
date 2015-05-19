@@ -4,15 +4,20 @@ using System.Collections;
 public class DontRemoveObjects : MonoBehaviour 
 {
     public Object[] Targets;
-	// Use this for initialization
-	void Start () 
+
+    void Awake()
     {
         GameObject.DontDestroyOnLoad(gameObject);
 
-        foreach(var tar in Targets)
+        foreach (var tar in Targets)
         {
             GameObject.DontDestroyOnLoad(tar);
         }
+    }
+	// Use this for initialization
+	void Start () 
+    {
+        
 	}
 	
 	// Update is called once per frame

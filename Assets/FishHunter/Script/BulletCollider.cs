@@ -16,9 +16,12 @@ public class BulletCollider : MonoBehaviour
 
     public GameObject BoomBullet;
     private VGame.Project.FishHunter.IPlayer _Player;
+
+    bool _Enable;
 	// Use this for initialization
 	void Start () 
     {
+        _Enable = true;
         if(Client.Instance!=null)
         {
             _Client = Client.Instance;
@@ -29,8 +32,8 @@ public class BulletCollider : MonoBehaviour
 
     void OnDestroy()
     {
-        if (Client.Instance != null)
-            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        _Enable = false;
+        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
     }
 
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
@@ -85,7 +88,7 @@ public class BulletCollider : MonoBehaviour
         _Player.Hit(Id, (from f in fishs select f.Id).ToArray()).OnValue += (count) =>
         {
             _Requested = false;
-            if (count > 0)
+            if (count > 0 && _Enable)
                 GameObject.Destroy(gameObject);
         };
     }
