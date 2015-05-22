@@ -292,7 +292,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Limit: 100
-  Fish: {fileID: 151636, guid: 04f025c27fbd8f149bf8ae9b163ee319, type: 2}
+  Fish: {fileID: 152976, guid: ba02de8c2e4b0ea44b92f4269aa3a899, type: 2}
 --- !u!4 &138021634
 Transform:
   m_ObjectHideFlags: 0

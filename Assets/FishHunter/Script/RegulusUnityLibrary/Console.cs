@@ -99,6 +99,11 @@ public class Console : MonoBehaviour
 
         _ScrollView.y = Mathf.Infinity;
     }
+
+    public void WriteLine(string text)
+    {
+        _WriteLine(text);
+    }
     
 }
 
