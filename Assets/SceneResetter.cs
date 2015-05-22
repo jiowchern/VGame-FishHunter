@@ -17,7 +17,15 @@ public class SceneResetter : MonoBehaviour
     {
         
         Client.User.AccountStatusProvider.Supply += AccountStatusProvider_Supply;
+        Client.User.Remoting.OnlineProvider.Supply += OnlineProvider_Supply;
     }
+
+    void OnlineProvider_Supply(Regulus.Utility.IOnline obj)
+    {
+        obj.DisconnectEvent += _Reset;
+    }
+
+   
 
     void AccountStatusProvider_Supply(VGame.Project.FishHunter.IAccountStatus obj)
     {
