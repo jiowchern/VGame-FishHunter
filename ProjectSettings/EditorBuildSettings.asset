@@ -13,3 +13,11 @@ EditorBuildSettings:
     path: Assets/FishHunter/Scene/Game/DemoPlay.unity
   - enabled: 1
     path: Assets/FishHunter/Scene/Game/empty.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/SelectStage.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/Play1.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/Play2.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/Play3.unity

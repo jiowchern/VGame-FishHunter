@@ -9,13 +9,13 @@ namespace Assets
     {
         private string _Account;
         private string _Password;
-        private Regulus.Remoting.Ghost.IProviderNotice<VGame.Project.FishHunter.IVerify> _Provider;
+        private Regulus.Remoting.Ghost.INotifier<VGame.Project.FishHunter.IVerify> _Provider;
 
         public delegate void DoneCallback();
         public event DoneCallback SuccessEvent;
         public event DoneCallback FailEvent;
 
-        public VerifyStage(string _Account, string _Password, Regulus.Remoting.Ghost.IProviderNotice<VGame.Project.FishHunter.IVerify> providerNotice)
+        public VerifyStage(string _Account, string _Password, Regulus.Remoting.Ghost.INotifier<VGame.Project.FishHunter.IVerify> providerNotice)
         {
             // TODO: Complete member initialization
             this._Account = _Account;

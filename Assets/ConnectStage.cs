@@ -9,13 +9,13 @@ namespace Assets
     {
         private string _Ip;
         private int _Port;
-        private Regulus.Remoting.Ghost.IProviderNotice<Regulus.Utility.IConnect> _Provider;
+        private Regulus.Remoting.Ghost.INotifier<Regulus.Utility.IConnect> _Provider;
 
         public delegate void DoneCallback();
         public event DoneCallback SuccessEvent;
         public event DoneCallback FailEvent;
 
-        public ConnectStage(string _Ip, int _Port, Regulus.Remoting.Ghost.IProviderNotice<Regulus.Utility.IConnect> providerNotice)
+        public ConnectStage(string _Ip, int _Port, Regulus.Remoting.Ghost.INotifier<Regulus.Utility.IConnect> providerNotice)
         {
             
             this._Ip = _Ip;

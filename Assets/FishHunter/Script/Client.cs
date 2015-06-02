@@ -12,7 +12,7 @@ public class Client : MonoBehaviour
     public Console Console;
 
     
-    Regulus.Utility.CenterOfUpdateable _Updater;
+    Regulus.Utility.Updater _Updater;
 
     public VGame.Project.FishHunter.IUser User { get; private set; }
 
@@ -38,7 +38,7 @@ public class Client : MonoBehaviour
 	public Client()
     {
         _Standalong = new VGame.Project.FishHunter.Play.DummyStandalong();
-        _Updater = new Regulus.Utility.CenterOfUpdateable();
+        _Updater = new Regulus.Utility.Updater();
     }
 	void Start () {
         var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
