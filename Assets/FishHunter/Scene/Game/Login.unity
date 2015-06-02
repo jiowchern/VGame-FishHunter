@@ -272,7 +272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UI: {fileID: 77336097}
-  NextScene: DemoPlay
+  NextScene: SelectStage
 --- !u!1 &156597999
 GameObject:
   m_ObjectHideFlags: 0

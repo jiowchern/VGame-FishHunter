@@ -26,14 +26,21 @@ public class BulletCollider : MonoBehaviour
         {
             _Client = Client.Instance;
             Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
+            _Client.User.PlayerProvider.Unsupply += PlayerProvider_Unsupply;
         }
             
 	}
+
+    void PlayerProvider_Unsupply(VGame.Project.FishHunter.IPlayer obj)
+    {
+        _Player = null;
+    }
 
     void OnDestroy()
     {
         _Enable = false;
         _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        _Client.User.PlayerProvider.Unsupply -= PlayerProvider_Unsupply;
     }
 
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
@@ -82,7 +89,7 @@ public class BulletCollider : MonoBehaviour
     bool _Requested;
     private void _HitRequest(VGame.Project.FishHunter.FishBounds[] fishs)
     {
-        if (_Requested)
+        if (_Requested || _Player == null)
             return;
         _Requested = true;
         _Player.Hit(Id, (from f in fishs select f.Id).ToArray()).OnValue += (count) =>

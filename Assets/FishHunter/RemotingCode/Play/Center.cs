@@ -5,9 +5,9 @@ using System.Text;
 
 namespace VGame.Project.FishHunter.Play
 {
-    public class Center : Regulus.Utility.ICore
+    public class Center : Regulus.Remoting.ICore
     {
-        Regulus.Utility.CenterOfUpdateable _Updater;
+        Regulus.Utility.Updater _Updater;
         Hall _Hall;
         VGame.Project.FishHunter.IAccountFinder _AccountFinder;
         
@@ -19,12 +19,12 @@ namespace VGame.Project.FishHunter.Play
         {
             _RecordQueriers = rq;
             _AccountFinder = accountFinder;
-            _Updater = new Regulus.Utility.CenterOfUpdateable();
+            _Updater = new Regulus.Utility.Updater();
             _Hall = new Hall();            
             
             this._FishStageQueryer = fishStageQueryer;
         }
-        void Regulus.Utility.ICore.ObtainController(Regulus.Remoting.ISoulBinder binder)
+        void Regulus.Remoting.ICore.AssignBinder(Regulus.Remoting.ISoulBinder binder)
         {
             var user = new User(binder, 
                 _AccountFinder, 
@@ -40,12 +40,12 @@ namespace VGame.Project.FishHunter.Play
             return true;
         }
 
-        void Regulus.Framework.ILaunched.Launch()
+        void Regulus.Framework.IBootable.Launch()
         {
             _Updater.Add(_Hall);
         }
 
-        void Regulus.Framework.ILaunched.Shutdown()
+        void Regulus.Framework.IBootable.Shutdown()
         {
             _Updater.Shutdown();
         }
