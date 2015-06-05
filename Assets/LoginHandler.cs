@@ -61,7 +61,9 @@ public class LoginHandler : MonoBehaviour {
 
     private void _ToConnectFail()
     {
-        throw new System.Exception("_ToConnectFail");        
+        //throw new System.Exception("_ToConnectFail");        
+
+        Debug.Log("_ToConnectFail");
     }
 
     

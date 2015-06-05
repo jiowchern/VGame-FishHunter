@@ -11,7 +11,8 @@ public class SelectStageHandler : MonoBehaviour
  
     void OnDestroy()
     {
-        _Client.User.LevelSelectorProvider.Supply -= LevelSelectorProvider_Supply;
+        if (_Client != null)
+            _Client.User.LevelSelectorProvider.Supply -= LevelSelectorProvider_Supply;
     }
 	// Use this for initialization
 	void Start () {

@@ -56,6 +56,6 @@ public class UIMoney : MonoBehaviour {
             _Player.Quit();
             
         }
-        Application.LoadLevel("Login");
+        Application.LoadLevel("SelectStage");
     }
 }

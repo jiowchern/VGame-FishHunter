@@ -19,8 +19,13 @@ public class DisplaySwitch : MonoBehaviour {
 	    if(Input.GetKeyUp(Key))
         {
             Show = !Show;
-            Target.enabled = Show;
-            
         }
+        if (Target.enabled != Show)
+            Target.enabled = Show;
 	}
+
+    public void Trigger()
+    {
+        Show = !Show;
+    }
 }
