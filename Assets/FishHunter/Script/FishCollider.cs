@@ -19,6 +19,8 @@ public abstract class FishCollider : MonoBehaviour
     public event DeadCallback DeadEvent;
     private Client _Client;
 
+    bool _Initialed;
+
 
 	public FishCollider()
     {        
@@ -43,6 +45,7 @@ public abstract class FishCollider : MonoBehaviour
         _Bounds.RequestHitEvent += _Hit;
         Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
         _Client = Client.Instance;
+        _Initialed = true;
     }
     void Release()
     {
@@ -135,7 +138,8 @@ public abstract class FishCollider : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        UpdateBounds();
+        if (_Initialed)
+            UpdateBounds();
 	    
 	}
 
@@ -165,9 +169,10 @@ public abstract class FishCollider : MonoBehaviour
 
     void OnGUI()
     {
-        
+        /*if (_Bounds == null)
+            return;
 
-        /*var bounds = _Bounds.Bounds;
+        var bounds = _Bounds.Bounds;
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Right, bounds.Top), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Left, bounds.Bottom), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Right, bounds.Bottom), new Vector2(bounds.Left, bounds.Bottom), Color.black);
@@ -188,7 +193,6 @@ public abstract class FishCollider : MonoBehaviour
             var path2 = _Polygon.Points[0];
             GUIHelper.DrawLine(new Vector2(path1.X, path1.Y), new Vector2(path2.X, path2.Y), Color.yellow);
         }*/
-            
         
     }
 

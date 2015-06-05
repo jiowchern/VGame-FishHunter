@@ -99,8 +99,7 @@ public class GameObjectPool : MonoBehaviour
             if (catache.Value.Recycle(instance))
                 return;
         }
-
-        throw new System.Exception("This instance is not from GameObjectPool");
+        GameObject.Destroy(instance);        
     }
     
     public GameObject Instantiate(GameObject prefab)
