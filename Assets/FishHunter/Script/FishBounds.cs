@@ -11,8 +11,11 @@ namespace VGame.Project.FishHunter
         Regulus.CustomType.Rect _Bounds;
         public delegate bool AreaCallback(Regulus.CustomType.Polygon collider );
         public event AreaCallback RequestHitEvent;
-        public FishBounds(int id,Regulus.CustomType.Rect bounds)
+
+        public bool Visible;
+        public FishBounds(int id,Regulus.CustomType.Rect bounds )
         {
+            Visible = true;
             _Id = id;
             SetBounds(bounds);
         }
@@ -50,8 +53,9 @@ namespace VGame.Project.FishHunter
         internal bool IsHit(Regulus.CustomType.Polygon collider)
         {
 
-
-            return RequestHitEvent(collider);
+            if (Visible)
+                return RequestHitEvent(collider);
+            return false;
         }
 
 

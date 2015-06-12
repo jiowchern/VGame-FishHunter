@@ -5,7 +5,7 @@ using System.Text;
 
 namespace VGame.Project.FishHunter.Stage
 {
-    public class StroageAccess : Regulus.Utility.IStage, VGame.Project.FishHunter.IQuitable, IStorageCompetnces
+    public class StroageAccess : Regulus.Utility.IStage, VGame.Project.FishHunter.IQuitable, IStorageCompetences
     {
 
         public delegate void DoneCallback();
@@ -43,17 +43,24 @@ namespace VGame.Project.FishHunter.Stage
 
         private void _Attach(Data.Account account)
         {
-            _Binder.Bind<IStorageCompetnces>(this);
+
+            _Binder.Bind<ITradeNotes>(_Storage);
+            _Binder.Bind<IStorageCompetences>(this);
+
             if (account.HasCompetnce(Data.Account.COMPETENCE.ACCOUNT_FINDER))
             {
                 _Binder.Bind<IAccountFinder>(_Storage);
                 _Binder.Bind<IRecordQueriers>(_Storage);
+                
             }
 
                 
             if (account.HasCompetnce(Data.Account.COMPETENCE.ACCOUNT_MANAGER))
+            {
                 _Binder.Bind<IAccountManager>(_Storage);
-
+                
+            }
+            _Binder.Bind<ITradeNotes>(_Storage);
             
         }
         private void _Detach(Data.Account account)
@@ -65,16 +72,29 @@ namespace VGame.Project.FishHunter.Stage
             }
                 
             if (account.HasCompetnce(Data.Account.COMPETENCE.ACCOUNT_MANAGER) )
+            {
                 _Binder.Unbind<IAccountManager>(_Storage);
+            }
 
-            _Binder.Unbind<IStorageCompetnces>(this);
+            _Binder.Unbind<ITradeNotes>(_Storage);
+
+            _Binder.Unbind<IStorageCompetences>(this);
+
+            
+            _Binder.Unbind<ITradeNotes>(_Storage);
         }
 
 
 
-        Regulus.Remoting.Value<Data.Account.COMPETENCE[]> IStorageCompetnces.Query()
+        Regulus.Remoting.Value<Data.Account.COMPETENCE[]> IStorageCompetences.Query()
         {
             return _Account.Competnces.ToArray();
+        }
+
+
+        Regulus.Remoting.Value<Guid> IStorageCompetences.QueryForId()
+        {
+            return _Account.Id;
         }
     }
 }

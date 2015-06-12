@@ -5,10 +5,11 @@ using VGame.Extension;
 public abstract class FishCollider : MonoBehaviour 
 {        
     public Transform Root;
-         
+    public UnityEngine.Renderer Render;
+    
     VGame.Project.FishHunter.FishBounds _Bounds;
 
-    
+    UnityEngine.Animator _Animator;
     Regulus.CustomType.Polygon _Polygon;
     
     protected abstract Bounds _GetBounds();
@@ -31,8 +32,16 @@ public abstract class FishCollider : MonoBehaviour
 
 	void Start () 
     {
+        _Animator = GetComponentInChildren<UnityEngine.Animator>();
+        if (_Animator != null)
+            _Animator.GetBehaviour<DieHandler>().DoneEvent += _Erase ;
         
 	}
+
+    private void _Erase()
+    {
+        GameObjectPool.Instance.Destroy(gameObject);        
+    }
 
     public void Initial(int id)
     {
@@ -40,23 +49,34 @@ public abstract class FishCollider : MonoBehaviour
         DeadEvent = null;
 
         _Bounds = new VGame.Project.FishHunter.FishBounds(_Id, _UpdateBounds());
-        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
-        set.Add(_Bounds);
+        _JoinToSet();
         _Bounds.RequestHitEvent += _Hit;
         Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
         _Client = Client.Instance;
         _Initialed = true;
     }
+
+    private void _JoinToSet()
+    {
+        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+        set.Add(_Bounds);
+    }
     void Release()
     {
+        
         _Bounds.RequestHitEvent -= _Hit;
-        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
-        if (set != null)
-            set.Remove(_Bounds);        
-            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        _LeftSet();
+        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
         _Player.DeathFishEvent -= _Player_DeathFishEvent;
 
         _Id = 0;
+    }
+
+    private void _LeftSet()
+    {
+        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+        if (set != null)
+            set.Remove(_Bounds);
     }
     void OnDestroy()
     {
@@ -72,16 +92,25 @@ public abstract class FishCollider : MonoBehaviour
     void _Player_DeathFishEvent(int obj)
     {
         if (obj == _Id)
+        {
             _Dead();
+            
+        }
+            
     }
 
     private void _Dead()
     {
-        gameObject.GetComponent<FishCollider>().Release();
-        GameObjectPool.Instance.Destroy(gameObject);        
+        
+        gameObject.GetComponent<FishCollider>().Release();        
         
         if (DeadEvent != null)
             DeadEvent();
+
+        if (_Animator != null)
+            _Animator.SetTrigger("Die");
+        else
+            _Erase();
     }
 
     private bool _Hit(Regulus.CustomType.Polygon collider)
@@ -138,10 +167,20 @@ public abstract class FishCollider : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        
+
         if (_Initialed)
+        {
+
+            _Bounds.Visible = this.Render.isVisible;
             UpdateBounds();
+            
+        }
+            
 	    
 	}
+
+    
 
     private void UpdateBounds()
     {        

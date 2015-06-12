@@ -27,7 +27,8 @@ public class BaseFort : MonoBehaviour {
     void OnDestroy()
     {
         _Enable = false;
-        _Client.User.PlayerProvider.Supply -= _PlayerSupply;
+        if (_Client != null)
+            _Client.User.PlayerProvider.Supply -= _PlayerSupply;
     }
 
     private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)

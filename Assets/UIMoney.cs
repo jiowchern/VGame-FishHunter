@@ -26,7 +26,8 @@ public class UIMoney : MonoBehaviour {
 
     private void _Release()
     {
-        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+        if (_Client != null)
+            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
         if (_Player != null)
             _Player.MoneyEvent -= _Player_MoneyEvent;
     }

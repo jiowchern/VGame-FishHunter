@@ -19,6 +19,8 @@ public class UIFps : MonoBehaviour
         _Client.User.Remoting.OnlineProvider.Supply -= OnlineProvider_Supply;
         _Client.User.Remoting.OnlineProvider.Unsupply -= OnlineProvider_Unsupply;
         _Client.InitialDoneEvent -= _Client_InitialDoneEvent;
+        if (_Online != null)
+            _Online.DisconnectEvent -= _Online_DisconnectEvent;
     }
 
     void _Client_InitialDoneEvent()
@@ -29,6 +31,7 @@ public class UIFps : MonoBehaviour
 
     void OnlineProvider_Unsupply(Regulus.Utility.IOnline obj)
     {
+        
         if (_Online != null)
         {
             _Online.DisconnectEvent -= _Online_DisconnectEvent;

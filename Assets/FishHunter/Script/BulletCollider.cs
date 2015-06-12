@@ -61,13 +61,14 @@ public class BulletCollider : MonoBehaviour
         {
 
 
-            bool hit = _HitDetection(fishs);
 
-            if(hit)
+            var hits = _HitDetection(fishs);
+
+            if (hits.Length > 0)
             {
                 if (Mode == MODE.DAMAGER)
                 {
-                    _HitRequest(fishs);
+                    _HitRequest(hits);
                 }
                 else if (Mode == MODE.TRIGGER)
                 {
@@ -112,19 +113,20 @@ public class BulletCollider : MonoBehaviour
         }
     }
 
-    private bool _HitDetection(VGame.Project.FishHunter.FishBounds[] fishs)
+    private VGame.Project.FishHunter.FishBounds[] _HitDetection(VGame.Project.FishHunter.FishBounds[] fishs)
     {
-        bool hit = false;
+        System.Collections.Generic.List<VGame.Project.FishHunter.FishBounds> hits = new System.Collections.Generic.List<VGame.Project.FishHunter.FishBounds>();
         var bulletCollider = Collider.ToRegulusPolygon();
         foreach (var fish in fishs)
         {
             if (fish.IsHit(bulletCollider))
             {
-                hit = true;
+                hits.Add(fish);
             }
 
         }
-        return hit;
+
+        return hits.ToArray();
     }
 
     public Client _Client { get; set; }

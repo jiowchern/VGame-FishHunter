@@ -8,7 +8,7 @@ public class Console : MonoBehaviour
 
     public string Title;
     const int LineCount = 25;
-    const int MaxLineCount = 300;    
+    const int MaxLineCount = 100;    
     System.Collections.Generic.Queue<string> _Messages;
     string _LastMessage;
     public string _Input;
