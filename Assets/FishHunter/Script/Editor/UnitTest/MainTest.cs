@@ -38,6 +38,8 @@ namespace VGame
         [Test]
         public void FishSetTestChangeBounds()
         {
+
+
             var fishOutline = new VGame.Project.FishHunter.FishBounds(0,new Regulus.CustomType.Rect(0, 0, 100, 100));
             fishOutline.SetBounds(new Regulus.CustomType.Rect(0, 0, 100, 100));
 

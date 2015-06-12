@@ -14,7 +14,6 @@ GameObject:
   - 114: {fileID: 11433028}
   - 114: {fileID: 11432440}
   - 114: {fileID: 11425710}
-  - 114: {fileID: 11422100}
   - 114: {fileID: 11471318}
   m_Layer: 8
   m_Name: FishCube
@@ -78,20 +77,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11422100
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 152976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31e793789488245609c7ee2d806c6d32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _weight: 1
-  _maximumDistance: 30
-  _tetherPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &11425710
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,8 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weight: 1
-  _maxLatitudeSide: 2
-  _maxLatitudeUp: 2
+  _maxLatitudeSide: 1
+  _maxLatitudeUp: 0
   _smoothRate: .0500000007
 --- !u!114 &11432440
 MonoBehaviour:
@@ -157,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Root: {fileID: 495630}
+  Render: {fileID: 2364896}
   BoundsSource: {fileID: 6536216}
 --- !u!1001 &100100000
 Prefab:

@@ -5,7 +5,8 @@ public class RunHide : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
 	}
 	
 	// Update is called once per frame

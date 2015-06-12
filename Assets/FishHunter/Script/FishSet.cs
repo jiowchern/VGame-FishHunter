@@ -12,7 +12,7 @@ namespace VGame.Project.FishHunter
 
         public FishSet ()
         {
-            _Set = new Regulus.Collection.QuadTree<FishBounds>( new Regulus.CustomType.Size(100,100) , 1000);
+            _Set = new Regulus.Collection.QuadTree<FishBounds>( new Regulus.CustomType.Size(2,2) , 1000);
         }
         public void Add(FishBounds fishOutline)
         {

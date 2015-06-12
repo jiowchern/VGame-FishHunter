@@ -160,6 +160,90 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!1 &197744619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 197744621}
+  - 114: {fileID: 197744620}
+  m_Layer: 0
+  m_Name: Looper 5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &197744620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197744619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 15
+  MaxSeconds: 30
+  Prefab: {fileID: 132980, guid: b4347043678e2f64691aef112f1f8466, type: 2}
+--- !u!4 &197744621
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197744619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 5
+--- !u!1 &321579491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 321579492}
+  - 114: {fileID: 321579493}
+  m_Layer: 0
+  m_Name: Looper 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &321579492
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 321579491}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 2
+--- !u!114 &321579493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 321579491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 25
+  MaxSeconds: 35
+  Prefab: {fileID: 160288, guid: 747a8812d4c526b4fabef64e39736582, type: 2}
 --- !u!1 &368526952
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,9 +283,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSeconds: 50
-  MaxSeconds: 60
-  Prefab: {fileID: 183568, guid: 3a25346a45e43b64ba50d00560c0e2ad, type: 2}
+  MinSeconds: 30
+  MaxSeconds: 50
+  Prefab: {fileID: 129436, guid: 98d1bee5d69487d44b30f1a3c620fe61, type: 2}
+--- !u!1 &399242412
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 399242413}
+  - 114: {fileID: 399242414}
+  m_Layer: 0
+  m_Name: Looper 7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &399242413
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399242412}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 7
+--- !u!114 &399242414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399242412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 30
+  MaxSeconds: 38
+  Prefab: {fileID: 152984, guid: 5d776db4ff8254245bb077185e5156b7, type: 2}
 --- !u!1001 &511036246
 Prefab:
   m_ObjectHideFlags: 0
@@ -248,6 +374,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2d68ff9369211794abcef0eb1698dd30, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &957059929
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 957059930}
+  - 114: {fileID: 957059931}
+  m_Layer: 0
+  m_Name: Looper 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &957059930
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957059929}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 4
+--- !u!114 &957059931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 957059929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 20
+  MaxSeconds: 30
+  Prefab: {fileID: 128524, guid: a2579ab06f809ba4a801e47f924c34ef, type: 2}
 --- !u!1 &1355355058
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +426,7 @@ GameObject:
   - 4: {fileID: 1355355060}
   - 111: {fileID: 1355355062}
   m_Layer: 0
-  m_Name: StagePlayer
+  m_Name: Rehearse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -276,6 +444,12 @@ Transform:
   m_Children:
   - {fileID: 368526953}
   - {fileID: 1538992392}
+  - {fileID: 321579492}
+  - {fileID: 1882856548}
+  - {fileID: 957059930}
+  - {fileID: 197744621}
+  - {fileID: 1930239052}
+  - {fileID: 399242413}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!111 &1355355062
@@ -378,9 +552,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MinSeconds: 50
-  MaxSeconds: 60
-  Prefab: {fileID: 150230, guid: 12f8053e602e6fc4eb0f26ae81dca00e, type: 2}
+  MinSeconds: 20
+  MaxSeconds: 25
+  Prefab: {fileID: 156782, guid: 448d4644f782cac47bc29747af901f18, type: 2}
 --- !u!1001 &1700132330
 Prefab:
   m_ObjectHideFlags: 0
@@ -517,6 +691,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c57b015601deea41884b465e4dc2d46, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1882856547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1882856548}
+  - 114: {fileID: 1882856549}
+  m_Layer: 0
+  m_Name: Looper 3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1882856548
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882856547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 3
+--- !u!114 &1882856549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1882856547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 60
+  MaxSeconds: 80
+  Prefab: {fileID: 190062, guid: 90bec72a04f365f45b8dd5ee0e80c53a, type: 2}
 --- !u!1001 &1888146483
 Prefab:
   m_ObjectHideFlags: 0
@@ -575,6 +791,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 008ff39908eff5241b1dc4c33f89a213, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1930239051
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1930239052}
+  - 114: {fileID: 1930239053}
+  m_Layer: 0
+  m_Name: Looper 6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1930239052
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930239051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1355355060}
+  m_RootOrder: 6
+--- !u!114 &1930239053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1930239051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 567422f2f402c704ab1f7e13ada193d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MinSeconds: 15
+  MaxSeconds: 30
+  Prefab: {fileID: 107840, guid: 943f8373ff08c904784766f55c2390de, type: 2}
 --- !u!1 &1934841848
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,12 +1,16 @@
 fileFormatVersion: 2
 guid: 263b653d9fe1de744a88014cea99cf71
+timeCreated: 1433816526
+licenseType: Pro
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
-  - serializedVersion: 12
+  - serializedVersion: 15
     name: Fish50_Att
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
     inputs:
     - name: Dirt_level
       value:
@@ -36,7 +40,7 @@ SubstanceImporter:
           first:
             name: _MainTex
           second:
-            texture: {instanceID: 0}
+            texture: {fileID: 2800000, guid: 5baa98a1018db7346b08723ea6bdbbd4, type: 3}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
         data:
@@ -75,11 +79,7 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    textureAssignments:
-    - shaderProp:
-        name: _MainTex
-      material: {instanceID: 0}
-      baseUID: 2110425932
+    textureAssignments: []
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -87,10 +87,12 @@ SubstanceImporter:
       textureHeight: 512
       textureFormat: 0
       loadingBehavior: 1
-  - serializedVersion: 12
+  - serializedVersion: 15
     name: Fish50_Dif
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
     inputs:
     - name: Dirt_level
       value:
@@ -171,10 +173,12 @@ SubstanceImporter:
       textureHeight: 512
       textureFormat: 0
       loadingBehavior: 1
-  - serializedVersion: 12
+  - serializedVersion: 15
     name: Fish50_dirty
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: 
+    renderQueue: -1
     inputs:
     - name: Dirt_level
       value:
@@ -204,7 +208,7 @@ SubstanceImporter:
           first:
             name: _MainTex
           second:
-            texture: {instanceID: 0}
+            texture: {fileID: 2800000, guid: ef21f7fe05139dd4d9df51954fe0e2e3, type: 3}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
         data:
@@ -243,11 +247,7 @@ SubstanceImporter:
       filterMode: 1
       aniso: 1
       wrapMode: 0
-    textureAssignments:
-    - shaderProp:
-        name: _MainTex
-      material: {instanceID: 0}
-      baseUID: 2110425932
+    textureAssignments: []
     buildTargetSettings:
     - serializedVersion: 2
       buildTarget: 
@@ -257,3 +257,5 @@ SubstanceImporter:
       loadingBehavior: 1
   deletedPrototypes: []
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
