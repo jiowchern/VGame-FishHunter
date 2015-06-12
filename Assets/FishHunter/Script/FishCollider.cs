@@ -13,11 +13,12 @@ public abstract class FishCollider : MonoBehaviour
     Regulus.CustomType.Polygon _Polygon;
     
     protected abstract Bounds _GetBounds();
-    
+
     int _Id;
     private VGame.Project.FishHunter.IPlayer _Player;
     public delegate void DeadCallback();
     public event DeadCallback DeadEvent;
+
     private Client _Client;
 
     bool _Initialed;
@@ -30,12 +31,13 @@ public abstract class FishCollider : MonoBehaviour
      
     }
 
+    protected abstract void _ChangeMaterial();
+
 	void Start () 
     {
         _Animator = GetComponentInChildren<UnityEngine.Animator>();
         if (_Animator != null)
             _Animator.GetBehaviour<DieHandler>().DoneEvent += _Erase ;
-        
 	}
 
     private void _Erase()
@@ -113,12 +115,17 @@ public abstract class FishCollider : MonoBehaviour
             _Erase();
     }
 
+
+    
+    
+
     private bool _Hit(Regulus.CustomType.Polygon collider)
     {
         var fishPolygon  = _GetCollider();
         var result = Regulus.CustomType.Polygon.Collision(collider, fishPolygon , new Regulus.CustomType.Vector2(0,0));
         if (result.Intersect || result.WillIntersect)
-        {            
+        {
+            _ChangeMaterial();
             return true;
         }
         return false;
