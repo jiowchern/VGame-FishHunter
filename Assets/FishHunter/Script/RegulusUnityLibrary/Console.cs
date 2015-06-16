@@ -102,12 +102,7 @@ public class Console : MonoBehaviour
 
     public void WriteLine(string text)
     {
-        var lines = text.Split(new char[] {'\n' , '\r' });
-        foreach(var line in lines)
-        {
-            _WriteLine(text);
-        }
-        
+        _WriteLine(text);
     }
     
 }

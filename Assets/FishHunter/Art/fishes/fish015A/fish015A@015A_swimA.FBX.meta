@@ -71,7 +71,6 @@ ModelImporter:
     400062: fish15A_root
     7400000: 015A_swimA
     9500000: //RootNode
-    11400000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
