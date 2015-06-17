@@ -33,6 +33,7 @@ namespace Assets
 
         private void _Connect(Regulus.Utility.IConnect obj)
         {
+            _Provider.Supply -= _Connect;
             obj.Connect(_Ip, _Port).OnValue += _Result;
         }
 
@@ -42,7 +43,12 @@ namespace Assets
             if (success)
                 SuccessEvent();
             else
+            {
                 FailEvent();
+            }
+                
+
+            
         }
 
         
