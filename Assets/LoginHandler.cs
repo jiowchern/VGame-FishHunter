@@ -19,6 +19,11 @@ public class LoginHandler : MonoBehaviour {
     {
         _Machine = new Regulus.Utility.StageMachine();
     }
+
+    void OnDestroy()
+    {
+        _Machine.Termination();
+    }
 	// Use this for initialization
 	void Start () {
         var client  = GameObject.FindObjectOfType<Client>();
@@ -62,7 +67,9 @@ public class LoginHandler : MonoBehaviour {
     {
         //throw new System.Exception("_ToConnectFail");        
 
-        Debug.Log("_ToConnectFail");
+        //Debug.Log("_ToConnectFail");
+
+        _Machine.Empty();
     }
 
     
@@ -74,12 +81,13 @@ public class LoginHandler : MonoBehaviour {
         stage.SuccessEvent += _ToLoadPlay;
         stage.FailEvent += _ToVerifyFail;
 
+        var code = this.GetHashCode();
         _Machine.Push(stage);
     }
 
     private void _ToVerifyFail()
     {
-        throw new System.Exception("_ToVerifyFail");        
+        _Machine.Empty();
     }
 
     private void _ToLoadPlay()
@@ -91,6 +99,7 @@ public class LoginHandler : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
     {
+        var code = this.GetHashCode();
         _Machine.Update();
 	}
     
