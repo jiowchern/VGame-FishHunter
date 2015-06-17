@@ -1466,7 +1466,7 @@ MonoBehaviour:
     Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
-    RemovedObjects: e1a8f92fed1ae0df
+    RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: c491c993b1345604db6519cec57192a9
@@ -1495,6 +1495,8 @@ MonoBehaviour:
   Root: {fileID: 417332}
   Render: {fileID: 13746036}
   SkinnedMesh: {fileID: 13746036}
+  Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
+  Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
 --- !u!114 &11494006
 MonoBehaviour:
   m_ObjectHideFlags: 1
