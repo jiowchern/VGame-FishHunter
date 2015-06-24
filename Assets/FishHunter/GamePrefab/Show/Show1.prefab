@@ -11504,10 +11504,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9578322}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -12322,10 +12318,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9543322}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -12675,10 +12667,6 @@ MonoBehaviour:
     - Object: {fileID: 480046}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9594908}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -13354,10 +13342,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9581228}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -13811,10 +13795,6 @@ MonoBehaviour:
     - Object: {fileID: 478768}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9578456}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -15510,10 +15490,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9571648}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -16431,10 +16407,6 @@ MonoBehaviour:
     - Object: {fileID: 408142}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9569502}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []

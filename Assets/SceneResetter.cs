@@ -18,15 +18,21 @@ public class SceneResetter : MonoBehaviour
     {
         
         Client.User.AccountStatusProvider.Supply += AccountStatusProvider_Supply;
+        Client.User.Remoting.ConnectProvider.Supply += ConnectProvider_Supply;
         Client.User.Remoting.OnlineProvider.Supply += OnlineProvider_Supply;
+        
     }
 
+    void ConnectProvider_Supply(Regulus.Utility.IConnect obj)
+    {
+        _Reset();
+    }
+
+   
     void OnlineProvider_Supply(Regulus.Utility.IOnline obj)
     {
-        if (_Online != null)
-            _Online.DisconnectEvent -= _Reset;
-        _Online = obj;
-        obj.DisconnectEvent += _Reset;
+        
+        _Online = obj;        
     }
 
    
@@ -62,8 +68,7 @@ public class SceneResetter : MonoBehaviour
         {
             _AccountStatus.KickEvent -= _Reset;
         }
-        if (_Online != null)
-            _Online.DisconnectEvent -= _Reset;
+        
     }
 
     
