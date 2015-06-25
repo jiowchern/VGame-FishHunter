@@ -13,7 +13,10 @@ public class Client : MonoBehaviour
 
     
     Regulus.Utility.Updater _Updater;
+    public UnityEngine.TextAsset VersionData;
 
+
+    public string Version { get { return VersionData.text; } }
     public VGame.Project.FishHunter.IUser User { get; private set; }
 
     public delegate void InitialDoneCallback();
@@ -40,8 +43,11 @@ public class Client : MonoBehaviour
         _Standalong = new VGame.Project.FishHunter.Play.DummyStandalong();
         _Updater = new Regulus.Utility.Updater();
     }
-	void Start () {
-        System.Reflection.Assembly.Load("Common");
+	void Start () 
+    {
+     
+        System.Reflection.Assembly.Load("Common");        
+
         var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
         client.ModeSelectorEvent += _ModeSelector;
         _Updater.Add(client);
