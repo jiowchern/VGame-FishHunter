@@ -41,6 +41,7 @@ public class Client : MonoBehaviour
         _Updater = new Regulus.Utility.Updater();
     }
 	void Start () {
+        System.Reflection.Assembly.Load("Common");
         var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
         client.ModeSelectorEvent += _ModeSelector;
         _Updater.Add(client);
@@ -75,9 +76,7 @@ public class Client : MonoBehaviour
 	}
 
     void OnDestroy()
-    {    
-        if (User.Remoting.OnlineProvider.Ghosts.Length > 0)
-            User.Remoting.OnlineProvider.Ghosts[0].Disconnect();
+    {            
         _Updater.Shutdown();
     }
 }

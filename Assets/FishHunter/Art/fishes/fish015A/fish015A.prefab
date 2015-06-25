@@ -990,7 +990,7 @@ Animator:
   m_GameObject: {fileID: 142392}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 208b811eca1bdf74ea671ba2a94df067, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 10642d9591b33f04d86b795a7387d2ac, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1164,7 +1164,15 @@ MonoBehaviour:
     - LIIF: 1821181231
       InstanceTarget: {fileID: 6535810}
   Modifications:
-    Modificated: []
+    Modificated:
+    - Object: {fileID: 496862}
+      ObjeckLink: 455795363
+      PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 9502182}
+      ObjeckLink: -323379200
+      PropertyPath: m_Controller
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 

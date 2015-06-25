@@ -48,11 +48,12 @@ public class LoginHandler : MonoBehaviour {
 
     private void _ToConnect()
     {
-        var ghosts = _User.Remoting.OnlineProvider.Ghosts;
-        if (ghosts.Length > 0)
+
+        if (_User.Remoting.OnlineProvider.Ghosts.Length > 0)
         {
-            ghosts[0].Disconnect();            
+            _User.Remoting.OnlineProvider.Ghosts[0].Disconnect();
         }
+            
 
         var stage = new ConnectStage(_Ip, _Port, _User.Remoting.ConnectProvider);
 

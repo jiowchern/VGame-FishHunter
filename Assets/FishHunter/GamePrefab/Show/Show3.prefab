@@ -12971,10 +12971,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9501296}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -13633,10 +13629,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9505462}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -13934,10 +13926,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9564722}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -14114,10 +14102,6 @@ MonoBehaviour:
     - Object: {fileID: 474968}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9573826}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -14627,10 +14611,6 @@ MonoBehaviour:
     - Object: {fileID: 484078}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9594616}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -15723,10 +15703,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9599686}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -16395,10 +16371,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9544710}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -16649,10 +16621,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9535924}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -16890,10 +16858,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9547704}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -17124,10 +17088,6 @@ MonoBehaviour:
     - Object: {fileID: 498162}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9531346}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -17641,10 +17601,6 @@ MonoBehaviour:
     - Object: {fileID: 451052}
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 9545836}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []

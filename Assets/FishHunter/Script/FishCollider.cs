@@ -23,7 +23,7 @@ public abstract class FishCollider : MonoBehaviour
 
     bool _Initialed;
 
-
+    int _JoinCount;
 	public FishCollider()
     {        
         _Polygon = new Regulus.CustomType.Polygon();
@@ -60,6 +60,7 @@ public abstract class FishCollider : MonoBehaviour
 
     private void _JoinToSet()
     {
+        _JoinCount++;
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         set.Add(_Bounds);
     }
@@ -76,9 +77,18 @@ public abstract class FishCollider : MonoBehaviour
 
     private void _LeftSet()
     {
-        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
-        if (set != null)
-            set.Remove(_Bounds);
+        _JoinCount--;
+        try
+        {
+            var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+            if (set != null)
+                set.Remove(_Bounds);
+        }
+        catch(System.Collections.Generic.KeyNotFoundException knfe)
+        {
+
+        }
+        
     }
     void OnDestroy()
     {

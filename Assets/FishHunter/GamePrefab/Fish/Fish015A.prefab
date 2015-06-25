@@ -1267,10 +1267,6 @@ MonoBehaviour:
       ObjeckLink: 455795363
       PropertyPath: m_LocalRotation
       Mode: 0
-    - Object: {fileID: 9594960}
-      ObjeckLink: -323379200
-      PropertyPath: m_Controller
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
