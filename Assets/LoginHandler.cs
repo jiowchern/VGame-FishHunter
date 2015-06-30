@@ -43,17 +43,20 @@ public class LoginHandler : MonoBehaviour {
         _Account = account;
         _Password = password;
 
-        _ToConnect();
+        _ToDisconnect(); 
+    }
+
+    private void _ToDisconnect()
+    {
+        var stage = new DisconnectStage(_User.Remoting.OnlineProvider);
+
+        stage.DoneEvent += _ToConnect;        
+
+        _Machine.Push(stage);
     }
 
     private void _ToConnect()
     {
-
-        if (_User.Remoting.OnlineProvider.Ghosts.Length > 0)
-        {
-            _User.Remoting.OnlineProvider.Ghosts[0].Disconnect();
-        }
-            
 
         var stage = new ConnectStage(_Ip, _Port, _User.Remoting.ConnectProvider);
 
