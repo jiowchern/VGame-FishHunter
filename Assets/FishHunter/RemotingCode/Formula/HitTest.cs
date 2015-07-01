@@ -10,11 +10,37 @@ namespace VGame.Project.FishHunter.Formula
     public class HitTest : HitBase
     {
         private Regulus.Utility.IRandom _Random;
+        WeaponChancesTable _WeaponChancesTable;
+        ScoreOddsTable _ScoreOddsTable;
         
         public HitTest(Regulus.Utility.IRandom random)
         {
-            
+            _InitialWeapon();
+            _InitialScore();
             this._Random = random;
+        }
+
+        private void _InitialScore()
+        {
+            var datas = new ScoreOddsTable.Data[] { 
+                new ScoreOddsTable.Data { Id = 1, Rate = 0.9f } , 
+                new ScoreOddsTable.Data { Id = 2, Rate = 0.025f },
+                new ScoreOddsTable.Data { Id = 3, Rate = 0.025f },
+                new ScoreOddsTable.Data { Id = 5, Rate = 0.025f },
+                new ScoreOddsTable.Data { Id = 10, Rate = 0.025f }
+            };
+            _ScoreOddsTable = new ScoreOddsTable(datas);
+        }
+
+        private void _InitialWeapon()
+        {
+            var datas = new WeaponChancesTable.Data[] { 
+                new WeaponChancesTable.Data { Id = 0, Rate = 0.9f } , 
+                new WeaponChancesTable.Data { Id = 2, Rate = 0.033f },
+                new WeaponChancesTable.Data { Id = 3, Rate = 0.033f },
+                new WeaponChancesTable.Data { Id = 4, Rate = 0.033f }
+            };
+            _WeaponChancesTable = new WeaponChancesTable(datas);
         }
 
         public override HitResponse Request(HitRequest request)
@@ -48,8 +74,10 @@ namespace VGame.Project.FishHunter.Formula
             if (gate > 0x0fffffff)
                 gate = 0x10000000;
             
-            var value = _Random.NextLong(long.MinValue,long.MaxValue) % 0x10000000;
-            if(value < gate )
+            var rValue = _Random.NextLong(0,long.MaxValue);
+            var value = rValue % 0x10000000;
+            Regulus.Utility.Log.Instance.WriteDebug(string.Format("HitResponse gate {0} value {1} r-value {2}", gate, value, rValue));
+            if (value < gate) 
                 return _Die(request);
 
             return _Miss(request);
@@ -59,10 +87,11 @@ namespace VGame.Project.FishHunter.Formula
         {
             return new HitResponse {
                 FishID = request.FishID, 
-                DieResult =  FISH_DETERMINATION.DEATH , 
-                SpecAsn = 0, 
+                DieResult =  FISH_DETERMINATION.DEATH ,
+                SpecAsn = (byte)_WeaponChancesTable.Dice(Regulus.Utility.Random.NextFloat(0, 1)) , 
                 WepID = request.WepID ,
-                WUp = Regulus.Utility.Random.Next(1 , 5)};
+                WUp = _ScoreOddsTable.Dice(Regulus.Utility.Random.NextFloat(0, 1))
+            };
         }
 
         private static HitResponse _Miss(HitRequest request)

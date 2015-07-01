@@ -11,8 +11,12 @@ public class KickHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         _Client = Client.Instance;
-        _Client.User.AccountStatusProvider.Supply += AccountStatusProvider_Supply;
-        _Client.User.Remoting.ConnectProvider.Supply += ConnectProvider_Supply;
+        if (_Client != null)
+        {
+            _Client.User.AccountStatusProvider.Supply += AccountStatusProvider_Supply;
+            _Client.User.Remoting.ConnectProvider.Supply += ConnectProvider_Supply;
+        }
+        
 	}
 
     void ConnectProvider_Supply(Regulus.Utility.IConnect obj)
