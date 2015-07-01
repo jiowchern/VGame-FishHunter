@@ -19,7 +19,27 @@ namespace VGame
         }
 
 
-       
+       [Test]
+        public void PathBuilderTest()
+        {
+           var pathAsset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/FishHunter/Test/Path/Points.txt", typeof(UnityEngine.TextAsset)) as UnityEngine.TextAsset;
+           var pathRoot = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/FishHunter/Test/Path/Root.prefab", typeof(UnityEngine.GameObject)) as UnityEngine.GameObject;
+           var pathNode = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/FishHunter/Entity/Path/Node.prefab", typeof(UnityEngine.GameObject)) as UnityEngine.GameObject;
+
+           PathBuilder pathBuilder = new PathBuilder();
+           pathBuilder.File = pathAsset;
+           pathBuilder.Target = GameObject.Instantiate(pathRoot);
+           pathBuilder.Node = pathNode;
+           pathBuilder.Build();
+
+           var ch1 = pathBuilder.Target.transform.FindChild("1");
+           var ch2 = pathBuilder.Target.transform.FindChild("2");
+           var ch3 = pathBuilder.Target.transform.FindChild("3");
+           
+           Assert.AreEqual("1" , ch1.name);
+           Assert.AreEqual("2", ch2.name);
+           Assert.AreEqual("3", ch3.name);           
+        }
 
         [Test]
         public void FishSetTest()
