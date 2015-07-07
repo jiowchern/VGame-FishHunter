@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: a44bf6ee0ffd1944691b7db976a2bb08
+timeCreated: 1435894963
+licenseType: Pro
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Spec_Win_Fx_c_big_0
+    21300002: Spec_Win_Fx_c_big_1
+    21300004: Spec_Win_Fx_c_big_2
+    21300006: Spec_Win_Fx_c_big_3
+    21300008: Spec_Win_Fx_c_big_4
+    21300010: Spec_Win_Fx_c_big_5
+    21300012: Spec_Win_Fx_c_big_6
+    21300014: Spec_Win_Fx_c_big_7
+    21300016: Spec_Win_Fx_c_big_8
+    21300018: Spec_Win_Fx_c_big_9
+    21300020: Spec_Win_Fx_c_big_10
+    21300022: Spec_Win_Fx_c_big_11
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 1
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Spec_Win_Fx_c_big_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_1
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_2
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_3
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_4
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_5
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 298
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_7
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_8
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_9
+      rect:
+        serializedVersion: 2
+        x: 894
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_10
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Spec_Win_Fx_c_big_11
+      rect:
+        serializedVersion: 2
+        x: 1490
+        y: 0
+        width: 298
+        height: 298
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
