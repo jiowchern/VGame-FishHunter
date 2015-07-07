@@ -30,11 +30,17 @@ public class PerformBuilder
     } 
 
 
-    [MenuItem("VGame/Build Apk")]
-	public static void BuildAndroid()
+    [MenuItem("VGame/Update Version")]
+	public static void UpdateVersion()
     {
         _VersionUpdate();
+        
+        
+    }
 
+    [MenuItem("VGame/Build Apk")]
+    public static void BuildAndroid()
+    {
         string[] scenes = GetBuildScenes();
         //string path = GetBuildPathAndroid();
         string path = UnityEditor.EditorUtility.OpenFilePanel("", UnityEditor.PlayerSettings.productName, "apk");
@@ -42,9 +48,17 @@ public class PerformBuilder
         if (string.IsNullOrEmpty(path) == false)
         {
             Debug.Log(string.Format("Path: \"{0}\"", path));
-            BuildPipeline.BuildPlayer(scenes, path, BuildTarget.Android, BuildOptions.None); 
+            BuildPipeline.BuildPlayer(scenes, path, BuildTarget.Android, BuildOptions.None);
         }
-        
+
+    }
+
+    [MenuItem("VGame/Release Apk To FishHunter.apk")]
+    public static void ReleaseAndroid()
+    {
+        string[] scenes = GetBuildScenes();
+        BuildPipeline.BuildPlayer(scenes, "/output/bin/android/FishHunter.apk", BuildTarget.Android, BuildOptions.None);
+
     }
 
     public static void BuildWindows64()
