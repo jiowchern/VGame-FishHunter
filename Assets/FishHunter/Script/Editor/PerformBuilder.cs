@@ -57,7 +57,7 @@ public class PerformBuilder
     public static void ReleaseAndroid()
     {
         string[] scenes = GetBuildScenes();
-        BuildPipeline.BuildPlayer(scenes, "/output/bin/android/FishHunter.apk", BuildTarget.Android, BuildOptions.None);
+        BuildPipeline.BuildPlayer(scenes, "FishHunter.apk", BuildTarget.Android, BuildOptions.None);
 
     }
 
