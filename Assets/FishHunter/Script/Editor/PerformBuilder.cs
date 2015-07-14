@@ -57,11 +57,11 @@ public class PerformBuilder
     public static void ReleaseAndroid()
     {
         var sdk = EditorPrefs.GetString("AndroidSdkRoot");
-        Debug.LogFormat("AndroidSdkRoot {0}" , sdk);
-        if(sdk == null)
+        Debug.LogFormat("AndroidSdkRoot = {0}" , sdk);
+        if(string.IsNullOrEmpty(sdk))
         {
             sdk = System.Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT");
-            Debug.LogFormat("Environment AndroidSdkRoot {0}", sdk);
+            Debug.LogFormat("Environment AndroidSdkRoot = {0}", sdk);
         }
         EditorPrefs.SetString("AndroidSdkRoot", sdk);
 
