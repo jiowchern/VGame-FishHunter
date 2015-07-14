@@ -56,6 +56,16 @@ public class PerformBuilder
     [MenuItem("VGame/Release Apk To FishHunter.apk")]
     public static void ReleaseAndroid()
     {
+        var sdk = EditorPrefs.GetString("AndroidSdkRoot");
+        Debug.LogFormat("AndroidSdkRoot {0}" , sdk);
+        if(sdk == null)
+        {
+            sdk = System.Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT");
+            Debug.LogFormat("Environment AndroidSdkRoot {0}", sdk);
+        }
+        EditorPrefs.SetString("AndroidSdkRoot", sdk);
+
+
         string[] scenes = GetBuildScenes();
         EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
         BuildPipeline.BuildPlayer(scenes, "FishHunter.apk", BuildTarget.Android, BuildOptions.None);
