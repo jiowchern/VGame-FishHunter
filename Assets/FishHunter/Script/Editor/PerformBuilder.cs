@@ -63,6 +63,13 @@ public class PerformBuilder
             sdk = System.Environment.GetEnvironmentVariable("ANDROID_SDK_ROOT");
             Debug.LogFormat("Environment AndroidSdkRoot = {0}", sdk);
         }
+
+        if (string.IsNullOrEmpty(sdk))
+        {
+            sdk = @"D:\AppData\Local\Android\sdk";
+
+            Debug.LogFormat("Default AndroidSdkRoot = {0}", sdk);
+        }
         EditorPrefs.SetString("AndroidSdkRoot", sdk);
 
 
