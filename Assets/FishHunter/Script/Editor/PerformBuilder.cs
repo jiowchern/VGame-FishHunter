@@ -57,6 +57,7 @@ public class PerformBuilder
     public static void ReleaseAndroid()
     {
         string[] scenes = GetBuildScenes();
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.Android);
         BuildPipeline.BuildPlayer(scenes, "FishHunter.apk", BuildTarget.Android, BuildOptions.None);
 
     }
@@ -68,6 +69,7 @@ public class PerformBuilder
         string[] scenes = GetBuildScenes();
         string path = WindowsPath( "/output/" + PlayerSettings.productName +".exe"); ;
         Debug.Log(string.Format("Path: \"{0}\"", path));
+        EditorUserBuildSettings.SwitchActiveBuildTarget(BuildTarget.StandaloneWindows64);
         BuildPipeline.BuildPlayer(scenes, path, BuildTarget.StandaloneWindows64 , BuildOptions.None);
     }
 

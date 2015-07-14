@@ -78,10 +78,12 @@ public abstract class FishCollider : MonoBehaviour
         set.Add(_Bounds);
     }
     void _Release()
-    {        
-        _Bounds.RequestHitEvent -= _Hit;
-        _LeftSet();        
-
+    {
+        if (_Id != 0)
+        {            
+            _Bounds.RequestHitEvent -= _Hit;
+            _LeftSet();        
+        }
         _Id = 0;        
     }
 
