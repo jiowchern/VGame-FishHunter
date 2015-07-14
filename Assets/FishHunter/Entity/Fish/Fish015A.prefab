@@ -1059,7 +1059,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11428456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1459,7 +1459,15 @@ MonoBehaviour:
     - LIIF: 683599657
       InstanceTarget: {fileID: 142314}
   Modifications:
-    Modificated: []
+    Modificated:
+    - Object: {fileID: 417640}
+      ObjeckLink: 1984939945
+      PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11489178}
+      ObjeckLink: 1090953602
+      PropertyPath: Animator
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -1490,6 +1498,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 417332}
   Render: {fileID: 13746036}
+  Animator: {fileID: 9594960}
   SkinnedMesh: {fileID: 13746036}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -1623,7 +1632,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _minSpeedToConsider
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 124842}

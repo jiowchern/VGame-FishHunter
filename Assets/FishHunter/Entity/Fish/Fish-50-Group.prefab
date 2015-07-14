@@ -805,7 +805,7 @@ MonoBehaviour:
     Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
-    RemovedObjects: 
+    RemovedObjects: eb35c37a
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 0ceb07e94d8e2cd48bd3e78bcb8eb07a
@@ -912,7 +912,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 415170}
   Render: {fileID: 13720052}
+  Animator: {fileID: 9509528}
   SkinnedMesh: {fileID: 13720052}
+  Original: {fileID: 0}
+  Hit: {fileID: 0}
 --- !u!114 &11462640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1050,22 +1053,22 @@ MonoBehaviour:
       InstanceTarget: {fileID: 6572268}
     - LIIF: 1540551165
       InstanceTarget: {fileID: 11411260}
+    - LIIF: -28759622
+      InstanceTarget: {fileID: 11413750}
   Modifications:
     Modificated:
-    - Object: {fileID: 197076}
-      ObjeckLink: -992906496
-      PropertyPath: m_Name
-      Mode: 0
     - Object: {fileID: 419046}
       ObjeckLink: 172977106
       PropertyPath: m_RootOrder
       Mode: 0
     - Object: {fileID: 11456264}
       ObjeckLink: -793954953
-      PropertyPath: Render
+      PropertyPath: Animator
       Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents: []
+    NonPrefabComponents:
+    - child: {fileID: 11413750}
+      parent: {fileID: 176008}
     RemovedObjects: 8cf25918019b4f5712e833d562c5c4401b7011f2
     TransformParentChanges: []
   ParentPrefabGUID: 

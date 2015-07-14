@@ -13,7 +13,7 @@ public class PathBinder : MonoBehaviour
         {
             var pathPoints = PathFromRoot(Path);
 
-            fish.Path = new UnitySteer.SplinePathway(pathPoints, 3);
+            fish.Path = new UnitySteer.SplinePathway(pathPoints, 1);
         }
 	}
 	

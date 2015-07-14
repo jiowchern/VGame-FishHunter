@@ -34,5 +34,11 @@ namespace VGame.Project.FishHunter
         {
             _Set.Remove(_Bounds);
         }
+
+
+        void OnDestroy()
+        {
+
+        }
     }
 }

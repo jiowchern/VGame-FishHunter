@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 454670}
   - 33: {fileID: 3386466}
   - 23: {fileID: 2306574}
-  - 114: {fileID: 11445716}
   m_Layer: 8
   m_Name: Fish_50A-Eye-L
   m_TagString: Untagged
@@ -159,7 +158,6 @@ GameObject:
   - 4: {fileID: 413116}
   - 33: {fileID: 3381514}
   - 23: {fileID: 2340312}
-  - 114: {fileID: 11497386}
   m_Layer: 8
   m_Name: ' Fish_50A-Eye-R'
   m_TagString: Untagged
@@ -756,8 +754,6 @@ MonoBehaviour:
       InstanceTarget: {fileID: 3381514}
     - LIIF: 1456508268
       InstanceTarget: {fileID: 2340312}
-    - LIIF: 408547980
-      InstanceTarget: {fileID: 0}
     - LIIF: 737406381
       InstanceTarget: {fileID: 3386466}
     - LIIF: 366087137
@@ -780,20 +776,8 @@ MonoBehaviour:
       InstanceTarget: {fileID: 189544}
     - LIIF: -1564745336
       InstanceTarget: {fileID: 6585392}
-    - LIIF: 1464834817
-      InstanceTarget: {fileID: 0}
-    - LIIF: -5092311
-      InstanceTarget: {fileID: 0}
-    - LIIF: -665660209
-      InstanceTarget: {fileID: 0}
     - LIIF: -2090506226
       InstanceTarget: {fileID: 11480008}
-    - LIIF: -718018542
-      InstanceTarget: {fileID: 0}
-    - LIIF: 1086637410
-      InstanceTarget: {fileID: 0}
-    - LIIF: -233738213
-      InstanceTarget: {fileID: 0}
     - LIIF: 791035222
       InstanceTarget: {fileID: 6587906}
     - LIIF: 1540551165
@@ -806,9 +790,13 @@ MonoBehaviour:
       ObjeckLink: 172977106
       PropertyPath: m_RootOrder
       Mode: 0
+    - Object: {fileID: 11437138}
+      ObjeckLink: -793954953
+      PropertyPath: Animator
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
-    RemovedObjects: 8cf25918019b4f57294cb2ffcfd452d812e833d562c5c4401b7011f2
+    RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 7a4f1cddfaf1b284a8a2ef257d8ad342
@@ -825,18 +813,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 455304}
   Render: {fileID: 13794452}
+  Animator: {fileID: 9504080}
   SkinnedMesh: {fileID: 13794452}
---- !u!114 &11445716
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 105328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  Original: {fileID: 0}
+  Hit: {fileID: 0}
 --- !u!114 &11456686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -892,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11474670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1029,17 +1009,6 @@ MonoBehaviour:
     m_Bits: 4294967295
   _drawGizmos: 0
   _preAllocateSize: 30
---- !u!114 &11497386
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 159354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!137 &13794452
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -1094,7 +1063,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: _minSpeedToConsider
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 129818}

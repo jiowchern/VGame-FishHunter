@@ -12258,7 +12258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11404474
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -12770,6 +12770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 470490}
   Render: {fileID: 13745226}
+  Animator: {fileID: 9531346}
   SkinnedMesh: {fileID: 13745226}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -12786,6 +12787,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 491366}
   Render: {fileID: 13730636}
+  Animator: {fileID: 9544710}
   SkinnedMesh: {fileID: 13730636}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -13204,6 +13206,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 400018}
   Render: {fileID: 13767546}
+  Animator: {fileID: 9547704}
   SkinnedMesh: {fileID: 13767546}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -13252,7 +13255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11417858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13727,7 +13730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11423684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14353,6 +14356,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 461258}
   Render: {fileID: 13745472}
+  Animator: {fileID: 9599686}
   SkinnedMesh: {fileID: 13745472}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14396,6 +14400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 450970}
   Render: {fileID: 13722916}
+  Animator: {fileID: 9564722}
   SkinnedMesh: {fileID: 13722916}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14412,6 +14417,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 440532}
   Render: {fileID: 13729186}
+  Animator: {fileID: 9535924}
   SkinnedMesh: {fileID: 13729186}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14631,6 +14637,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 429976}
   Render: {fileID: 13702206}
+  Animator: {fileID: 9594616}
   SkinnedMesh: {fileID: 13702206}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14658,7 +14665,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11442704
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14672,6 +14679,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 477370}
   Render: {fileID: 13758672}
+  Animator: {fileID: 9501296}
   SkinnedMesh: {fileID: 13758672}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14718,6 +14726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 439808}
   Render: {fileID: 13781232}
+  Animator: {fileID: 9545836}
   SkinnedMesh: {fileID: 13781232}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14755,7 +14764,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11449000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15272,7 +15281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11455802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15942,7 +15951,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11464716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15956,7 +15965,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11466266
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16401,6 +16410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 432696}
   Render: {fileID: 13787506}
+  Animator: {fileID: 9505462}
   SkinnedMesh: {fileID: 13787506}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -16428,7 +16438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11476038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16888,6 +16898,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 473914}
   Render: {fileID: 13768744}
+  Animator: {fileID: 9573826}
   SkinnedMesh: {fileID: 13768744}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -17378,7 +17389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11490556
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17392,7 +17403,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11491050
 MonoBehaviour:
   m_ObjectHideFlags: 1

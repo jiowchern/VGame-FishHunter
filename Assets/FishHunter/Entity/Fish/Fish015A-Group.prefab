@@ -1415,7 +1415,15 @@ MonoBehaviour:
     - LIIF: 683599657
       InstanceTarget: {fileID: 157036}
   Modifications:
-    Modificated: []
+    Modificated:
+    - Object: {fileID: 405524}
+      ObjeckLink: 1984939945
+      PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11455668}
+      ObjeckLink: 1090953602
+      PropertyPath: Animator
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -1467,6 +1475,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 464620}
   Render: {fileID: 13743404}
+  Animator: {fileID: 9543652}
   SkinnedMesh: {fileID: 13743404}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}

@@ -12,14 +12,7 @@ namespace VGame
     [TestFixture]
     public class UnitTest
     {
-        [UnityEditor.MenuItem("VGame/Test")]
-        public static void Run()
-        {            
-            
-        }
-
-
-       [Test]
+        [Test]
         public void PathBuilderTest()
         {
            var pathAsset = UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/FishHunter/Test/Path/Points.txt", typeof(UnityEngine.TextAsset)) as UnityEngine.TextAsset;

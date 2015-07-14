@@ -9,7 +9,7 @@ public abstract class FishCollider : MonoBehaviour
     
     VGame.Project.FishHunter.FishBounds _Bounds;
 
-    UnityEngine.Animator _Animator;
+    public UnityEngine.Animator Animator;
     Regulus.CustomType.Polygon _Polygon;
     
     protected abstract Bounds _GetBounds();
@@ -22,83 +22,87 @@ public abstract class FishCollider : MonoBehaviour
     private Client _Client;
 
     bool _Initialed;
-
-    int _JoinCount;
+    
 	public FishCollider()
-    {        
+    {
         _Polygon = new Regulus.CustomType.Polygon();
-        _Polygon.BuildEdges();
-     
+        _Polygon.BuildEdges();     
     }
 
     protected abstract void _ChangeMaterial();
+    
 
+    void OnDestroy()
+    {
+        if (DeadEvent != null)
+            DeadEvent();
+
+        _Release();
+
+        if (_Client != null)
+        {
+            _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
+            if (_Player != null)
+                _Player.DeathFishEvent -= _Player_DeathFishEvent;
+        }
+    }
 	void Start () 
     {
-        _Animator = GetComponentInChildren<UnityEngine.Animator>();
-        if (_Animator != null)
-            _Animator.GetBehaviour<DieHandler>().DoneEvent += _Erase ;
+        if (Client.Instance != null)
+        {
+            Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
+            _Client = Client.Instance;
+        }        
+        
 	}
 
     private void _Erase()
-    {
-        GameObjectPool.Instance.Destroy(gameObject);        
+    {        
+        GameObjectPool.Instance.Destroy(gameObject);                
     }
 
-    public void Initial(int id)
-    {
-        _Id = id;
-        DeadEvent = null;
+    void _Initial(int id)
+    {        
+        _Id = id;        
 
         _Bounds = new VGame.Project.FishHunter.FishBounds(_Id, _UpdateBounds());
         _JoinToSet();
-        _Bounds.RequestHitEvent += _Hit;
-        Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
-        _Client = Client.Instance;
+        _Bounds.RequestHitEvent += _Hit;        
         _Initialed = true;
     }
 
     private void _JoinToSet()
     {
-        _JoinCount++;
+        
         var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
         set.Add(_Bounds);
     }
-    void Release()
-    {
-        
+    void _Release()
+    {        
         _Bounds.RequestHitEvent -= _Hit;
-        _LeftSet();
-        _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
-        _Player.DeathFishEvent -= _Player_DeathFishEvent;
+        _LeftSet();        
 
-        _Id = 0;
+        _Id = 0;        
     }
 
     private void _LeftSet()
     {
-        _JoinCount--;
-        try
-        {
-            var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
-            if (set != null)
-                set.Remove(_Bounds);
-        }
-        catch(System.Collections.Generic.KeyNotFoundException knfe)
-        {
-
-        }
+        
+        var set = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishSet>();
+        if (set != null)
+            set.Remove(_Bounds);
         
     }
-    void OnDestroy()
-    {
-        if (_Id != 0)
-            Release();
-    }
+    
     void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
     {
         _Player = obj;
         _Player.DeathFishEvent += _Player_DeathFishEvent;
+
+        _Player.RequestFish().OnValue += (id) =>
+        {
+            _Initial(id) ;
+        };
     }
 
     void _Player_DeathFishEvent(int obj)
@@ -111,16 +115,20 @@ public abstract class FishCollider : MonoBehaviour
             
     }
 
-    private void _Dead()
+    public void Dead()
     {
-        
-        gameObject.GetComponent<FishCollider>().Release();        
-        
-        if (DeadEvent != null)
-            DeadEvent();
+        _Dead();
+    }
 
-        if (_Animator != null)
-            _Animator.SetTrigger("Die");
+    private void _Dead()
+    {        
+
+        if (Animator != null)
+        {
+            Animator.GetBehaviour<DieHandler>().DoneEvent += _Erase;
+            Animator.SetTrigger("Die");            
+        }
+            
         else
             _Erase();
     }
@@ -131,25 +139,41 @@ public abstract class FishCollider : MonoBehaviour
 
     private bool _Hit(Regulus.CustomType.Polygon collider)
     {
-        var fishPolygon  = _GetCollider();
-        var result = Regulus.CustomType.Polygon.Collision(collider, fishPolygon , new Regulus.CustomType.Vector2(0,0));
-        if (result.Intersect || result.WillIntersect)
+
+
+        if(_TryGetCollider(ref _Polygon))
         {
-            _ChangeMaterial();
-            return true;
+            if(_Polygon.Points.Count > 0 && collider.Points.Count > 0)
+            {
+                var result = Regulus.CustomType.Polygon.Collision(collider, _Polygon, new Regulus.CustomType.Vector2(0, 0));
+                if (result.Intersect || result.WillIntersect)
+                {
+                    _ChangeMaterial();
+
+                    return true;
+                }
+            }            
         }
+        
+        
         return false;
     }
 
-    private Regulus.CustomType.Polygon _GetCollider()
+    private bool _TryGetCollider(ref Regulus.CustomType.Polygon polygon)
     {
         
         var boxs = gameObject.GetComponentsInChildren<BoxCollider>();
         Vector2[] points = _GetVectors(boxs);
+
+        if (points.Length <= 1)
+        {
+            return false;
+        }
         var paths = AForge.Math.Geometry.GrahamConvexHull.FindHull(points.ToList()).ToArray();
 
-        _SetPolygon(_Polygon, paths);
-        return _Polygon;
+        _SetPolygon(polygon, paths);
+        
+        return true;
     }
 
     private void _SetPolygon(Regulus.CustomType.Polygon polygon, Vector2[] paths)
@@ -184,17 +208,12 @@ public abstract class FishCollider : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        
-
         if (_Initialed)
         {
-
             _Bounds.Visible = this.Render.isVisible;
             UpdateBounds();
             
         }
-            
-	    
 	}
 
     
@@ -227,7 +246,7 @@ public abstract class FishCollider : MonoBehaviour
     {
         /*if (_Bounds == null)
             return;
-
+        
         var bounds = _Bounds.Bounds;
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Right, bounds.Top), Color.black);
         GUIHelper.DrawLine(new Vector2(bounds.Left, bounds.Top), new Vector2(bounds.Left, bounds.Bottom), Color.black);

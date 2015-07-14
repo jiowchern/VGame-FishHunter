@@ -27,3 +27,5 @@ EditorBuildSettings:
     path: Assets/FishHunter/Scene/Game/Demo2.unity
   - enabled: 1
     path: Assets/FishHunter/Scene/Game/Demo3.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/RandomPath.unity

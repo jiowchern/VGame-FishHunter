@@ -13316,6 +13316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 421662}
   Render: {fileID: 13724942}
+  Animator: {fileID: 9569508}
   SkinnedMesh: {fileID: 13724942}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -13332,6 +13333,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 479088}
   Render: {fileID: 13791962}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13791962}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -13352,10 +13354,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -13638,6 +13640,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 427514}
   Render: {fileID: 13759406}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13759406}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -13927,6 +13930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 424066}
   Render: {fileID: 13706894}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13706894}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -14175,10 +14179,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -14448,10 +14452,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -14529,6 +14533,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 489586}
   Render: {fileID: 13791962}
+  Animator: {fileID: 9569882}
   SkinnedMesh: {fileID: 13791962}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -14776,7 +14781,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11427930
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14849,7 +14854,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11432112
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14878,6 +14883,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 416192}
   Render: {fileID: 13739660}
+  Animator: {fileID: 9535692}
   SkinnedMesh: {fileID: 13739660}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -14908,6 +14914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 470430}
   Render: {fileID: 13789534}
+  Animator: {fileID: 9500178}
   SkinnedMesh: {fileID: 13789534}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -15109,6 +15116,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 417534}
   Render: {fileID: 13759406}
+  Animator: {fileID: 9573602}
   SkinnedMesh: {fileID: 13759406}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -15136,7 +15144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11436210
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15885,10 +15893,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -15908,6 +15916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 470648}
   Render: {fileID: 13780318}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13780318}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -15967,6 +15976,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 465806}
   Render: {fileID: 13711828}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13711828}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -15997,6 +16007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 404700}
   Render: {fileID: 13739660}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13739660}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -16013,6 +16024,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 484444}
   Render: {fileID: 13711828}
+  Animator: {fileID: 9571336}
   SkinnedMesh: {fileID: 13711828}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -16029,6 +16041,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 461104}
   Render: {fileID: 13780318}
+  Animator: {fileID: 9592390}
   SkinnedMesh: {fileID: 13780318}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -16045,6 +16058,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 484508}
   Render: {fileID: 13758204}
+  Animator: {fileID: 9525150}
   SkinnedMesh: {fileID: 13758204}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -16123,6 +16137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 486382}
   Render: {fileID: 13743076}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13743076}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -16413,10 +16428,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -16671,10 +16686,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -16976,7 +16991,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11455312
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17103,10 +17118,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -17126,7 +17141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11460632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17540,6 +17555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 473600}
   Render: {fileID: 13758204}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13758204}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -17655,7 +17671,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11471614
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17696,6 +17712,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 491922}
   Render: {fileID: 13706894}
+  Animator: {fileID: 9550974}
   SkinnedMesh: {fileID: 13706894}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -17738,10 +17755,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -17782,7 +17799,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11474350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -18295,6 +18312,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 421120}
   Render: {fileID: 13789534}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13789534}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -18405,10 +18423,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -18969,7 +18987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11487694
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19033,7 +19051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11490962
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19109,6 +19127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 419668}
   Render: {fileID: 13724942}
+  Animator: {fileID: 0}
   SkinnedMesh: {fileID: 13724942}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -19352,10 +19371,10 @@ MonoBehaviour:
   _minSpeedForTurning: .100000001
   _movementPriority: 0
   _turnTime: .25
-  _mass: 1
+  _mass: .00999999978
   _allowedMovementAxes: {x: 1, y: 1, z: 1}
   _arrivalRadius: .25
-  _maxSpeed: 1
+  _maxSpeed: 2
   _maxForce: 10
   _canMove: 1
   _queueName: Steering
@@ -19375,7 +19394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11498482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -19445,6 +19464,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 495370}
   Render: {fileID: 13743076}
+  Animator: {fileID: 9567062}
   SkinnedMesh: {fileID: 13743076}
   Original: {fileID: 0}
   Hit: {fileID: 0}

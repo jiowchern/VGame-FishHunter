@@ -12,11 +12,11 @@ public class Looper : MonoBehaviour {
     private Client _Client;
     VGame.Project.FishHunter.IPlayer _Player;
 
-    Queue<FishCollider> _Fishs;
+    
 
     public Looper()
     {
-        _Fishs = new Queue<FishCollider>();
+    
     }
     void OnDestroy()
     {
@@ -61,18 +61,7 @@ public class Looper : MonoBehaviour {
         _Current = null;
         _Current = GameObject.Instantiate(Prefab);
 
-        if (_Player != null)
-        {
-            foreach (var fish in _Current.GetComponentsInChildren<FishCollider>())
-            {
-                _Fishs.Enqueue(fish);
-                _Player.RequestFish().OnValue += _InitFish ;
-            }
-        }
+        
     }
-
-    private void _InitFish(short obj)
-    {
-        _Fishs.Dequeue().Initial(obj); 
-    }
+    
 }

@@ -20,11 +20,9 @@ public class DieHandler : StateMachineBehaviour {
 
 	// OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-	    if(_Counter.Second >= stateInfo.length)
-        {
-            if (DoneEvent != null)
-                DoneEvent();
-
+        if (_Counter.Second >= stateInfo.length && DoneEvent != null)        
+        {         
+            DoneEvent();
             DoneEvent = null;
         }
 	}

@@ -12266,6 +12266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 493040}
   Render: {fileID: 13724380}
+  Animator: {fileID: 9563290}
   SkinnedMesh: {fileID: 13724380}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -12879,7 +12880,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11411422
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13182,6 +13183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 455470}
   Render: {fileID: 13751012}
+  Animator: {fileID: 9559728}
   SkinnedMesh: {fileID: 13751012}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -13246,6 +13248,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 404200}
   Render: {fileID: 13760784}
+  Animator: {fileID: 9585712}
   SkinnedMesh: {fileID: 13760784}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -13283,7 +13286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11421218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13297,7 +13300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11421820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13385,6 +13388,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 474700}
   Render: {fileID: 13790010}
+  Animator: {fileID: 9541152}
   SkinnedMesh: {fileID: 13790010}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -13626,7 +13630,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11432152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13694,7 +13698,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11439256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -13932,6 +13936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 444426}
   Render: {fileID: 13754750}
+  Animator: {fileID: 9542672}
   SkinnedMesh: {fileID: 13754750}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14000,7 +14005,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11449358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14256,6 +14261,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 414072}
   Render: {fileID: 13780192}
+  Animator: {fileID: 9522316}
   SkinnedMesh: {fileID: 13780192}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -14488,7 +14494,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11455692
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14540,7 +14546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11458408
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -15194,6 +15200,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 400786}
   Render: {fileID: 13719978}
+  Animator: {fileID: 9594146}
   SkinnedMesh: {fileID: 13719978}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -16612,6 +16619,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 497266}
   Render: {fileID: 13739734}
+  Animator: {fileID: 9525426}
   SkinnedMesh: {fileID: 13739734}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -16628,7 +16636,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11478270
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -16675,6 +16683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 435860}
   Render: {fileID: 13757212}
+  Animator: {fileID: 9580140}
   SkinnedMesh: {fileID: 13757212}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -17221,7 +17230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11492952
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17433,7 +17442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weight: 1
   _predictionTime: 1.5
-  _minSpeedToConsider: .25
+  _minSpeedToConsider: 3
 --- !u!114 &11495250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -17468,6 +17477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 477744}
   Render: {fileID: 13779968}
+  Animator: {fileID: 9590298}
   SkinnedMesh: {fileID: 13779968}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
@@ -17687,6 +17697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Root: {fileID: 462618}
   Render: {fileID: 13743558}
+  Animator: {fileID: 9521530}
   SkinnedMesh: {fileID: 13743558}
   Original: {fileID: -1992870978, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}
   Hit: {fileID: 2044974680, guid: 273224c16cb0eb049a01032bc9a134a5, type: 3}

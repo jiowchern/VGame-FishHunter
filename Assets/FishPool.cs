@@ -53,8 +53,7 @@ public class FishPool : MonoBehaviour
         if(_Enable )
         {
             var fish = GameObjectPool.Instance.Instantiate(Fish);
-            var collider = fish.GetComponent<FishCollider>();
-            collider.Initial(id);
+            var collider = fish.GetComponent<FishCollider>();            
             collider.DeadEvent += collider_DeadEvent;
 
             fish.transform.position = UnityEngine.Random.insideUnitSphere * 15;
