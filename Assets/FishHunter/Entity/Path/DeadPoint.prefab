@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11464982}
   - 54: {fileID: 5464982}
   m_Layer: 0
-  m_Name: Root
+  m_Name: DeadPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

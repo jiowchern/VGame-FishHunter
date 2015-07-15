@@ -504,7 +504,7 @@ GameObject:
   - 114: {fileID: 11471746}
   m_Layer: 0
   m_Name: Fish020A
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1304,11 +1304,7 @@ MonoBehaviour:
     - LIIF: 883586936
       InstanceTarget: {fileID: 11477130}
   Modifications:
-    Modificated:
-    - Object: {fileID: 445510}
-      ObjeckLink: -794019831
-      PropertyPath: m_RootOrder
-      Mode: 0
+    Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -2817,6 +2813,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: _arrivalRadius
       value: .25
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Fish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

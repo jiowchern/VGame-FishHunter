@@ -40,21 +40,19 @@ public class Ecology : MonoBehaviour {
     {
         var root = _Create();
 
-        root.transform.position = path[2];
-        fish.transform.position = path[0];        
-        //fish.transform.parent = root.transform;
+        root.transform.position = path[PathMaker.END_INDEX];
+        fish.transform.position = path[PathMaker.BEGIN_INDEX];                
 
         var deadTrigger = root.GetComponent<FishDeadTrigger>();
         deadTrigger.Fish = fish;
 
         var steering = fish.GetComponent<UnitySteer.Behaviors.SteerForPathSimplified>();
         
-        steering.Path = new UnitySteer.SplinePathway(path.ToList(), 10);
+        steering.Path = new UnitySteer.SplinePathway(path.ToList(), 1);
     }
 
     private GameObject _Create()
     {
-
         return GameObject.Instantiate(PathRoot);
     }
 

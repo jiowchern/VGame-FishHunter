@@ -3,7 +3,9 @@ using System.Collections;
 
 public class PathMaker : MonoBehaviour {
 
-
+    public const int BEGIN_INDEX = 0;
+    public const int MIDDLE_INDEX = 1;
+    public const int END_INDEX = 2;
     public Transform[] EndPoints;
     public Transform MiddlePoint;
 

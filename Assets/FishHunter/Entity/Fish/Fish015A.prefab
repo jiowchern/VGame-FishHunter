@@ -1459,15 +1459,7 @@ MonoBehaviour:
     - LIIF: 683599657
       InstanceTarget: {fileID: 142314}
   Modifications:
-    Modificated:
-    - Object: {fileID: 417640}
-      ObjeckLink: 1984939945
-      PropertyPath: m_RootOrder
-      Mode: 0
-    - Object: {fileID: 11489178}
-      ObjeckLink: 1090953602
-      PropertyPath: Animator
-      Mode: 0
+    Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
