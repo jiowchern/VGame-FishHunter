@@ -287,7 +287,7 @@ GameObject:
   - 114: {fileID: 11411260}
   m_Layer: 8
   m_Name: Fish-50-Group
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1056,19 +1056,9 @@ MonoBehaviour:
     - LIIF: -28759622
       InstanceTarget: {fileID: 11413750}
   Modifications:
-    Modificated:
-    - Object: {fileID: 419046}
-      ObjeckLink: 172977106
-      PropertyPath: m_RootOrder
-      Mode: 0
-    - Object: {fileID: 11456264}
-      ObjeckLink: -793954953
-      PropertyPath: Animator
-      Mode: 0
+    Modificated: []
     NonPrefabObjects: []
-    NonPrefabComponents:
-    - child: {fileID: 11413750}
-      parent: {fileID: 176008}
+    NonPrefabComponents: []
     RemovedObjects: 8cf25918019b4f5712e833d562c5c4401b7011f2
     TransformParentChanges: []
   ParentPrefabGUID: 
@@ -1138,7 +1128,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Fish
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 197076}
