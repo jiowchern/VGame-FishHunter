@@ -30,8 +30,8 @@ public abstract class FishCollider : MonoBehaviour
     }
 
     protected abstract void _ChangeMaterial();
-    
 
+    bool _Destroyed;
     void OnDestroy()
     {
         if (DeadEvent != null)
@@ -45,6 +45,7 @@ public abstract class FishCollider : MonoBehaviour
             if (_Player != null)
                 _Player.DeathFishEvent -= _Player_DeathFishEvent;
         }
+        _Destroyed = true;
     }
 	void Start () 
     {
@@ -103,7 +104,8 @@ public abstract class FishCollider : MonoBehaviour
 
         _Player.RequestFish().OnValue += (id) =>
         {
-            _Initial(id) ;
+            if (_Destroyed == false)
+                _Initial(id) ;
         };
     }
 
