@@ -5,7 +5,7 @@ public class BaseFort : MonoBehaviour {
 
     public GameObject Bullet;
     private VGame.Project.FishHunter.IPlayer _Player;
-
+    public Transform Owner;
     bool _Enable;
     public BaseFort()
     {
@@ -14,7 +14,8 @@ public class BaseFort : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
-
+        if (Owner == null)
+            Owner = transform;
         if (Client.Instance != null)
         {
 
@@ -47,7 +48,13 @@ public class BaseFort : MonoBehaviour {
             _Player.RequestBullet().OnValue += (bullet) => 
             {
                 if (bullet != 0 && _Enable)
+                {
+                    
+                    var angle = _GetAngle(dir, Vector3.right);
+                    Owner.rotation = Quaternion.Euler(0,0,angle);
                     _SpawnBullet(bullet , dir);
+                }
+                    
             };
             
         }
@@ -90,20 +97,32 @@ public class BaseFort : MonoBehaviour {
         instance.transform.position = transform.position;
     }
 
+    static float _GetAngle(Vector3 dir , Vector3 to)
+    {
+        var angle = Vector2.Angle(dir, to);
+        Vector3 cross = Vector3.Cross(dir, to);
+        if (cross.z > 0)
+            angle = 360 - angle;
+        return angle;
+    }
+    private static void _SetRotation(Vector3 dir, Transform t)
+    {
+
+        var angle = _GetAngle(dir , Vector3.up);
+        t.rotation = Quaternion.Euler(0, 0, angle);        
+    }
     private static void _SetRotation(Vector3 dir, GameObject instance)
     {
         instance.GetComponent<BulletCollider>().Direction = dir;
-        var angle = Vector2.Angle(dir, Vector2.up);
-        Vector3 cross = Vector3.Cross(dir, Vector2.up);
-        if (cross.z > 0)
-            angle = 360 - angle;
 
-        instance.transform.rotation = Quaternion.Euler(0, 0, angle);        
+        _SetRotation(dir, instance.transform );
+        
     }
 
     private Vector3 _GetDirection(Vector3 vector3)
     {
-        var dir = vector3 - CameraHelper.Front.WorldToScreenPoint(transform.position);        
+
+        var dir = vector3 - CameraHelper.Front.WorldToScreenPoint(Owner.position);        
         return dir;
     }
 

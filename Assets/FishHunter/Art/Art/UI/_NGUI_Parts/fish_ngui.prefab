@@ -1,0 +1,903 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &122556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 426406}
+  - 114: {fileID: 11485578}
+  m_Layer: 0
+  m_Name: fish_ngui
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &426406
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11485578
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0c51bb0b6e93049af5e88f93826e3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 021701ac77b3b444988cb88bbdcfebdb, type: 2}
+  mSprites:
+  - name: 002A
+    x: 369
+    y: 390
+    width: 329
+    height: 264
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 83
+    paddingRight: 88
+    paddingTop: 139
+    paddingBottom: 97
+  - name: 003A
+    x: 0
+    y: 26
+    width: 361
+    height: 294
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 51
+    paddingRight: 88
+    paddingTop: 90
+    paddingBottom: 116
+  - name: 004A
+    x: 0
+    y: 321
+    width: 368
+    height: 333
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 65
+    paddingRight: 67
+    paddingTop: 83
+    paddingBottom: 84
+  - name: arrow_01
+    x: 937
+    y: 838
+    width: 56
+    height: 63
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 2
+    paddingBottom: 2
+  - name: arrow_02
+    x: 1640
+    y: 1387
+    width: 76
+    height: 81
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: atlas_f
+    x: 369
+    y: 31
+    width: 216
+    height: 358
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: atlas_tc
+    x: 997
+    y: 1028
+    width: 266
+    height: 72
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 16
+    paddingTop: 4
+    paddingBottom: 4
+  - name: Berlin Sans FB Demi_0
+    x: 1007
+    y: 1370
+    width: 496
+    height: 177
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 12
+    paddingTop: 4
+    paddingBottom: 331
+  - name: Berlin Sans num_0
+    x: 0
+    y: 655
+    width: 491
+    height: 340
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 4
+    paddingRight: 5
+    paddingTop: 4
+    paddingBottom: 156
+  - name: Boat_bet_frame01
+    x: 615
+    y: 927
+    width: 112
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: Boat_bet_frame02
+    x: 615
+    y: 858
+    width: 112
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: Boat_bet_frame03
+    x: 586
+    y: 129
+    width: 112
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: Boat_bet_frame04
+    x: 586
+    y: 60
+    width: 112
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: Boat_bet_frame05
+    x: 731
+    y: 833
+    width: 112
+    height: 68
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: boat_bet_num_0
+    x: 997
+    y: 998
+    width: 331
+    height: 29
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 178
+    paddingTop: 3
+    paddingBottom: 480
+  - name: Boat_BetNum_frame_01
+    x: 878
+    y: 646
+    width: 81
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: Boat_BetNum_frame_02
+    x: 1941
+    y: 1104
+    width: 81
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: Boat_BetNum_frame_03
+    x: 813
+    y: 579
+    width: 81
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: Boat_BetNum_frame_04
+    x: 731
+    y: 579
+    width: 81
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: Boat_BetNum_frame_05
+    x: 796
+    y: 646
+    width: 81
+    height: 47
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 2
+    paddingTop: 1
+    paddingBottom: 0
+  - name: Boat_CrtNum_0
+    x: 1531
+    y: 1034
+    width: 303
+    height: 35
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 207
+    paddingTop: 2
+    paddingBottom: 219
+  - name: Boat_CrtNum_frame
+    x: 1710
+    y: 1102
+    width: 230
+    height: 49
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 11
+    paddingRight: 5
+    paddingTop: 5
+    paddingBottom: 6
+  - name: cannon_a_01
+    x: 492
+    y: 672
+    width: 158
+    height: 102
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 39
+    paddingRight: 53
+    paddingTop: 64
+    paddingBottom: 64
+  - name: chang_f
+    x: 0
+    y: 996
+    width: 730
+    height: 346
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: contact_tc
+    x: 1264
+    y: 1028
+    width: 266
+    height: 72
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 16
+    paddingTop: 4
+    paddingBottom: 4
+  - name: goods_f_01
+    x: 1738
+    y: 1559
+    width: 303
+    height: 489
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: HHA_boat_01
+    x: 731
+    y: 1222
+    width: 355
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 22
+    paddingTop: 16
+    paddingBottom: 14
+  - name: HHA_boat_02
+    x: 1087
+    y: 1222
+    width: 355
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 22
+    paddingTop: 16
+    paddingBottom: 14
+  - name: HHA_boat_03
+    x: 1443
+    y: 1222
+    width: 355
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 22
+    paddingTop: 16
+    paddingBottom: 14
+  - name: HHA_boat_04
+    x: 731
+    y: 1101
+    width: 355
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 22
+    paddingTop: 16
+    paddingBottom: 14
+  - name: HHA_boat_05
+    x: 1087
+    y: 1101
+    width: 355
+    height: 120
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 23
+    paddingRight: 22
+    paddingTop: 16
+    paddingBottom: 14
+  - name: member_tc
+    x: 731
+    y: 954
+    width: 261
+    height: 72
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 18
+    paddingRight: 21
+    paddingTop: 4
+    paddingBottom: 4
+  - name: my_icon01
+    x: 794
+    y: 523
+    width: 54
+    height: 55
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: ok_tc
+    x: 586
+    y: 14
+    width: 120
+    height: 45
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 2
+    paddingBottom: 3
+  - name: set_01
+    x: 586
+    y: 270
+    width: 116
+    height: 119
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 5
+    paddingTop: 5
+    paddingBottom: 2
+  - name: set_bar
+    x: 1531
+    y: 1070
+    width: 454
+    height: 30
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: set_bt
+    x: 1443
+    y: 1138
+    width: 266
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 2
+    paddingTop: 4
+    paddingBottom: 3
+  - name: set_bt_atlas_tc
+    x: 1799
+    y: 1227
+    width: 139
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 6
+    paddingTop: 1
+    paddingBottom: 1
+  - name: set_bt_contact_tc
+    x: 823
+    y: 794
+    width: 138
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 6
+    paddingTop: 1
+    paddingBottom: 1
+  - name: set_bt_member_tc
+    x: 731
+    y: 734
+    width: 137
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 6
+    paddingRight: 7
+    paddingTop: 1
+    paddingBottom: 1
+  - name: set_bt_s
+    x: 492
+    y: 775
+    width: 213
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 1
+    paddingBottom: 1
+  - name: set_bt_tc
+    x: 1738
+    y: 1343
+    width: 216
+    height: 38
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 27
+    paddingRight: 27
+    paddingTop: 26
+    paddingBottom: 26
+  - name: set_bt01
+    x: 1799
+    y: 1266
+    width: 212
+    height: 76
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: set_bt02
+    x: 1738
+    y: 1382
+    width: 266
+    height: 83
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: set_bt03
+    x: 1738
+    y: 1466
+    width: 288
+    height: 92
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: set_f
+    x: 1007
+    y: 1548
+    width: 730
+    height: 500
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 10
+    paddingRight: 10
+    paddingTop: 10
+    paddingBottom: 10
+  - name: set_icon_a
+    x: 1681
+    y: 1355
+    width: 45
+    height: 31
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 2
+    paddingRight: 3
+    paddingTop: 10
+    paddingBottom: 9
+  - name: set_icon_b
+    x: 1955
+    y: 1344
+    width: 33
+    height: 37
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 8
+    paddingRight: 9
+    paddingTop: 7
+    paddingBottom: 6
+  - name: set_icon_c
+    x: 1640
+    y: 1346
+    width: 40
+    height: 40
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 5
+    paddingRight: 5
+    paddingTop: 5
+    paddingBottom: 5
+  - name: set_m_icon
+    x: 731
+    y: 517
+    width: 62
+    height: 61
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: set_music_tc
+    x: 731
+    y: 773
+    width: 91
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 15
+    paddingTop: 1
+    paddingBottom: 0
+  - name: set_sound_tc
+    x: 844
+    y: 842
+    width: 92
+    height: 59
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 14
+    paddingTop: 1
+    paddingBottom: 0
+  - name: set_tc
+    x: 731
+    y: 1027
+    width: 265
+    height: 73
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 18
+    paddingTop: 4
+    paddingBottom: 3
+  - name: shop_01
+    x: 492
+    y: 854
+    width: 122
+    height: 141
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 14
+    paddingRight: 14
+    paddingTop: 5
+    paddingBottom: 4
+  - name: shop_buy_tc
+    x: 1939
+    y: 1226
+    width: 106
+    height: 39
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 7
+    paddingTop: 5
+    paddingBottom: 6
+  - name: shop_f
+    x: 0
+    y: 1343
+    width: 1006
+    height: 705
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 17
+    paddingRight: 12
+    paddingTop: 12
+    paddingBottom: 8
+  - name: shop_tc
+    x: 586
+    y: 198
+    width: 123
+    height: 71
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 88
+    paddingRight: 89
+    paddingTop: 0
+    paddingBottom: 0
+  - name: tc_title_01
+    x: 1710
+    y: 1152
+    width: 289
+    height: 69
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: touch
+    x: 731
+    y: 902
+    width: 230
+    height: 51
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_bt_lesss
+    x: 1640
+    y: 1469
+    width: 79
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 0
+    paddingTop: 1
+    paddingBottom: 1
+  - name: UI_bt_plus
+    x: 651
+    y: 696
+    width: 78
+    height: 78
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 1
+    paddingRight: 1
+    paddingTop: 1
+    paddingBottom: 1
+  - name: UI_icon
+    x: 1504
+    y: 1409
+    width: 135
+    height: 138
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 7
+    paddingRight: 8
+    paddingTop: 7
+    paddingBottom: 4
+  - name: UI_lvbar_bk
+    x: 1504
+    y: 1359
+    width: 121
+    height: 49
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  - name: UI_lvbar_top
+    x: 731
+    y: 694
+    width: 114
+    height: 39
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 3
+    paddingRight: 4
+    paddingTop: 5
+    paddingBottom: 5
+  - name: x
+    x: 731
+    y: 627
+    width: 64
+    height: 66
+    borderLeft: 0
+    borderRight: 0
+    borderTop: 0
+    borderBottom: 0
+    paddingLeft: 0
+    paddingRight: 0
+    paddingTop: 0
+    paddingBottom: 0
+  mPixelSize: 1
+  mReplacement: {fileID: 0}
+  mCoordinates: 0
+  sprites: []
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 122556}
+  m_IsPrefabParent: 1

@@ -4,6 +4,7 @@ using System.Collections;
 public class UIMoney : MonoBehaviour {
 
     public UnityEngine.UI.Text Money;
+    public UILabel Score;
     VGame.Project.FishHunter.IPlayer _Player;
     Client _Client;
 	// Use this for initialization
@@ -40,7 +41,10 @@ public class UIMoney : MonoBehaviour {
 
     void _Player_MoneyEvent(int obj)
     {
-        Money.text = obj.ToString();   
+        if (Score != null)
+            Score.text = obj.ToString();
+        if (Money != null)
+            Money.text = obj.ToString();   
     }
 	
 	// Update is called once per frame

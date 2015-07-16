@@ -1,0 +1,182 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &184054
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 412120}
+  - 114: {fileID: 11418000}
+  m_Layer: 0
+  m_Name: boat_bet_num
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412120
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184054}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11418000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 184054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b4eb3a400afab046abb8471a9d746d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMat: {fileID: 2100000, guid: 021701ac77b3b444988cb88bbdcfebdb, type: 2}
+  mUVRect:
+    serializedVersion: 2
+    x: .485351562
+    y: .264160156
+    width: .25
+    height: .25
+  mFont:
+    mSize: 50
+    mBase: 41
+    mWidth: 512
+    mHeight: 512
+    mSpriteName: boat_bet_num_0
+    mSaved:
+    - index: 48
+      x: 3
+      y: 3
+      width: 32
+      height: 29
+      offsetX: -1
+      offsetY: 15
+      advance: 27
+      channel: 15
+      kerning: 
+    - index: 49
+      x: 287
+      y: 3
+      width: 20
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 14
+      channel: 15
+      kerning: 
+    - index: 50
+      x: 135
+      y: 3
+      width: 30
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 22
+      channel: 15
+      kerning: 
+    - index: 51
+      x: 197
+      y: 3
+      width: 29
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 21
+      channel: 15
+      kerning: 
+    - index: 52
+      x: 36
+      y: 3
+      width: 32
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 24
+      channel: 15
+      kerning: 
+    - index: 53
+      x: 166
+      y: 3
+      width: 30
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 22
+      channel: 15
+      kerning: 
+    - index: 54
+      x: 69
+      y: 3
+      width: 32
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 24
+      channel: 15
+      kerning: 
+    - index: 55
+      x: 227
+      y: 3
+      width: 29
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 21
+      channel: 15
+      kerning: 
+    - index: 56
+      x: 257
+      y: 3
+      width: 29
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 21
+      channel: 15
+      kerning: 
+    - index: 57
+      x: 102
+      y: 3
+      width: 32
+      height: 29
+      offsetX: -4
+      offsetY: 15
+      advance: 24
+      channel: 15
+      kerning: 
+    - index: 120
+      x: 308
+      y: 3
+      width: 26
+      height: 25
+      offsetX: -4
+      offsetY: 20
+      advance: 21
+      channel: 15
+      kerning: 
+  mAtlas: {fileID: 11485578, guid: 99c4b4b9d0f409c48896a3f5a1d4534e, type: 2}
+  mReplacement: {fileID: 0}
+  mSymbols: []
+  mDynamicFont: {fileID: 0}
+  mDynamicFontSize: 16
+  mDynamicFontStyle: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 184054}
+  m_IsPrefabParent: 1
