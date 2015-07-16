@@ -46,12 +46,7 @@ public class Client : MonoBehaviour
 	void Start () 
     {
      
-        System.Reflection.Assembly.Load("Common");        
-
-        var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
-        client.ModeSelectorEvent += _ModeSelector;
-        _Updater.Add(client);
-        _Updater.Add(_Standalong);
+        
     }
 
     private void _ModeSelector(Regulus.Framework.GameModeSelector<VGame.Project.FishHunter.IUser> selector)
@@ -84,5 +79,15 @@ public class Client : MonoBehaviour
     void OnDestroy()
     {            
         _Updater.Shutdown();
+    }
+
+    internal void Initial()
+    {
+        System.Reflection.Assembly.Load("Common");
+
+        var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
+        client.ModeSelectorEvent += _ModeSelector;
+        _Updater.Add(client);
+        _Updater.Add(_Standalong);
     }
 }
