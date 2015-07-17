@@ -1,0 +1,230 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &163940
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 435148}
+  - 212: {fileID: 21295134}
+  - 114: {fileID: 11473834}
+  - 60: {fileID: 6017452}
+  m_Layer: 9
+  m_Name: Net2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &435148
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163940}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!60 &6017452
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163940}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: 62.5, y: -118}
+      - {x: 68.5, y: -116}
+      - {x: 65.5, y: -107}
+      - {x: 104.5, y: -69}
+      - {x: 114.5, y: -68}
+      - {x: 117.5, y: -63}
+      - {x: 117.5, y: -56}
+      - {x: 112.5, y: -52}
+      - {x: 109.5, y: -2}
+      - {x: 117.5, y: 9}
+      - {x: 117.5, y: 14}
+      - {x: 113.5, y: 22}
+      - {x: 106.5, y: 20}
+      - {x: 75.5, y: 42}
+      - {x: 81.5, y: 49}
+      - {x: 83.5, y: 54}
+      - {x: 77.5, y: 60}
+      - {x: 62.5, y: 72}
+      - {x: 53.5, y: 70}
+      - {x: 30.5, y: 105}
+      - {x: 26.5, y: 110}
+      - {x: 21.5, y: 110}
+      - {x: -3.5, y: 101}
+      - {x: -40.5, y: 105}
+      - {x: -43.5, y: 111}
+      - {x: -45.5, y: 112}
+      - {x: -54.5, y: 112}
+      - {x: -63.5, y: 91}
+      - {x: -88.5, y: 64}
+      - {x: -107.5, y: 61}
+      - {x: -110.5, y: 53}
+      - {x: -110.5, y: 50}
+      - {x: -104.5, y: 46}
+      - {x: -98.5, y: 21}
+      - {x: -100.5, y: -7}
+      - {x: -110.5, y: -17}
+      - {x: -110.5, y: -24}
+      - {x: -109.5, y: -29}
+      - {x: -87.5, y: -33}
+      - {x: -67.5, y: -50}
+      - {x: -73.5, y: -54}
+      - {x: -77.5, y: -63}
+      - {x: -73.5, y: -67}
+      - {x: -57.5, y: -72}
+      - {x: -55.5, y: -82}
+      - {x: -44.5, y: -79}
+      - {x: -22.5, y: -107}
+      - {x: -23.5, y: -116}
+      - {x: -19.5, y: -118}
+      - {x: -7.5, y: -118}
+      - {x: 10.5, y: -109}
+      - {x: 34.5, y: -109}
+      - {x: 52.5, y: -118}
+    - - {x: -5.5, y: -99}
+      - {x: -3.5, y: -96}
+      - {x: -2.5, y: -88}
+      - {x: -5.5, y: -85}
+      - {x: -6.5, y: -85}
+      - {x: -11.5, y: -90}
+      - {x: -34.5, y: -62}
+      - {x: -40.5, y: -58}
+      - {x: -46.5, y: -55}
+      - {x: -48.5, y: -58}
+      - {x: -50.5, y: -62}
+      - {x: -49.5, y: -62}
+      - {x: -49.5, y: -61}
+      - {x: -46.5, y: -53}
+      - {x: -43.5, y: -51}
+      - {x: -50.5, y: -33}
+      - {x: -82.5, y: -20}
+      - {x: -90.5, y: -21}
+      - {x: -91.5, y: -21}
+      - {x: -91.5, y: -22}
+      - {x: -80.5, y: -17}
+      - {x: -76.5, y: -14}
+      - {x: -79.5, y: -7}
+      - {x: -84.5, y: 27}
+      - {x: -66.5, y: 29}
+      - {x: -66.5, y: 62}
+      - {x: -37.5, y: 74}
+      - {x: -37.5, y: 87}
+      - {x: 3.5, y: 92}
+      - {x: 14.5, y: 81}
+      - {x: 15.5, y: 81}
+      - {x: 21.5, y: 87}
+      - {x: 23.5, y: 92}
+      - {x: 23.5, y: 94}
+      - {x: 22.5, y: 93}
+      - {x: 24.5, y: 88}
+      - {x: 29.5, y: 77}
+      - {x: 70.5, y: 31}
+      - {x: 91.5, y: 16}
+      - {x: 98.5, y: 14}
+      - {x: 99.5, y: 14}
+      - {x: 99.5, y: 15}
+      - {x: 90.5, y: 11}
+      - {x: 85.5, y: 7}
+      - {x: 88.5, y: 1}
+      - {x: 93.5, y: -18}
+      - {x: 85.5, y: -50}
+      - {x: 85.5, y: -52}
+      - {x: 81.5, y: -67}
+      - {x: 51.5, y: -81}
+      - {x: 49.5, y: -83}
+      - {x: 50.5, y: -83}
+      - {x: 47.5, y: -80}
+      - {x: 36.5, y: -76}
+      - {x: 30.5, y: -91}
+      - {x: 3.5, y: -99}
+      - {x: -3.5, y: -102}
+      - {x: -6.5, y: -104}
+      - {x: -7.5, y: -105}
+      - {x: -6.5, y: -104}
+    - - {x: -74.5, y: 15}
+      - {x: -73.5, y: 11}
+      - {x: -69.5, y: 8}
+      - {x: -67.5, y: 8}
+      - {x: -64.5, y: 9}
+      - {x: -64.5, y: 14}
+      - {x: -66.5, y: 20}
+      - {x: -70.5, y: 20}
+      - {x: -74.5, y: 16}
+--- !u!114 &11473834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163940}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30263c862daff0a4d87cb01aeb79b403, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Id: 0
+  Mode: 0
+  Direction: {x: 0, y: 0}
+  Collider: {fileID: 6017452}
+  ViewChecker: {fileID: 21295134}
+  BoomBullet: {fileID: 0}
+--- !u!212 &21295134
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 163940}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 9faa19e0a60f89a4499b89f4445e84eb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9faa19e0a60f89a4499b89f4445e84eb,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Collider
+      value: 
+      objectReference: {fileID: 6017452}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 163940}
+  m_IsPrefabParent: 1

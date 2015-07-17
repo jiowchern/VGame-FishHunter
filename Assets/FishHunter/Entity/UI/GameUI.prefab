@@ -703,6 +703,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 471862}
   - 114: {fileID: 11452466}
+  - 114: {fileID: 11436832}
   m_Layer: 5
   m_Name: UIHandler
   m_TagString: Untagged
@@ -2765,7 +2766,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 65.4000015, y: 0, z: 0}
+  m_LocalPosition: {x: 92, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 489412}
@@ -4523,7 +4524,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a7ed4f38d2e6384495109a8b82958d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Bullet: {fileID: 173702, guid: 8ce57f74c45ed6f4e93bbb30859216a4, type: 2}
+  Weapons:
+  - Type: 1
+    BulletPrefab: {fileID: 173702, guid: 8ce57f74c45ed6f4e93bbb30859216a4, type: 2}
+  - Type: 2
+    BulletPrefab: {fileID: 100548, guid: 12460918f86dd274b97db2995f36d0d7, type: 2}
+  - Type: 3
+    BulletPrefab: {fileID: 143112, guid: 643811eaeb77a5c4c9a6716096d2a5a6, type: 2}
+  - Type: 4
+    BulletPrefab: {fileID: 187348, guid: 00a2b08f1f979f94eb76b795ade06c08, type: 2}
   Owner: {fileID: 489412}
 --- !u!114 &11417950
 MonoBehaviour:
@@ -5209,7 +5218,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 11436832}
+    mMethodName: NextOdds
+    mParameters: []
+    oneShot: 0
 --- !u!114 &11433080
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5610,6 +5623,19 @@ MonoBehaviour:
   mAtlas: {fileID: 11485578, guid: 99c4b4b9d0f409c48896a3f5a1d4534e, type: 2}
   mSpriteName: shop_01
   mFillCenter: 1
+--- !u!114 &11436832
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 139606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b21b67d6c5a448d42894757e09661e01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WeaponOdds: {fileID: 11409372}
+  WeaponPower: {fileID: 11490412}
 --- !u!114 &11437258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -6646,7 +6672,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 11436832}
+    mMethodName: NextWeapon
+    mParameters: []
+    oneShot: 0
 --- !u!114 &11459628
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -7520,7 +7550,11 @@ MonoBehaviour:
   pressedSprite2D: {fileID: 0}
   disabledSprite2D: {fileID: 0}
   pixelSnap: 0
-  onClick: []
+  onClick:
+  - mTarget: {fileID: 11436832}
+    mMethodName: PrevWeapon
+    mParameters: []
+    oneShot: 0
 --- !u!114 &11473256
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8557,15 +8591,17 @@ MonoBehaviour:
       InstanceTarget: {fileID: 471862}
     - LIIF: 644284619
       InstanceTarget: {fileID: 139606}
+    - LIIF: 750218307
+      InstanceTarget: {fileID: 11436832}
   Modifications:
     Modificated:
     - Object: {fileID: 410914}
       ObjeckLink: 1400544654
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 489412}
-      ObjeckLink: -1368210463
-      PropertyPath: m_LocalRotation
+    - Object: {fileID: 21214174}
+      ObjeckLink: -1257824898
+      PropertyPath: m_Enabled
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -10499,7 +10535,7 @@ SpriteRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 177308}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_Materials:
