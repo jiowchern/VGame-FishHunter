@@ -65,7 +65,7 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Collider: {fileID: 6095968}
   ViewChecker: {fileID: 21219240}
-  BoomBullet: {fileID: 163940, guid: 63e33d5d11f1d324f9755e9fdb297f40, type: 2}
+  BoomBullet: {fileID: 163940, guid: 5af96f9cb3b923f429f38857db2a4012, type: 2}
 --- !u!212 &21219240
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -110,6 +110,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: BoomBullet
+      value: 
+      objectReference: {fileID: 163940, guid: 5af96f9cb3b923f429f38857db2a4012, type: 2}
+    - target: {fileID: 0}
+      propertyPath: Mode
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

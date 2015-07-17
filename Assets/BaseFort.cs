@@ -1,9 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
+using  System.Linq;
 
-public class BaseFort : MonoBehaviour {
 
-    public GameObject Bullet;
+
+public class BaseFort : MonoBehaviour
+{
+    [System.Serializable]
+    public class Weapon
+    {
+        public VGame.Project.FishHunter.WEAPON Type;
+        public GameObject BulletPrefab;
+    }
+
+
+    public Weapon[] Weapons;    
     private VGame.Project.FishHunter.IPlayer _Player;
     public Transform Owner;
     bool _Enable;
@@ -63,11 +73,21 @@ public class BaseFort : MonoBehaviour {
 
     private void _SpawnBulletLookAt(Vector3 touchPosition)
     {
-        var instance = GameObject.Instantiate(Bullet);
+        var instance = GameObject.Instantiate(_GetBullet());
 
         _SetRotationLookAt(touchPosition, instance);
 
         _SetPosition(instance);
+    }
+
+    private GameObject _GetBullet()
+    {
+        if (_Player != null)
+        {
+
+            return (from w in Weapons where w.Type == _Player.Weapon select w.BulletPrefab).FirstOrDefault();
+        }
+        return null;
     }
 
     private void _SetRotationLookAt(Vector3 touchPosition, GameObject instance)
@@ -82,7 +102,7 @@ public class BaseFort : MonoBehaviour {
 
     private void _SpawnBullet(int id,Vector3 dir)
     {
-        var instance = GameObject.Instantiate(Bullet);
+        var instance = GameObject.Instantiate(_GetBullet());
         var collider = instance.GetComponent<BulletCollider>();
         collider.Id = id;
         collider.Mode = BulletCollider.MODE.TRIGGER;
