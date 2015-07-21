@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ModeSelector : MonoBehaviour {
-
-
+public class ModeSelector : MonoBehaviour 
+{
     public Client Target;
 	// Use this for initialization
 	void Start () {

@@ -37,6 +37,7 @@ ModelImporter:
     4300006: Net_col_lv2
     4300008: Net_col_lv01
     4300010: Net_col_lv02
+    11400000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -46,6 +47,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

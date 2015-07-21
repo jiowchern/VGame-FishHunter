@@ -83,9 +83,6 @@ public class BulletCollider : MonoBehaviour
         if(ViewChecker.isVisible == false)
             GameObject.Destroy(gameObject);
 
-
-
-
 	}
     bool _Requested;
     private void _HitRequest(VGame.Project.FishHunter.FishBounds[] fishs)
