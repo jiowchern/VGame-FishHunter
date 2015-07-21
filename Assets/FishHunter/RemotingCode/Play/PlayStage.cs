@@ -95,8 +95,8 @@ namespace VGame.Project.FishHunter.Play
                                       WepType = (byte)_Weapon
                                   };
 
-                this._Requests.Add(fishid, request);
-                this._FishStage.Hit(request);
+                _Requests.Add(fishid, request);
+                _FishStage.Hit(request);
 
                 logFishs += fishid + ",";
             }
