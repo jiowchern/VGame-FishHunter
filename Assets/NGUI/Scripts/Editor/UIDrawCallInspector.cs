@@ -1,4 +1,4 @@
-//----------------------------------------------
+﻿//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2015 Tasharen Entertainment
 //----------------------------------------------
@@ -26,7 +26,7 @@ public class UIDrawCallInspector : Editor
 			if (dc.manager != null)
 			{
 				EditorGUILayout.LabelField("Render Queue", dc.renderQueue.ToString());
-				EditorGUILayout.LabelField("Owner Panel", NGUITools.GetHierarchy(dc.manager.gameObject));
+				EditorGUILayout.LabelField("Base Panel", NGUITools.GetHierarchy(dc.manager.gameObject));
 				EditorGUILayout.LabelField("Triangles", dc.triangles.ToString());
 			}
 			else if (Event.current.type == EventType.Repaint)

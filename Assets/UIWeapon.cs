@@ -35,10 +35,14 @@ public class UIWeapon : MonoBehaviour
 
         _Powers = new[]
                       {
-                          VGame.Project.FishHunter.WEAPON.WEAPON1,
-                          VGame.Project.FishHunter.WEAPON.WEAPON2,
-                          VGame.Project.FishHunter.WEAPON.WEAPON3,
-                          VGame.Project.FishHunter.WEAPON.WEAPON4
+                          VGame.Project.FishHunter.BULLET.WEAPON1,
+                          VGame.Project.FishHunter.BULLET.WEAPON2,
+                          VGame.Project.FishHunter.BULLET.WEAPON3,
+                          VGame.Project.FishHunter.BULLET.WEAPON4,
+                           VGame.Project.FishHunter.BULLET.WEAPON5,
+                          VGame.Project.FishHunter.BULLET.WEAPON6,
+                          VGame.Project.FishHunter.BULLET.WEAPON7,
+                          VGame.Project.FishHunter.BULLET.WEAPON8
                       };
         ;
     }
@@ -76,7 +80,7 @@ public class UIWeapon : MonoBehaviour
 	    {
 	        WeaponOdds.text = string.Format("x{0}", _Player.WeaponOdds);
 
-	        WeaponPower.text = string.Format("{0}", _Player.Weapon.ToString());
+	        WeaponPower.text = string.Format("{0}", _Player.Bullet.ToString());
 	    }
 	}
 
@@ -88,7 +92,7 @@ public class UIWeapon : MonoBehaviour
             return;
         }
 
-        this._Player.EquipWeapon(this._Player.Weapon, this._NextOdds());
+        this._Player.EquipWeapon(this._Player.Bullet, this._NextOdds());
     }
     
     private readonly int[] _Oddss;
@@ -119,9 +123,9 @@ public class UIWeapon : MonoBehaviour
     }
 
 
-    private WEAPON[] _Powers;
+    private BULLET[] _Powers;
     private int _PowerIndex;
-    private WEAPON _NextWeapon()
+    private BULLET _NextWeapon()
     {
         _PowerIndex ++;
         _PowerIndex %= _Powers.Length;
@@ -129,7 +133,7 @@ public class UIWeapon : MonoBehaviour
         return _Powers[_PowerIndex];
     }
 
-    private WEAPON _PrevWeapon()
+    private BULLET _PrevWeapon()
     {
         _PowerIndex--;
         _PowerIndex = (_PowerIndex + _Powers.Length) % _Powers.Length;
