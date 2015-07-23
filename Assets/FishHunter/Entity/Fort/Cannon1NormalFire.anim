@@ -19,13 +19,13 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 63b8b968461514e458bcfeb8a2ccf858, type: 3}
-    - time: .0833333358
+    - time: .0333333351
       value: {fileID: 21300000, guid: 80c0e203d62ba5c449176f159adeba72, type: 3}
-    - time: .166666672
+    - time: .0666666701
       value: {fileID: 21300000, guid: 4cf1f8383d20c134f97e275b6b76611d, type: 3}
-    - time: .25
+    - time: .100000001
       value: {fileID: 21300000, guid: a42462fcddab33b4a872dd0eed1ef4d1, type: 3}
-    - time: .333333343
+    - time: .13333334
       value: {fileID: 21300000, guid: c3a42cb9f23ea3344adc5980f887be1e, type: 3}
     attribute: nextSprite
     path: 
@@ -53,7 +53,7 @@ AnimationClip:
   m_AnimationClipSettings:
     serializedVersion: 2
     m_StartTime: 0
-    m_StopTime: .350000024
+    m_StopTime: .150000006
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -73,7 +73,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: .166666672
+  - time: .0666666701
     functionName: _Fire
     data: 
     objectReferenceParameter: {fileID: 0}

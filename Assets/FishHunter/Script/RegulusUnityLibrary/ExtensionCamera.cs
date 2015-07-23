@@ -7,6 +7,13 @@ namespace VGame.Extension
 {
     public static class ExtensionCamera
     {
+
+        public static bool InVisibleFrom(this Camera camera, Renderer renderer)
+        {
+            Plane[] planes = GeometryUtility.CalculateFrustumPlanes(camera);
+            return GeometryUtility.TestPlanesAABB(planes, renderer.bounds);
+        }        
+
         public static Regulus.CustomType.Rect ToRect(this Camera camera , Bounds bounds)
         {
             var points = bounds.GetVectors();
