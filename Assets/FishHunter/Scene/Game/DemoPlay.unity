@@ -118,6 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Money: {fileID: 758362800}
+  Score: {fileID: 0}
 --- !u!114 &103896644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1254,6 +1255,7 @@ GameObject:
   - 114: {fileID: 1415113466}
   - 114: {fileID: 1415113468}
   - 114: {fileID: 1415113469}
+  - 114: {fileID: 1415113470}
   m_Layer: 0
   m_Name: FishSet
   m_TagString: Untagged
@@ -1309,6 +1311,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 0}
   Direction: {x: 0, y: 0, z: 0}
+--- !u!114 &1415113470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1415113465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e4157610dba97449008e94edcce3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set: {fileID: 1415113466}
 --- !u!1 &1430798882
 GameObject:
   m_ObjectHideFlags: 0

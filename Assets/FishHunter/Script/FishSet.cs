@@ -10,13 +10,21 @@ namespace VGame.Project.FishHunter
     {
         Regulus.Collection.QuadTree<FishBounds> _Set;
 
+        public delegate void FishCallback(FishBounds fish);
+
+        public event FishCallback JoinEvent;
+        public event FishCallback LeaveEvent;
+
         public FishSet ()
         {
             _Set = new Regulus.Collection.QuadTree<FishBounds>( new Regulus.CustomType.Size(2,2) , 1000);
         }
-        public void Add(FishBounds fishOutline)
+        public void Add(FishBounds fish)
         {
-            _Set.Insert(fishOutline);            
+            
+            _Set.Insert(fish);
+            if (JoinEvent != null)
+                JoinEvent(fish);
         }
 
         public FishBounds[] Query(Regulus.CustomType.Rect rect)
@@ -30,15 +38,12 @@ namespace VGame.Project.FishHunter
             return set.Query(camera.ToRect(bounds));
         }
 
-        internal void Remove(FishBounds _Bounds)
+        internal void Remove(FishBounds fish)
         {
-            _Set.Remove(_Bounds);
+            _Set.Remove(fish);
+            if (LeaveEvent != null)
+                LeaveEvent(fish);   
         }
 
-
-        void OnDestroy()
-        {
-
-        }
     }
 }

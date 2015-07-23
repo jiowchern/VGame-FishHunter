@@ -127,14 +127,7 @@ public class BaseFort : MonoBehaviour
         _SpawnBullet(bullet, dir);
     }
 
-    private void _SpawnBulletLookAt(Vector3 touchPosition)
-	{
-		var instance = GameObject.Instantiate(_FindBullet());
-
-		_SetRotationLookAt(touchPosition, instance);
-
-		_SetPosition(instance);
-	}
+    
 
 	private GameObject _FindBullet()
 	{
@@ -144,23 +137,14 @@ public class BaseFort : MonoBehaviour
 		}
 		return null;
 	}
+	
 
-	private void _SetRotationLookAt(Vector3 touchPosition, GameObject instance)
-	{
-		instance.GetComponent<BulletCollider>().Direction = _GetDirection(touchPosition);
-		
-
-		var ray = CameraHelper.Middle.ScreenPointToRay(touchPosition);
-
-		instance.transform.LookAt(ray.GetPoint(-1000) , Vector3.forward);
-	}
-
+    
 	private void _SpawnBullet(int id,Vector3 dir)
 	{
 		var instance = GameObject.Instantiate(_FindBullet());
 		var collider = instance.GetComponent<BulletCollider>();
-		collider.Id = id;
-		collider.Mode = BulletCollider.MODE.TRIGGER;
+		collider.Id = id;		
 		_SetRotation(dir, instance);
 
 		_SetPosition(instance);
@@ -188,7 +172,7 @@ public class BaseFort : MonoBehaviour
 	}
 	private static void _SetRotation(Vector3 dir, GameObject instance)
 	{
-		instance.GetComponent<BulletCollider>().Direction = dir;
+		instance.GetComponent<BulletCollider>().Direction = dir.normalized;
 
 		_SetRotation(dir, instance.transform );
 		

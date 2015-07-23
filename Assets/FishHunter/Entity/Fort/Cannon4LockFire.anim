@@ -19,11 +19,11 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 21300000, guid: 2a32fc17c58d92342b08f5b4a09c3919, type: 3}
-    - time: .0833333358
+    - time: .0333333351
       value: {fileID: 21300000, guid: 86f842e97b7ced840892e628fce06d18, type: 3}
-    - time: .166666672
+    - time: .0666666701
       value: {fileID: 21300000, guid: 04b6b6d53ff54214fbf8193157f5f33a, type: 3}
-    - time: .25
+    - time: .100000001
       value: {fileID: 21300000, guid: 8093f10e97235f94c8b5e1e6ed33b9a5, type: 3}
     - time: .333333343
       value: {fileID: 21300000, guid: a5808449cd4e9ee488939a475af04a92, type: 3}
@@ -73,7 +73,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_GenerateMotionCurves: 0
   m_Events:
-  - time: .166666672
+  - time: .0666666701
     functionName: _Fire
     data: 
     objectReferenceParameter: {fileID: 0}

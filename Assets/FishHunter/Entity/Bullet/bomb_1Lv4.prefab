@@ -11,6 +11,7 @@ GameObject:
   - 212: {fileID: 21220974}
   - 60: {fileID: 6008116}
   - 114: {fileID: 11415954}
+  - 114: {fileID: 11404600}
   m_Layer: 9
   m_Name: bomb_1Lv4
   m_TagString: Untagged
@@ -49,6 +50,18 @@ PolygonCollider2D:
       - {x: -.312959641, y: -.243838176}
       - {x: .31659174, y: -.246914446}
       - {x: .313734114, y: .031566456}
+--- !u!114 &11404600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57474ffa1640bc242974357b5231fac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BoomBullet: {fileID: 163940, guid: d88ecbd47f484304aa56bc9a01aaec06, type: 2}
 --- !u!114 &11415954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -61,11 +74,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Id: 0
-  Mode: 0
   Direction: {x: 0, y: 0}
   Collider: {fileID: 6008116}
   ViewChecker: {fileID: 21220974}
-  BoomBullet: {fileID: 163940, guid: d88ecbd47f484304aa56bc9a01aaec06, type: 2}
+  HitHandler: {fileID: 11404600}
+  Speed: 300
 --- !u!212 &21220974
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -126,6 +139,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalScale.z
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: HitHandler
+      value: 
+      objectReference: {fileID: 11404600}
+    - target: {fileID: 0}
+      propertyPath: Speed
+      value: 300
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

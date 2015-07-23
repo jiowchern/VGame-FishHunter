@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 473934}
   - 114: {fileID: 11480914}
+  - 114: {fileID: 11489250}
   m_Layer: 0
   m_Name: FishSet
   m_TagString: Untagged
@@ -39,13 +40,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee4fe256549c0c48b55ec345376025c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11489250
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87e4157610dba97449008e94edcce3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Set: {fileID: 11480914}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: Set
+      value: 
+      objectReference: {fileID: 11480914}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135418}

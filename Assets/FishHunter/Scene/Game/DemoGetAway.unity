@@ -160,7 +160,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!1 &112549954
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +190,7 @@ Transform:
   m_LocalScale: {x: 6.73659706, y: 10, z: 6.89792681}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
 --- !u!23 &112549956
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -336,7 +336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndPoints:
-  - {fileID: 564246774}
+  - {fileID: 0}
   - {fileID: 1920480774}
   - {fileID: 1003748155}
   - {fileID: 1754840006}
@@ -356,82 +356,6 @@ MonoBehaviour:
   Maker: {fileID: 534917050}
   DeadPoint: {fileID: 184480, guid: 774596b5b840e8a438d6d6d8e24da19d, type: 2}
   Speed: 10
---- !u!1 &564246773
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 107494, guid: be209f0009ff7f344b9af253c49f65aa, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 564246774}
-  - 33: {fileID: 564246777}
-  - 65: {fileID: 564246776}
-  - 23: {fileID: 564246775}
-  m_Layer: 0
-  m_Name: EndPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &564246774
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 463408, guid: be209f0009ff7f344b9af253c49f65aa, type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564246773}
-  m_LocalRotation: {x: -.708665371, y: 0, z: 0, w: .705544829}
-  m_LocalPosition: {x: .00594997406, y: .150000095, z: -10.7600002}
-  m_LocalScale: {x: 10, y: 1, z: 10}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
---- !u!23 &564246775
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 2397618, guid: be209f0009ff7f344b9af253c49f65aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564246773}
-  m_Enabled: 0
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
---- !u!65 &564246776
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 6589004, guid: be209f0009ff7f344b9af253c49f65aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564246773}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!33 &564246777
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 3397216, guid: be209f0009ff7f344b9af253c49f65aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 564246773}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &843118139
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +386,7 @@ Transform:
   - {fileID: 301356511}
   - {fileID: 534917049}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
 --- !u!111 &843118141
 Animation:
   m_ObjectHideFlags: 0
@@ -549,7 +473,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!23 &1003748156
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -748,7 +672,6 @@ MonoBehaviour:
   - {fileID: 1754840006}
   - {fileID: 1003748155}
   - {fileID: 1920480774}
-  - {fileID: 564246774}
   MiddlePoint: {fileID: 112549955}
 --- !u!1001 &1700132330
 Prefab:
@@ -829,7 +752,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!23 &1754840007
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -905,7 +828,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!23 &1866929583
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1117,7 +1040,7 @@ Transform:
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
 --- !u!1 &2133465632
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1105,6 @@ MonoBehaviour:
   - {fileID: 1754840006}
   - {fileID: 1003748155}
   - {fileID: 1920480774}
-  - {fileID: 564246774}
   MiddlePoint: {fileID: 112549955}
 --- !u!4 &2133465636
 Transform:
