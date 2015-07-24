@@ -1,8 +1,10 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 using UnityEngine;
 using  System.Linq;
 
+using VGame.Extension;
 using VGame.Project.FishHunter;
 
 public class BaseFort : MonoBehaviour
@@ -20,8 +22,8 @@ public class BaseFort : MonoBehaviour
 	public Transform Gun;
 	public FortBehavior Behavior;
 
-    public VGame.Project.FishHunter.BULLET Bullet;
-    VGame.Project.FishHunter.BULLET _CurrentBullet;
+	public VGame.Project.FishHunter.BULLET Bullet;
+	VGame.Project.FishHunter.BULLET _CurrentBullet;
 	bool _Enable;
 	public BaseFort()
 	{
@@ -60,9 +62,9 @@ public class BaseFort : MonoBehaviour
 	// Update is called once per frame	
 	void Update () 
 	{
-        if (Input.GetMouseButtonDown(0))
-		{
-			var touchPosition = Input.mousePosition;
+		if (Input.GetMouseButtonDown(0))
+		{            
+			var touchPosition = _GetPosition();
 			var dir = _GetDirection(touchPosition);
 
 			var result = this.Behavior.Fire(_GetCurrentBullet());
@@ -70,64 +72,95 @@ public class BaseFort : MonoBehaviour
 			{
 				result.OnValue += (bullet) =>
 				{
-                    if (_Player != null)
-					    _PlayerLaunch(dir);
-                    else
-                    {
-                        _LaunchBullet(dir, 0);
-                    }
+					if (_Player != null)
+						_PlayerLaunch(dir);
+					else
+					{
+						_LaunchBullet(dir, 0);
+					}
 				};
 			}
 				
 		}
 
 
-	    _UpdateFort();
+		_UpdateFort();
 	}
-    
-    private void _UpdateFort()
-    {
 
-        if (_Player != null)
-        {
-            Bullet = _Player.Bullet;
-        }
-        if (Bullet != _CurrentBullet)
-        {
-            this.Behavior.Idle(Bullet);
-
-            _CurrentBullet = Bullet;
-        }
-    }
-
-    private BULLET _GetCurrentBullet()
-    {
-        return _Player != null
-                   ? _Player.Bullet
-                   : VGame.Project.FishHunter.BULLET.WEAPON1;
-    }
-
-    private void _PlayerLaunch(Vector3 dir)
+	private static Vector3 _GetPosition()
 	{
-        
-		_Player.RequestBullet().OnValue += (bullet) =>
-		    {
-		        if (bullet == 0 || !_Enable)
-		        {
-		            return;
-		        }
-		        _LaunchBullet(dir, bullet);
-		    };
+		var defaultPosition = Input.mousePosition;
+		var target = FishEnvironment.Instance.Selected;
+		if (target != 0)
+		{
+			var fish = FishCollider.Find(target);
+		
+            if (fish != null)
+			{
+                var firstPosition = fish.transform.position;
+				var cameraPosition = CameraHelper.Middle.GetScreenPoint(firstPosition);				
+				return cameraPosition;
+			}
+			
+		}
+		return defaultPosition;
 	}
 
-    private void _LaunchBullet(Vector3 dir, int bullet)
-    {
-        var angle = BaseFort._GetAngle(dir, Vector3.right);
-        Base.rotation = Quaternion.Euler(0, 0, angle);
-        _SpawnBullet(bullet, dir);
-    }
+	private void _UpdateFort()
+	{
 
-    
+		if (_Player != null)
+		{
+			Bullet = _Player.Bullet;
+		}
+		if (Bullet != _CurrentBullet)
+		{
+			_UpdateLock(Bullet);
+			this.Behavior.Idle(Bullet);
+
+			_CurrentBullet = Bullet;
+		}
+	}
+
+	private void _UpdateLock(BULLET bullet)
+	{
+		var data = new System.Collections.Generic.HashSet<BULLET>();
+		data.Add(BULLET.WEAPON2);
+		data.Add(BULLET.WEAPON4);
+		data.Add(BULLET.WEAPON6);
+		data.Add(BULLET.WEAPON8);
+		
+		FishEnvironment.Instance.Lock = data.Contains(bullet);
+	}
+
+	private BULLET _GetCurrentBullet()
+	{
+		return _Player != null
+				   ? _Player.Bullet
+				   : VGame.Project.FishHunter.BULLET.WEAPON1;
+	}
+
+	private void _PlayerLaunch(Vector3 dir)
+	{
+		
+		_Player.RequestBullet().OnValue += (bullet) =>
+			{
+				if (bullet == 0 || !_Enable)
+				{
+					return;
+				}
+				_LaunchBullet(dir, bullet);
+			};
+	}
+
+	private void _LaunchBullet(Vector3 dir, int bullet)
+	{
+		var angle = BaseFort._GetAngle(dir, Vector3.right);
+		Base.rotation = Quaternion.Euler(0, 0, angle);
+		_SpawnBullet(bullet, dir);
+	}
+
+	
 
 	private GameObject _FindBullet()
 	{
@@ -139,7 +172,7 @@ public class BaseFort : MonoBehaviour
 	}
 	
 
-    
+	
 	private void _SpawnBullet(int id,Vector3 dir)
 	{
 		var instance = GameObject.Instantiate(_FindBullet());

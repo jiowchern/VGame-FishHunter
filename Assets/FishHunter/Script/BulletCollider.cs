@@ -16,6 +16,10 @@ public class BulletCollider : MonoBehaviour
 	public BulletHitHandler HitHandler;
 
     public float Speed = 100;
+
+
+    public float FrontSpeed;
+
 	
 	private VGame.Project.FishHunter.IPlayer _Player;
 	
@@ -30,10 +34,13 @@ public class BulletCollider : MonoBehaviour
 			Client.Instance.User.PlayerProvider.Supply += PlayerProvider_Supply;
 			_Client.User.PlayerProvider.Unsupply += PlayerProvider_Unsupply;
 		}
-			
+
+        FrontSpeed = Vector3.Distance(CameraHelper.Front.GetScreenPoint(((Vector3)Direction) * Speed), Vector3.zero);
 	}
 
-	void PlayerProvider_Unsupply(VGame.Project.FishHunter.IPlayer obj)
+    
+
+    void PlayerProvider_Unsupply(VGame.Project.FishHunter.IPlayer obj)
 	{
 		_Player = null;
 	}
@@ -53,9 +60,8 @@ public class BulletCollider : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-        transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * Speed) + transform.position;
-		//transform.Translate(Direction * UnityEngine.Time.deltaTime);
-		
+
+        transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * FrontSpeed) + transform.position;				
 
 		VGame.Project.FishHunter.FishBounds[] fishs = VGame.Project.FishHunter.FishSet.Find(CameraHelper.Front , Collider.bounds);
 

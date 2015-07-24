@@ -1,29 +1,23 @@
 ﻿using UnityEngine;
 using System.Linq;
-using System.Collections;
+
 namespace VGame.Project.FishHunter
 {
     public class FishEnvironment : MonoBehaviour
     {
-        public FishSet Set;
+        public bool Lock;
 
-        public int DebugId;
-        FishBounds _Selected;
-        public FishBounds Selected { get { return _Selected; } }
-
-        void OnDestroy()
+        public static FishEnvironment Instance { get
         {
-            
-            Set.LeaveEvent -= _OnLeave;
-        }
-
-        
-        // Use this for initialization
-        void Start()
+            return Object.FindObjectOfType<FishEnvironment>();
+        } }
+        public int _Selected;
+        public int Selected { get
         {
-            
-            Set.LeaveEvent += _OnLeave;
-        }
+            return Lock
+                       ? _Selected
+                       : 0;
+        }}
 
         // Update is called once per frame
         void Update()
@@ -31,28 +25,21 @@ namespace VGame.Project.FishHunter
             if (Input.GetMouseButtonDown(0))
             {
                 var touchPosition = Input.mousePosition;
-                var fishs = Set.Query(new Regulus.CustomType.Rect(touchPosition.x, touchPosition.y, touchPosition.x + 1, touchPosition.y + 1));
-                var fish = fishs.FirstOrDefault();
+                var ray = CameraHelper.Middle.ScreenPointToRay(touchPosition);
 
-                if (fish != null)
-                {
+                RaycastHit hitInfo;
+                var fish = (from r in Physics.RaycastAll(ray)
+                           let collider = r.collider.GetComponent<FishCollider>()
+                           where collider != null && collider.Id != 0
+                           select collider.Id).FirstOrDefault();
+
+                if (fish != 0)
                     _Selected = fish;
-                    DebugId = fish.Id;
-                }
-                                
-                
             }
             
         }
 
-        private void _OnLeave(FishBounds fish)
-        {
-            if(_Selected == fish)
-            {
-                _Selected = null;
-                DebugId = 0;
-            }
-        }
+
 
 
     }

@@ -2,6 +2,8 @@
 using UnityEngine;
 using System.Collections;
 using VGame.Extension;
+using VGame.Project.FishHunter;
+
 public abstract class FishCollider : MonoBehaviour 
 {        
 	public Transform Root;
@@ -11,8 +13,20 @@ public abstract class FishCollider : MonoBehaviour
 
 	public UnityEngine.Animator Animator;
 	Regulus.CustomType.Polygon _Polygon;
-	
-	protected abstract Bounds _GetBounds();
+
+    public LockTip Lock;
+
+    public int Id {
+        get
+        {
+            if (_Bounds != null)
+                return _Bounds.Id;
+            return 0;
+        } }
+
+    
+
+    protected abstract Bounds _GetBounds();
 
 	int _Id;
 	private VGame.Project.FishHunter.IPlayer _Player;
@@ -32,7 +46,9 @@ public abstract class FishCollider : MonoBehaviour
 	protected abstract void _ChangeMaterial();
 
 	bool _Destroyed;
-	void OnDestroy()
+    
+
+    void OnDestroy()
 	{
 		if (DeadEvent != null)
 			DeadEvent();
@@ -217,8 +233,15 @@ public abstract class FishCollider : MonoBehaviour
 
 			_Bounds.Visible = CameraHelper.Front.InVisibleFrom(Render);
 			UpdateBounds();
-			
+
+            
 		}
+
+        if (Lock != null)
+        {
+            Lock.Set(FishEnvironment.Instance.Selected == Id);
+        }
+	    
 	}
 
 	
@@ -295,5 +318,8 @@ public abstract class FishCollider : MonoBehaviour
 		Gizmos.color = prevColor;*/
 	}
 
-
+    public static FishCollider Find(int select_id)
+    {
+        return (from f in GameObject.FindObjectsOfType<FishCollider>() where f.Id == select_id select f).SingleOrDefault() ;
+    }
 }

@@ -66,7 +66,8 @@ MonoBehaviour:
   Collider: {fileID: 6095968}
   ViewChecker: {fileID: 21219240}
   HitHandler: {fileID: 11422752}
-  Speed: 1000
+  Speed: 100
+  FrontSpeed: 0
 --- !u!114 &11422752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,7 +139,7 @@ Prefab:
       objectReference: {fileID: 11422752}
     - target: {fileID: 0}
       propertyPath: Speed
-      value: 1000
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

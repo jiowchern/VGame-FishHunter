@@ -286,7 +286,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 473934, guid: 2d68ff9369211794abcef0eb1698dd30, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 135418, guid: 2d68ff9369211794abcef0eb1698dd30, type: 2}
       propertyPath: m_IsActive
@@ -336,7 +336,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   EndPoints:
-  - {fileID: 0}
   - {fileID: 1920480774}
   - {fileID: 1003748155}
   - {fileID: 1754840006}
@@ -439,7 +438,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413030, guid: 7b7f8ef45883bba4ea9900502d9d2f45, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7b7f8ef45883bba4ea9900502d9d2f45, type: 2}
@@ -557,7 +556,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 410914, guid: e179c30b9bb978b478678da213ec88cc, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e179c30b9bb978b478678da213ec88cc, type: 2}
@@ -599,7 +598,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 412218, guid: 2fb446b98bbe1354fa55ec10b54ddaaa, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 197662, guid: 2fb446b98bbe1354fa55ec10b54ddaaa, type: 2}
       propertyPath: m_IsActive
@@ -710,7 +709,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 477936, guid: 9829c02df04332d4ba8837ee840e7acd, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 138104, guid: 9829c02df04332d4ba8837ee840e7acd, type: 2}
       propertyPath: m_IsActive
@@ -912,7 +911,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22487712, guid: 4c57b015601deea41884b465e4dc2d46, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 22487712, guid: 4c57b015601deea41884b465e4dc2d46, type: 2}
       propertyPath: m_AnchoredPosition.x
