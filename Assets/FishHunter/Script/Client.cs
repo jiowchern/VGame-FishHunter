@@ -83,8 +83,6 @@ public class Client : MonoBehaviour
 
     internal void Initial()
     {
-        System.Reflection.Assembly.Load("Common");
-
         var client = new Regulus.Framework.Client<VGame.Project.FishHunter.IUser>(this.Console, this.Console);
         client.ModeSelectorEvent += _ModeSelector;
         _Updater.Add(client);
