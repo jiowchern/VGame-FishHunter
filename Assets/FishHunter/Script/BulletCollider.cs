@@ -4,6 +4,8 @@ using System.Collections;
 using VGame.Extension;
 public class BulletCollider : MonoBehaviour 
 {
+    
+
 	public int Id;
 	
 	public Vector2 Direction;
@@ -18,13 +20,14 @@ public class BulletCollider : MonoBehaviour
     public float Speed = 100;
 
 
-    public float FrontSpeed;
+   
 
 	
 	private VGame.Project.FishHunter.IPlayer _Player;
 	
 	bool _Enable;
-	// Use this for initialization
+
+    public Client _Client { get; set; }	
 	void Start () 
 	{
 		_Enable = true;
@@ -35,7 +38,7 @@ public class BulletCollider : MonoBehaviour
 			_Client.User.PlayerProvider.Unsupply += PlayerProvider_Unsupply;
 		}
 
-        FrontSpeed = Vector3.Distance(CameraHelper.Front.GetScreenPoint(((Vector3)Direction) * Speed), Vector3.zero);
+       
 	}
 
     
@@ -61,7 +64,7 @@ public class BulletCollider : MonoBehaviour
 	void Update () 
 	{
 
-        transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * FrontSpeed) + transform.position;				
+        transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * Speed) + transform.position;				
 
 		VGame.Project.FishHunter.FishBounds[] fishs = VGame.Project.FishHunter.FishSet.Find(CameraHelper.Front , Collider.bounds);
 
@@ -83,7 +86,7 @@ public class BulletCollider : MonoBehaviour
 
 	private VGame.Project.FishHunter.FishBounds[] _HitDetection(VGame.Project.FishHunter.FishBounds[] fishs)
 	{
-		System.Collections.Generic.List<VGame.Project.FishHunter.FishBounds> hits = new System.Collections.Generic.List<VGame.Project.FishHunter.FishBounds>();
+		var hits = new System.Collections.Generic.List<VGame.Project.FishHunter.FishBounds>();
 		var bulletCollider = Collider.ToRegulusPolygon();
 		foreach (var fish in fishs)
 		{
@@ -97,6 +100,6 @@ public class BulletCollider : MonoBehaviour
 		return hits.ToArray();
 	}
 
-	public Client _Client { get; set; }
+	
 }
 

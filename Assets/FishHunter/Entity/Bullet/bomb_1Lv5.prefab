@@ -67,7 +67,6 @@ MonoBehaviour:
   ViewChecker: {fileID: 21219240}
   HitHandler: {fileID: 11422752}
   Speed: 100
-  FrontSpeed: 0
 --- !u!114 &11422752
 MonoBehaviour:
   m_ObjectHideFlags: 1

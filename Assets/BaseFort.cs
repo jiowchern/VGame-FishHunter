@@ -9,6 +9,10 @@ using VGame.Project.FishHunter;
 
 public class BaseFort : MonoBehaviour
 {
+
+    
+
+    
 	[System.Serializable]
 	public class BulletSource
 	{
@@ -22,15 +26,23 @@ public class BaseFort : MonoBehaviour
 	public Transform Gun;
 	public FortBehavior Behavior;
 
+
+    private Magazine _Magazine;
+
 	public VGame.Project.FishHunter.BULLET Bullet;
 	VGame.Project.FishHunter.BULLET _CurrentBullet;
 	bool _Enable;
-	public BaseFort()
+
+    private bool _CanFire;
+
+    public BaseFort()
 	{
 		_Enable = true;
 	}
 	// Use this for initialization
-	void Start () 
+    
+
+    void Start () 
 	{
 		if (this.Base == null)
 			this.Base = transform;
@@ -40,14 +52,30 @@ public class BaseFort : MonoBehaviour
 
 		if (Client.Instance != null)
 		{
-
 			Client.Instance.User.PlayerProvider.Supply += _PlayerSupply;
-			_Client = Client.Instance;
+			_Client = Client.Instance;           
 		}
-			
+		else
+		{
+            _Magazine = new Magazine();            
+		}
+        Behavior.FireEvent += _InFire;
+        Behavior.IdleEvent += _InIdle;
+
 	}
 
-	void OnDestroy()
+    private void _InIdle()
+    {
+        _CanFire = true;
+
+    }
+
+    private void _InFire(int bulletid)
+    {
+        _LaunchBullet(bulletid);
+    }
+
+    void OnDestroy()
 	{
 		_Enable = false;
 		if (_Client != null)
@@ -57,32 +85,30 @@ public class BaseFort : MonoBehaviour
 	private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)
 	{
 		_Player = obj;
+        _Magazine = new Magazine(_Player);        
 	}
 	
 	// Update is called once per frame	
-	void Update () 
+	void Update ()
 	{
-		if (Input.GetMouseButtonDown(0))
-		{            
-			var touchPosition = _GetPosition();
-			var dir = _GetDirection(touchPosition);
 
-			var result = this.Behavior.Fire(_GetCurrentBullet());
-			if (result != null)
-			{
-				result.OnValue += (bullet) =>
-				{
-					if (_Player != null)
-						_PlayerLaunch(dir);
-					else
-					{
-						_LaunchBullet(dir, 0);
-					}
-				};
-			}
-				
-		}
 
+        if (_Magazine != null)
+            _Magazine.Reload();
+	    ;
+        if (Input.GetMouseButtonDown(0) && _CanFire)
+        {
+            int bulletid;
+            if (_Magazine.TryGet(out bulletid))
+            {                
+                _CanFire = false;
+                var dir = _GetCurrentDirection();
+                _RotationBase(dir);
+                Behavior.Fire(bulletid);
+                       
+            }
+            
+        }
 
 		_UpdateFort();
 	}
@@ -140,29 +166,28 @@ public class BaseFort : MonoBehaviour
 				   : VGame.Project.FishHunter.BULLET.WEAPON1;
 	}
 
-	private void _PlayerLaunch(Vector3 dir)
-	{
-		
-		_Player.RequestBullet().OnValue += (bullet) =>
-			{
-				if (bullet == 0 || !_Enable)
-				{
-					return;
-				}
-				_LaunchBullet(dir, bullet);
-			};
-	}
-
-	private void _LaunchBullet(Vector3 dir, int bullet)
-	{
-		var angle = BaseFort._GetAngle(dir, Vector3.right);
-		Base.rotation = Quaternion.Euler(0, 0, angle);
-		_SpawnBullet(bullet, dir);
-	}
-
 	
 
-	private GameObject _FindBullet()
+	private void _LaunchBullet(int bullet)
+	{
+        var dir = _GetCurrentDirection();	    
+	    _SpawnBullet(bullet, dir);
+	}
+
+    private Vector3 _GetCurrentDirection()
+    {
+        var touchPosition = BaseFort._GetPosition();
+        var dir = _GetDirection(touchPosition);
+        return dir;
+    }
+
+    private void _RotationBase(Vector3 dir)
+    {
+        var angle = BaseFort._GetAngle(dir, Vector3.right);
+        Base.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private GameObject _FindBullet()
 	{
 		if (_Player != null)
 		{

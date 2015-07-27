@@ -9,7 +9,7 @@ public class LockBulletHit : BulletHitHandler {
 
 	public GameObject BoomBullet;
 
-	private float _DeadTime;
+	
 
 	private int _BulletId;
 
@@ -25,7 +25,7 @@ public class LockBulletHit : BulletHitHandler {
 		{
 			var end = CameraHelper.Middle.GetScreenPoint(fish.transform.position) ;
 			var start = CameraHelper.Front.GetScreenPoint(transform.position);
-			_DeadTime = Vector3.Distance(start, end) / bullet.Speed;
+			
 		}
 	}
 	
