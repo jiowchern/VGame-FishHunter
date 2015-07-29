@@ -39,7 +39,18 @@ public class BaseFort : MonoBehaviour
 	{
 		_Enable = true;
 	}
-	// Use this for initialization
+    void OnDestroy()
+    {
+        Behavior.FireEvent -= _InFire;
+        Behavior.IdleEvent -= _InIdle;
+
+        if (FishEnvironment.Instance != null)
+            FishEnvironment.Instance.TouchEvent -= _TouchFire;
+
+        _Enable = false;
+        if (_Client != null)
+            _Client.User.PlayerProvider.Supply -= _PlayerSupply;
+    }
     
 
     void Start () 
@@ -62,7 +73,27 @@ public class BaseFort : MonoBehaviour
         Behavior.FireEvent += _InFire;
         Behavior.IdleEvent += _InIdle;
 
+        FishEnvironment.Instance.TouchEvent += _TouchFire;
+
+
 	}
+
+    private void _TouchFire()
+    {
+        if (_CanFire)
+        {
+            int bulletid;
+            if (_Magazine.TryGet(out bulletid))
+            {
+                _CanFire = false;
+                var dir = _GetCurrentDirection();
+                _RotationBase(dir);
+                Behavior.Fire(bulletid, dir);
+
+            }
+
+        }
+    }
 
     private void _InIdle()
     {
@@ -70,17 +101,12 @@ public class BaseFort : MonoBehaviour
 
     }
 
-    private void _InFire(int bulletid)
+    private void _InFire(int bulletid,Vector3 direction)
     {
-        _LaunchBullet(bulletid);
+        _LaunchBullet(bulletid, direction);
     }
 
-    void OnDestroy()
-	{
-		_Enable = false;
-		if (_Client != null)
-			_Client.User.PlayerProvider.Supply -= _PlayerSupply;
-	}
+    
 
 	private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)
 	{
@@ -95,20 +121,8 @@ public class BaseFort : MonoBehaviour
 
         if (_Magazine != null)
             _Magazine.Reload();
-	    ;
-        if (Input.GetMouseButtonDown(0) && _CanFire)
-        {
-            int bulletid;
-            if (_Magazine.TryGet(out bulletid))
-            {                
-                _CanFire = false;
-                var dir = _GetCurrentDirection();
-                _RotationBase(dir);
-                Behavior.Fire(bulletid);
-                       
-            }
-            
-        }
+
+	    
 
 		_UpdateFort();
 	}
@@ -168,10 +182,9 @@ public class BaseFort : MonoBehaviour
 
 	
 
-	private void _LaunchBullet(int bullet)
-	{
-        var dir = _GetCurrentDirection();	    
-	    _SpawnBullet(bullet, dir);
+	private void _LaunchBullet(int bullet, Vector3 direction)
+	{        
+        _SpawnBullet(bullet, direction);
 	}
 
     private Vector3 _GetCurrentDirection()
@@ -188,17 +201,13 @@ public class BaseFort : MonoBehaviour
     }
 
     private GameObject _FindBullet()
-	{
-		if (_Player != null)
-		{
-			return (from w in this.BulletsSource where w.Type == _Player.Bullet select w.BulletPrefab).FirstOrDefault();
-		}
-		return null;
-	}
-	
+    {
+        return _Player != null
+                   ? (from w in this.BulletsSource where w.Type == _Player.Bullet select w.BulletPrefab).FirstOrDefault()
+                   : null;
+    }
 
-	
-	private void _SpawnBullet(int id,Vector3 dir)
+    private void _SpawnBullet(int id,Vector3 dir)
 	{
 		var instance = GameObject.Instantiate(_FindBullet());
 		var collider = instance.GetComponent<BulletCollider>();
