@@ -1294,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &167518
 GameObject:
   m_ObjectHideFlags: 1
@@ -8814,8 +8814,12 @@ MonoBehaviour:
       ObjeckLink: 1400544654
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 117258}
-      ObjeckLink: -960670964
+    - Object: {fileID: 11479210}
+      ObjeckLink: 543326907
+      PropertyPath: debug
+      Mode: 0
+    - Object: {fileID: 167460}
+      ObjeckLink: 804526549
       PropertyPath: m_IsActive
       Mode: 0
     NonPrefabObjects: []
@@ -9005,12 +9009,12 @@ MonoBehaviour:
   eventReceiverMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  debug: 0
-  useMouse: 1
+  debug: 1
+  useMouse: 0
   useTouch: 1
   allowMultiTouch: 1
-  useKeyboard: 1
-  useController: 1
+  useKeyboard: 0
+  useController: 0
   stickyTooltip: 1
   tooltipDelay: 1
   longPressTooltip: 0

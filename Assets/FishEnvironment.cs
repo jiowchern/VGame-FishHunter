@@ -46,15 +46,32 @@ namespace VGame.Project.FishHunter
         public event TouchCallback TouchEvent;
 
 
+        void OnDestroy()
+        {
+            
+        }
+        void Start()
+        {
+            
+            
+        }
+
+        
+
         // Update is called once per frame
         void Update()
         {
-            if (UICamera.isOverUI)
+            if (Input.touchCount == 0)
                 return;
 
-            if (Input.GetMouseButtonDown(0) && _InGame() )
+            var touchPosition = Input.mousePosition;
+
+            if (UICamera.Raycast(touchPosition))
+                return;
+
+            if ( _InGame() )
             {
-                var touchPosition = Input.mousePosition;
+                
                 var ray = CameraHelper.Middle.ScreenPointToRay(touchPosition);
 
                 RaycastHit hitInfo;
