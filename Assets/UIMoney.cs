@@ -3,7 +3,7 @@ using System.Collections;
 
 public class UIMoney : MonoBehaviour {
 
-    public UnityEngine.UI.Text Money;
+    
     public UILabel Score;
     VGame.Project.FishHunter.IPlayer _Player;
     Client _Client;
@@ -43,24 +43,9 @@ public class UIMoney : MonoBehaviour {
     {
         if (Score != null)
             Score.text = obj.ToString();
-        if (Money != null)
-            Money.text = obj.ToString();   
+    
     }
 	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
-
-    public void Quit()
-    {
-        if(_Player != null)
-        {
-            _Release();
-            _Player.Quit();
-            
-        }
-        Application.LoadLevel("SelectStage");
-    }
+    
 }
