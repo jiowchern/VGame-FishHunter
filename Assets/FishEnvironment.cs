@@ -3,6 +3,13 @@ using System.Linq;
 
 namespace VGame.Project.FishHunter
 {
+    using System;
+    using System.Collections.Generic;
+
+    using Regulus.Extension;
+
+    using Object = UnityEngine.Object;
+
     public class FishEnvironment : MonoBehaviour
     {
         public static FishEnvironment Instance
@@ -13,9 +20,6 @@ namespace VGame.Project.FishHunter
             }
         }
 
-
-
-        
         public enum EXCLUSIVE_FEATURE
         {
             GAME,
@@ -61,7 +65,7 @@ namespace VGame.Project.FishHunter
         // Update is called once per frame
         void Update()
         {
-            if (Input.touchCount == 0)
+            if (! Input.GetMouseButton((0)))
                 return;
 
             var touchPosition = Input.mousePosition;
