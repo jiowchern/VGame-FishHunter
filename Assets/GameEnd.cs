@@ -16,7 +16,7 @@ public class GameEnd : MonoBehaviour {
         _Client = Client.Instance;
 	}
 
-    private void _ToSelect(VGame.Project.FishHunter.ILevelSelector obj)
+    private void _ToSelect(VGame.Project.FishHunter.Common.GPI.ILevelSelector obj)
     {
         Application.LoadLevel(SelectLevelScene);
     }

@@ -5,7 +5,8 @@ using System.Collections;
 
 using Regulus.Remoting.Ghost;
 
-using VGame.Project.FishHunter;
+using VGame.Project.FishHunter.Common.GPI;
+using VGame.Project.FishHunter.Common.Data;
 
 using Debug = System.Diagnostics.Debug;
 
@@ -35,14 +36,14 @@ public class UIWeapon : MonoBehaviour
 
         _Powers = new[]
                       {
-                          VGame.Project.FishHunter.BULLET.WEAPON1,
-                          VGame.Project.FishHunter.BULLET.WEAPON2,
-                          VGame.Project.FishHunter.BULLET.WEAPON3,
-                          VGame.Project.FishHunter.BULLET.WEAPON4,
-                           VGame.Project.FishHunter.BULLET.WEAPON5,
-                          VGame.Project.FishHunter.BULLET.WEAPON6,
-                          VGame.Project.FishHunter.BULLET.WEAPON7,
-                          VGame.Project.FishHunter.BULLET.WEAPON8
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON1,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON2,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON3,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON4,
+                           VGame.Project.FishHunter.Common.Data.BULLET.WEAPON5,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON6,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON7,
+                          VGame.Project.FishHunter.Common.Data.BULLET.WEAPON8
                       };
         ;
     }

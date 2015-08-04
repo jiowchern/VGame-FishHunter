@@ -13,7 +13,7 @@ public class StaticFishInitial : MonoBehaviour {
 
 	}
 
-    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    void PlayerProvider_Supply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
     {
         _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
         

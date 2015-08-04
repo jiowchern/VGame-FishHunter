@@ -18,7 +18,7 @@ public class FortBehavior : MonoBehaviour
 
     public event Action<int,Vector3> FireEvent;
     public event Action IdleEvent;    
-    public void Idle(VGame.Project.FishHunter.BULLET bullet)
+    public void Idle(VGame.Project.FishHunter.Common.Data.BULLET bullet)
     {
         var animator = this.GetComponent<Animator>();
         animator.SetInteger("Fort", (int)bullet);

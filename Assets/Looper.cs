@@ -2,6 +2,8 @@
 using System.Collections;
 using Regulus.Remoting;
 using System.Collections.Generic;
+using VGame.Project.FishHunter.Common.GPI;
+
 public class Looper : MonoBehaviour {
 
     public float MinSeconds;
@@ -10,7 +12,7 @@ public class Looper : MonoBehaviour {
     float _Time;
     GameObject _Current;
     private Client _Client;
-    VGame.Project.FishHunter.IPlayer _Player;
+    IPlayer _Player;
 
     
 
@@ -35,7 +37,7 @@ public class Looper : MonoBehaviour {
         }
 	}
 
-    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    void PlayerProvider_Supply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
     {
         _Player = obj;
     }

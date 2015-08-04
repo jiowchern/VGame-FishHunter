@@ -5,7 +5,7 @@ public class KickHandler : MonoBehaviour {
     private Client _Client;
 
     public string LoginScene;
-    private VGame.Project.FishHunter.IAccountStatus _AccountStatus;
+    private VGame.Project.FishHunter.Common.GPI.IAccountStatus _AccountStatus;
 
 
 	// Use this for initialization
@@ -19,12 +19,12 @@ public class KickHandler : MonoBehaviour {
         
 	}
 
-    void ConnectProvider_Supply(Regulus.Utility.IConnect obj)
+    void ConnectProvider_Supply(Regulus.Remoting.IConnect obj)
     {
         Application.LoadLevel(LoginScene);
     }
 
-    void AccountStatusProvider_Supply(VGame.Project.FishHunter.IAccountStatus obj)
+    void AccountStatusProvider_Supply(VGame.Project.FishHunter.Common.GPI.IAccountStatus obj)
     {
         _AccountStatus = obj;
         obj.KickEvent += obj_KickEvent;

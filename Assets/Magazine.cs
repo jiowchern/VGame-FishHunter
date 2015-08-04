@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 using Regulus.Remoting;
 
-using VGame.Project.FishHunter;
+using VGame.Project.FishHunter.Common.GPI;
 
 public class Magazine 
 {

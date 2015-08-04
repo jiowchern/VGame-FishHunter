@@ -6,7 +6,7 @@ public class UIFps : MonoBehaviour
 	private Client _Client;
 	public UnityEngine.UI.Text Text;
 	Regulus.Utility.TimeCounter _TimeCounter;
-	private Regulus.Utility.IOnline _Online;
+	private Regulus.Remoting.IOnline _Online;
 	// Use this for initialization
 	void Start () {
 		_Client = Client.Instance;
@@ -30,7 +30,7 @@ public class UIFps : MonoBehaviour
 		_Client.User.Remoting.OnlineProvider.Unsupply += OnlineProvider_Unsupply;
 	}
 
-	void OnlineProvider_Unsupply(Regulus.Utility.IOnline obj)
+	void OnlineProvider_Unsupply(Regulus.Remoting.IOnline obj)
 	{
 		
 		if (_Online != null)
@@ -41,7 +41,7 @@ public class UIFps : MonoBehaviour
 		
 	}
 
-	void OnlineProvider_Supply(Regulus.Utility.IOnline obj)
+	void OnlineProvider_Supply(Regulus.Remoting.IOnline obj)
 	{
 		_Online = obj;
 		

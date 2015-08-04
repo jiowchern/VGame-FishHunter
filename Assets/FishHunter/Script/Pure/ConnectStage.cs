@@ -9,7 +9,7 @@
 
 namespace Assets
 {
-    using Regulus.Remoting.Ghost;
+    using Regulus.Remoting;
     using Regulus.Utility;
 
     /// <summary>

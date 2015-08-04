@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using VGame.Project.FishHunter;
+using VGame.Project.FishHunter.Common.GPI;
 
 public class NormalNetHit : BulletHitHandler {
 
@@ -52,7 +52,7 @@ public class NormalNetHit : BulletHitHandler {
         }
     }
 
-    private void _HitRequest(int id, IEnumerable<FishBounds> fishs)
+    private void _HitRequest(int id, IEnumerable<VGame.Project.FishHunter.FishBounds> fishs)
     {
         if (_Requested || _Player == null)
             return;

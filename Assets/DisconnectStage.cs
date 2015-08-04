@@ -9,9 +9,9 @@ namespace Assets
     {
         
         public Action DoneEvent;
-        private Regulus.Remoting.Ghost.INotifier<Regulus.Utility.IOnline> notifier;
+        private Regulus.Remoting.INotifier<Regulus.Remoting.IOnline> notifier;
 
-        public DisconnectStage(Regulus.Remoting.Ghost.INotifier<Regulus.Utility.IOnline> notifier)
+        public DisconnectStage(Regulus.Remoting.INotifier<Regulus.Remoting.IOnline> notifier)
         {
             // TODO: Complete member initialization
             this.notifier = notifier;
@@ -28,12 +28,12 @@ namespace Assets
             
         }
 
-        void notifier_Unsupply(Regulus.Utility.IOnline obj)
+        void notifier_Unsupply(Regulus.Remoting.IOnline obj)
         {
             DoneEvent();
         }
 
-        void notifier_Supply(Regulus.Utility.IOnline obj)
+        void notifier_Supply(Regulus.Remoting.IOnline obj)
         {
             obj.Disconnect();
         }

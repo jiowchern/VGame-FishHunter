@@ -16,12 +16,12 @@ public class BaseFort : MonoBehaviour
 	[System.Serializable]
 	public class BulletSource
 	{
-		public VGame.Project.FishHunter.BULLET Type;
+		public VGame.Project.FishHunter.Common.Data.BULLET Type;
 		public GameObject BulletPrefab;
 	}
 
-	public BulletSource[] BulletsSource;    
-	private VGame.Project.FishHunter.IPlayer _Player;
+	public BulletSource[] BulletsSource;
+    private VGame.Project.FishHunter.Common.GPI.IPlayer _Player;
 	public Transform Base;
 	public Transform Gun;
 	public FortBehavior Behavior;
@@ -29,8 +29,8 @@ public class BaseFort : MonoBehaviour
 
     private Magazine _Magazine;
 
-	public VGame.Project.FishHunter.BULLET Bullet;
-	VGame.Project.FishHunter.BULLET _CurrentBullet;
+    public VGame.Project.FishHunter.Common.Data.BULLET Bullet;    
+    VGame.Project.FishHunter.Common.Data.BULLET _CurrentBullet;
 	bool _Enable;
 
     private bool _CanFire;
@@ -108,7 +108,7 @@ public class BaseFort : MonoBehaviour
 
     
 
-	private void _PlayerSupply(VGame.Project.FishHunter.IPlayer obj)
+	private void _PlayerSupply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
 	{
 		_Player = obj;
         _Magazine = new Magazine(_Player);        
@@ -162,22 +162,22 @@ public class BaseFort : MonoBehaviour
 		}
 	}
 
-	private void _UpdateLock(BULLET bullet)
+	private void _UpdateLock(VGame.Project.FishHunter.Common.Data.BULLET bullet)
 	{
-		var data = new System.Collections.Generic.HashSet<BULLET>();
-		data.Add(BULLET.WEAPON2);
-		data.Add(BULLET.WEAPON4);
-		data.Add(BULLET.WEAPON6);
-		data.Add(BULLET.WEAPON8);
+		var data = new System.Collections.Generic.HashSet<VGame.Project.FishHunter.Common.Data.BULLET>();
+		data.Add(VGame.Project.FishHunter.Common.Data.BULLET.WEAPON2);
+		data.Add(VGame.Project.FishHunter.Common.Data.BULLET.WEAPON4);
+		data.Add(VGame.Project.FishHunter.Common.Data.BULLET.WEAPON6);
+		data.Add(VGame.Project.FishHunter.Common.Data.BULLET.WEAPON8);
 		
 		FishEnvironment.Instance.Lock = data.Contains(bullet);
 	}
 
-	private BULLET _GetCurrentBullet()
+	private VGame.Project.FishHunter.Common.Data.BULLET _GetCurrentBullet()
 	{
 		return _Player != null
 				   ? _Player.Bullet
-				   : VGame.Project.FishHunter.BULLET.WEAPON1;
+                   : VGame.Project.FishHunter.Common.Data.BULLET.WEAPON1;
 	}
 
 	

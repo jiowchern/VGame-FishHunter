@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using VGame.Project.FishHunter.Common.GPI;
 
 public class UIMoney : MonoBehaviour {
 
     
     public UILabel Score;
-    VGame.Project.FishHunter.IPlayer _Player;
+    VGame.Project.FishHunter.Common.GPI.IPlayer _Player;
     Client _Client;
 	// Use this for initialization
 	void Start () {
@@ -33,7 +34,7 @@ public class UIMoney : MonoBehaviour {
             _Player.MoneyEvent -= _Player_MoneyEvent;
     }
 
-    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    void PlayerProvider_Supply(IPlayer obj)
     {
         _Player = obj;
         _Player.MoneyEvent += _Player_MoneyEvent;

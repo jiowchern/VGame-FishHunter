@@ -7,7 +7,7 @@ public class FishPool : MonoBehaviour
     bool _Enable;
     public int Limit;
     int _CurrentCount;
-    VGame.Project.FishHunter.IPlayer _Player;
+    VGame.Project.FishHunter.Common.GPI.IPlayer _Player;
     public GameObject Fish;
 	// Use this for initialization
 	void Start () 
@@ -27,7 +27,7 @@ public class FishPool : MonoBehaviour
         _Client.User.PlayerProvider.Supply -= PlayerProvider_Supply;
     }
 
-    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    void PlayerProvider_Supply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
     {
         _Player = obj;
         _Check();   

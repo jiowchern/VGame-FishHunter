@@ -29,7 +29,7 @@ public abstract class FishCollider : MonoBehaviour
 	protected abstract Bounds _GetBounds();
 
 	int _Id;
-	private VGame.Project.FishHunter.IPlayer _Player;
+	private VGame.Project.FishHunter.Common.GPI.IPlayer _Player;
 	public delegate void DeadCallback();
 	public event DeadCallback DeadEvent;
 
@@ -113,7 +113,7 @@ public abstract class FishCollider : MonoBehaviour
 		
 	}
 	
-	void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+	void PlayerProvider_Supply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
 	{
 		_Player = obj;
 		_Player.DeathFishEvent += _Player_DeathFishEvent;

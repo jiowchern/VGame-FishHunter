@@ -6,7 +6,7 @@ public class SelectStageHandler : MonoBehaviour
 {
     
     public Stage[] Stages;
-    VGame.Project.FishHunter.ILevelSelector _Selector;
+    VGame.Project.FishHunter.Common.GPI.ILevelSelector _Selector;
     Client _Client;
  
     void OnDestroy()
@@ -30,7 +30,7 @@ public class SelectStageHandler : MonoBehaviour
         }
     }
 
-    void LevelSelectorProvider_Supply(VGame.Project.FishHunter.ILevelSelector obj)
+    void LevelSelectorProvider_Supply(VGame.Project.FishHunter.Common.GPI.ILevelSelector obj)
     {
         obj.QueryStages().OnValue += (stages) =>
         {

@@ -1,12 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using VGame.Project.FishHunter.Common.GPI;
 
 public class FishSpawner : MonoBehaviour {
 
 
     public GameObject Fish;
     private Client _Client;
-    private VGame.Project.FishHunter.IPlayer _Player;    
+    private IPlayer _Player;    
 	// Use this for initialization
 	void Start () 
     {
@@ -27,7 +28,7 @@ public class FishSpawner : MonoBehaviour {
         }
     }
 
-    void PlayerProvider_Supply(VGame.Project.FishHunter.IPlayer obj)
+    void PlayerProvider_Supply(IPlayer obj)
     {
         _Player = obj;
     }
