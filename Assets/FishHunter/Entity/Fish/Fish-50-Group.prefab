@@ -913,6 +913,8 @@ MonoBehaviour:
   Root: {fileID: 415170}
   Render: {fileID: 13720052}
   Animator: {fileID: 9509528}
+  Lock: {fileID: 0}
+  FishType: 18
   SkinnedMesh: {fileID: 13720052}
   Original: {fileID: 0}
   Hit: {fileID: 0}
@@ -1132,6 +1134,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Fish
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: FishType
+      value: 18
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

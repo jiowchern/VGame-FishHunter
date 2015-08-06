@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VGame.Project.FishHunter.Common.Data;
 
 namespace VGame.Project.FishHunter
 {
@@ -13,8 +14,9 @@ namespace VGame.Project.FishHunter
         public event AreaCallback RequestHitEvent;
 
         public bool Visible;
-        public FishBounds(int id,Regulus.CustomType.Rect bounds )
+        public FishBounds(int id,FISH_TYPE type,Regulus.CustomType.Rect bounds )
         {
+            Type = type;
             Visible = true;
             _Id = id;
             SetBounds(bounds);
@@ -61,5 +63,6 @@ namespace VGame.Project.FishHunter
 
 
         public int Id { get { return _Id; } }
+        public FISH_TYPE Type { get; private set; }
     }
 }

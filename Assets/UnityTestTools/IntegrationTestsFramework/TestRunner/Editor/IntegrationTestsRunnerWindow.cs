@@ -12,7 +12,7 @@ namespace UnityTest
     {
         #region GUI Contents
         private readonly GUIContent m_GUICreateNewTest = new GUIContent("Create", "Create new test");
-        private readonly GUIContent m_GUIRunSelectedTests = new GUIContent("Run Selected", "Run selected test(s)");
+        private readonly GUIContent m_GUIRunSelectedTests = new GUIContent("Run SelectedId", "Run selected test(s)");
         private readonly GUIContent m_GUIRunAllTests = new GUIContent("Run All", "Run all tests");
         private readonly GUIContent m_GUIAddGoUderTest = new GUIContent("Add GOs under test", "Add new GameObject under selected test");
         private readonly GUIContent m_GUIBlockUI = new GUIContent("Block UI when running", "Block UI when running tests");

@@ -6,6 +6,7 @@ using VGame.Project.FishHunter;
 
 public abstract class FishCollider : MonoBehaviour 
 {        
+	
 	public Transform Root;
 	public UnityEngine.Renderer Render;
 	
@@ -24,7 +25,8 @@ public abstract class FishCollider : MonoBehaviour
 			return 0;
 		} }
 
-	
+	public VGame.Project.FishHunter.Common.Data.FISH_TYPE FishType;
+
 
 	protected abstract Bounds _GetBounds();
 
@@ -82,7 +84,7 @@ public abstract class FishCollider : MonoBehaviour
 	{        
 		_Id = id;        
 
-		_Bounds = new VGame.Project.FishHunter.FishBounds(_Id, _UpdateBounds());
+		_Bounds = new VGame.Project.FishHunter.FishBounds(_Id,FishType,  _UpdateBounds());
 		_JoinToSet();
 		_Bounds.RequestHitEvent += _Hit;        
 		_Initialed = true;
@@ -239,7 +241,7 @@ public abstract class FishCollider : MonoBehaviour
 
 		if (Lock != null)
 		{
-			Lock.Set(FishEnvironment.Instance.Selected == Id);
+			Lock.Set(FishEnvironment.Instance.SelectedId == Id);
 		}
 		
 	}

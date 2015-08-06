@@ -4,6 +4,7 @@ using System.Threading;
 using NUnit.Framework;
 using UnityEngine;
 using System.Linq;
+using VGame.Project.FishHunter.Common.Data;
 
 
 namespace VGame
@@ -37,7 +38,7 @@ namespace VGame
         [Test]
         public void FishSetTest()
         {
-            var fishOutline = new VGame.Project.FishHunter.FishBounds(0,new Regulus.CustomType.Rect(0, 0, 100, 100));
+            var fishOutline = new VGame.Project.FishHunter.FishBounds(0 , FISH_TYPE.INVALID , new Regulus.CustomType.Rect(0, 0, 100, 100));
             fishOutline.SetBounds(new Regulus.CustomType.Rect(0, 0, 100, 100));
 
             var set = new VGame.Project.FishHunter.FishSet();
@@ -53,7 +54,7 @@ namespace VGame
         {
 
 
-            var fishOutline = new VGame.Project.FishHunter.FishBounds(0,new Regulus.CustomType.Rect(0, 0, 100, 100));
+            var fishOutline = new VGame.Project.FishHunter.FishBounds(0, FISH_TYPE.INVALID, new Regulus.CustomType.Rect(0, 0, 100, 100));
             fishOutline.SetBounds(new Regulus.CustomType.Rect(0, 0, 100, 100));
 
             var set = new VGame.Project.FishHunter.FishSet();
@@ -81,7 +82,7 @@ namespace VGame
         [Test]
         public void FishSetTestNoHit()
         {
-            var fishOutline = new VGame.Project.FishHunter.FishBounds(0,new Regulus.CustomType.Rect(0, 0, 100, 100));
+            var fishOutline = new VGame.Project.FishHunter.FishBounds(0, FISH_TYPE.INVALID, new Regulus.CustomType.Rect(0, 0, 100, 100));
             fishOutline.SetBounds(new Regulus.CustomType.Rect(0, 0, 100, 100));
 
             var set = new VGame.Project.FishHunter.FishSet();

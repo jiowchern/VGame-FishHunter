@@ -4,7 +4,7 @@ using System.Collections;
 using VGame.Extension;
 public class BulletCollider : MonoBehaviour 
 {
-    
+	
 
 	public int Id;
 	
@@ -17,18 +17,20 @@ public class BulletCollider : MonoBehaviour
 
 	public BulletHitHandler HitHandler;
 
-    public float Speed = 100;
+	public float Speed = 100;
 
 
-   
+    private Rigidbody2D _Rigidbody2D;
 
 	
 	private VGame.Project.FishHunter.Common.GPI.IPlayer _Player;
 	
 	bool _Enable;
 
-    public Client _Client { get; set; }	
-	void Start () 
+	private Client _Client;
+    private float _Angle;
+
+    void Start () 
 	{
 		_Enable = true;
 		if(Client.Instance!=null)
@@ -38,12 +40,15 @@ public class BulletCollider : MonoBehaviour
 			_Client.User.PlayerProvider.Unsupply += PlayerProvider_Unsupply;
 		}
 
-       
+        _Rigidbody2D = GetComponent<Rigidbody2D>();
+
+        _Rigidbody2D.AddForce(Direction * Speed);
+        
 	}
 
-    
+	
 
-    void PlayerProvider_Unsupply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
+	void PlayerProvider_Unsupply(VGame.Project.FishHunter.Common.GPI.IPlayer obj)
 	{
 		_Player = null;
 	}
@@ -59,26 +64,39 @@ public class BulletCollider : MonoBehaviour
 	{
 		_Player = obj;
 	}
-	
+    static float _GetAngle(Vector3 dir, Vector3 to)
+    {
+        var angle = Vector2.Angle(dir, to);
+        Vector3 cross = Vector3.Cross(dir, to);
+        if (cross.z > 0)
+            angle = 360 - angle;
+        return angle;
+    }
 	// Update is called once per frame
-	void Update () 
+	void Update ()
 	{
-
-        transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * Speed) + transform.position;				
+        var dir = _Rigidbody2D.velocity;
+        var a = _GetAngle(dir , Vector3.up);
+	    //transform.rotation = rot;
+        _Rigidbody2D.rotation = a;
+        //_Rigidbody2D.MoveRotation(angle);
+	    
+        
+	    
+        
+        
+		//transform.position = ((Vector3)Direction * UnityEngine.Time.deltaTime * Speed) + transform.position;				
 
 		VGame.Project.FishHunter.FishBounds[] fishs = VGame.Project.FishHunter.FishSet.Find(CameraHelper.Front , Collider.bounds);
 
 		if(fishs.Length > 0)
 		{
-
 			var hits = _HitDetection(fishs);
 			HitHandler.Hit(Id , hits );
-
 		}
-
+        
 		if(ViewChecker.isVisible == false)
 			GameObject.Destroy(gameObject);
-
 	}
 
 	

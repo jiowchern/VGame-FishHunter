@@ -9,4 +9,11 @@ public static class RandomExtension
         rndPosWithin = area.TransformPoint(rndPosWithin * .5f);
         return rndPosWithin;
     }
+
+
+    public static T QueryComponment<T>(this UnityEngine.GameObject instnace) where T : Component
+    {
+        var componment = instnace.GetComponent<T>();
+        return componment ?? instnace.AddComponent<T>();
+    }
 }

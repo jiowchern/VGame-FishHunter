@@ -15,7 +15,7 @@ namespace UnityTest
 
         protected static bool s_Refresh;
 
-        protected static GUIContent s_GUIRunSelected = new GUIContent("Run Selected");
+        protected static GUIContent s_GUIRunSelected = new GUIContent("Run SelectedId");
         protected static GUIContent s_GUIRun = new GUIContent("Run");
         protected static GUIContent s_GUITimeoutIcon = new GUIContent(Icons.StopwatchImg, "Timeout");
 

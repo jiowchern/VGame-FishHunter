@@ -239,7 +239,7 @@ public static class NGUIContextMenu
 		{
 			UIWidget widget = target.GetComponent<UIWidget>();
 
-			string myName = string.Format("Selected {0}", (widget != null) ? NGUITools.GetTypeName(widget) : "Object");
+			string myName = string.Format("SelectedId {0}", (widget != null) ? NGUITools.GetTypeName(widget) : "Object");
 
 			AddItem(myName + "/Bring to Front", false,
 				delegate(object obj)
