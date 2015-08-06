@@ -1,4 +1,4 @@
-//----------------------------------------------
+﻿//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2015 Tasharen Entertainment
 //----------------------------------------------
@@ -20,7 +20,7 @@ public class UIKeyNavigationEditor : Editor
 		NGUIEditorTools.SetLabelWidth(120f);
 
 		serializedObject.Update();
-		NGUIEditorTools.DrawProperty("Starts Selected", serializedObject, "startsSelected");
+		NGUIEditorTools.DrawProperty("Starts SelectedId", serializedObject, "startsSelected");
 		NGUIEditorTools.DrawProperty("Constraint", serializedObject, "constraint");
 
 		if (NGUIEditorTools.DrawHeader("Override"))

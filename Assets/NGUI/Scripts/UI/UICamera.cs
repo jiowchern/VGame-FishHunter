@@ -1,4 +1,4 @@
-//----------------------------------------------
+﻿//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2015 Tasharen Entertainment
 //----------------------------------------------
@@ -819,7 +819,7 @@ public class UICamera : MonoBehaviour
 	}
 
 	/// <summary>
-	/// Selected object receives exclusive focus. An input field requires exclusive focus in order to type,
+	/// SelectedId object receives exclusive focus. An input field requires exclusive focus in order to type,
 	/// for example. Any object is capable of grabbing the selection just by clicking on that object,
 	/// but only one object can be selected at a time.
 	/// </summary>

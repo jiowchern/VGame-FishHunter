@@ -13,7 +13,7 @@ namespace UnityTest
 
         protected static bool s_Refresh;
 
-        private static readonly GUIContent k_GUIRunSelected = new GUIContent("Run Selected");
+        private static readonly GUIContent k_GUIRunSelected = new GUIContent("Run SelectedId");
         private static readonly GUIContent k_GUIRun = new GUIContent("Run");
         private static readonly GUIContent k_GUIDelete = new GUIContent("Delete");
         private static readonly GUIContent k_GUIDeleteSelected = new GUIContent("Delete selected");

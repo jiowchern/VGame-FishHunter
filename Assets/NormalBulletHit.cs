@@ -21,10 +21,6 @@ public class NormalBulletHit : BulletHitHandler  {
         }
     }
 
-
-
-
-
     private void _SpawnBoom(int id)
     {
         if (BoomBullet != null)

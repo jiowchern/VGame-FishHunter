@@ -1,4 +1,4 @@
-//----------------------------------------------
+﻿//----------------------------------------------
 //            NGUI: Next-Gen UI kit
 // Copyright © 2011-2015 Tasharen Entertainment
 //----------------------------------------------
@@ -46,7 +46,7 @@ public class UIPlayAnimationEditor : Editor
 		EditorGUI.EndDisabledGroup();
 
 		SelectedObject so = pa.clearSelection ? SelectedObject.SetToNothing : SelectedObject.KeepCurrent;
-		bool clear = (SelectedObject)EditorGUILayout.EnumPopup("Selected object", so) == SelectedObject.SetToNothing;
+		bool clear = (SelectedObject)EditorGUILayout.EnumPopup("SelectedId object", so) == SelectedObject.SetToNothing;
 		AnimationOrTween.EnableCondition enab = (AnimationOrTween.EnableCondition)EditorGUILayout.EnumPopup("If disabled on start", pa.ifDisabledOnPlay);
 		ResetOnPlay rs = pa.resetOnPlay ? ResetOnPlay.RestartAnimation : ResetOnPlay.ContinueFromCurrent;
 		bool reset = (ResetOnPlay)EditorGUILayout.EnumPopup("On activation", rs) == ResetOnPlay.RestartAnimation;

@@ -621,6 +621,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 478988}
   - 212: {fileID: 21294268}
+  - 114: {fileID: 11453602}
   m_Layer: 5
   m_Name: GunDummy
   m_TagString: Untagged
@@ -2210,7 +2211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 356, y: 208, z: 0}
+  m_LocalPosition: {x: 376, y: 185, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 443006}
@@ -2690,7 +2691,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 356, y: -208, z: 0}
+  m_LocalPosition: {x: 376, y: -185, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 464690}
@@ -3150,8 +3151,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 131014}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 92, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 108.199997, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 0}
   m_Children: []
   m_Father: {fileID: 424530}
   m_RootOrder: 0
@@ -6656,6 +6657,60 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Score: {fileID: 11470542}
+--- !u!114 &11453602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 131014}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e96b31ce75e592f45a1cff563a4869db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 100
+  mHeight: 100
+  mDepth: 1
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 1
+  mType: 0
+  mFillDirection: 4
+  mFillAmount: 1
+  mInvert: 0
+  mFlip: 0
+  centerType: 1
+  leftType: 1
+  rightType: 1
+  bottomType: 1
+  topType: 1
+  mSprite: {fileID: 21300000, guid: c327a159f6dae674d99cd70a6d9f3f58, type: 3}
+  mMat: {fileID: 0}
+  mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
+  mBorder: {x: 0, y: 0, z: 0, w: 0}
+  mFixedAspect: 0
+  mPixelSize: 1
+  nextSprite: {fileID: 0}
 --- !u!114 &11455212
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -8808,19 +8863,25 @@ MonoBehaviour:
       InstanceTarget: {fileID: 11433574}
     - LIIF: 1559717730
       InstanceTarget: {fileID: 11442036}
+    - LIIF: -1879426372
+      InstanceTarget: {fileID: 11453602}
   Modifications:
     Modificated:
     - Object: {fileID: 410914}
       ObjeckLink: 1400544654
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 11479210}
-      ObjeckLink: 543326907
-      PropertyPath: debug
+    - Object: {fileID: 11486922}
+      ObjeckLink: -1052658805
+      PropertyPath: mSprite
       Mode: 0
-    - Object: {fileID: 167460}
-      ObjeckLink: 804526549
-      PropertyPath: m_IsActive
+    - Object: {fileID: 11453602}
+      ObjeckLink: -1879426372
+      PropertyPath: mDepth
+      Mode: 0
+    - Object: {fileID: 11453602}
+      ObjeckLink: -1879426372
+      PropertyPath: mSprite
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -9495,7 +9556,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 23e17ce641907e0479af7043b8182827, type: 3}
+  mSprite: {fileID: 21300000, guid: 86f842e97b7ced840892e628fce06d18, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -10849,7 +10910,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5baa98a1018db7346b08723ea6bdbbd4, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

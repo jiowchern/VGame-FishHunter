@@ -130,7 +130,7 @@ public class BaseFort : MonoBehaviour
 	private static Vector3 _GetPosition()
 	{
 		var defaultPosition = Input.mousePosition;
-		var target = FishEnvironment.Instance.Selected;
+		var target = FishEnvironment.Instance.SelectedId;
 		if (target != 0)
 		{
 			var fish = FishCollider.Find(target);
@@ -231,17 +231,17 @@ public class BaseFort : MonoBehaviour
 			angle = 360 - angle;
 		return angle;
 	}
-	private static void _SetRotation(Vector3 dir, Transform t)
+	/*private static void _SetRotation(Vector3 dir, Transform t)
 	{
 
 		var angle = _GetAngle(dir , Vector3.up);
 		t.rotation = Quaternion.Euler(0, 0, angle);        
-	}
+	}*/
 	private static void _SetRotation(Vector3 dir, GameObject instance)
 	{
 		instance.GetComponent<BulletCollider>().Direction = dir.normalized;
 
-		_SetRotation(dir, instance.transform );
+		//_SetRotation(dir, instance.transform );
 		
 	}
 

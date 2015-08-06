@@ -36,9 +36,20 @@ namespace VGame.Project.FishHunter
         public bool Lock;
 
 
-        
+        private VGame.Project.FishHunter.Common.Data.FISH_TYPE _FishType;
+
+        public VGame.Project.FishHunter.Common.Data.FISH_TYPE LockFishType
+        {
+            get
+            {
+                return Lock
+                       ? _FishType
+                       : VGame.Project.FishHunter.Common.Data.FISH_TYPE.INVALID;
+            }
+        }
+
         public int _Selected;
-        public int Selected { get
+        public int SelectedId { get
         {
             return Lock
                        ? _Selected
@@ -82,10 +93,14 @@ namespace VGame.Project.FishHunter
                 var fish = (from r in Physics.RaycastAll(ray)
                            let collider = r.collider.GetComponent<FishCollider>()
                            where collider != null && collider.Id != 0
-                           select collider.Id).FirstOrDefault();
+                           select new {id = collider.Id , FishType = collider.FishType }).FirstOrDefault();
 
-                if (fish != 0)
-                    _Selected = fish;
+                if (fish != null && fish.id != 0)
+                {
+                    _Selected = fish.id;
+                    _FishType = fish.FishType;
+                }
+                    
 
                 if (TouchEvent != null)
                     TouchEvent();

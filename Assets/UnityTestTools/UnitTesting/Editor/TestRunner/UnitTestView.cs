@@ -28,7 +28,7 @@ namespace UnityTest
         private UnitTestsRunnerSettings m_Settings;
 
         #region GUI Contents
-        private readonly GUIContent m_GUIRunSelectedTestsIcon = new GUIContent("Run Selected", "Run selected tests");
+        private readonly GUIContent m_GUIRunSelectedTestsIcon = new GUIContent("Run SelectedId", "Run selected tests");
         private readonly GUIContent m_GUIRunAllTestsIcon = new GUIContent("Run All", "Run all tests");
         private readonly GUIContent m_GUIRerunFailedTestsIcon = new GUIContent("Rerun Failed", "Rerun failed tests");
         private readonly GUIContent m_GUIRunOnRecompile = new GUIContent("Run on recompile", "Run all tests after recompilation");

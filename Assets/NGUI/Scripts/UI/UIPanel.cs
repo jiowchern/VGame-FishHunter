@@ -1852,6 +1852,7 @@ public class UIPanel : UIRect
 
 	void OnDrawGizmos ()
 	{
+	    
 		if (anchorCamera == null) return;
 
 		bool clip = (mClipping != UIDrawCall.Clipping.None);

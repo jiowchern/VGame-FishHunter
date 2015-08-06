@@ -10,6 +10,8 @@ GameObject:
   - 4: {fileID: 473934}
   - 114: {fileID: 11480914}
   - 114: {fileID: 11489250}
+  - 114: {fileID: 11481602}
+  - 68: {fileID: 6843648}
   m_Layer: 0
   m_Name: FishSet
   m_TagString: Untagged
@@ -29,6 +31,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!68 &6843648
+EdgeCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135418}
+  m_Enabled: 1
+  m_Material: {fileID: 6200000, guid: 638c369cc31a9ed48a81c3488f293b37, type: 2}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -.5, y: 0}
+  - {x: .5, y: 0}
 --- !u!114 &11480914
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -38,6 +54,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cee4fe256549c0c48b55ec345376025c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11481602
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45e88cb978224644bae51a52f1dd7fa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &11489250
@@ -51,7 +78,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87e4157610dba97449008e94edcce3dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Set: {fileID: 11480914}
+  Lock: 0
+  _Selected: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -63,6 +91,18 @@ Prefab:
       propertyPath: Set
       value: 
       objectReference: {fileID: 11480914}
+    - target: {fileID: 0}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_GravityScale
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 638c369cc31a9ed48a81c3488f293b37, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135418}

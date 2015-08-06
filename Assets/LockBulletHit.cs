@@ -19,14 +19,14 @@ public class LockBulletHit : BulletHitHandler {
 		var bullet = GetComponent<BulletCollider>();
 		_BulletId = bullet.Id;
 
-		var selectId = VGame.Project.FishHunter.FishEnvironment.Instance.Selected;
+		/*var selectId = VGame.Project.FishHunter.FishEnvironment.Instance.LockFishType;
 		var fish = FishCollider.Find(selectId);
 		if (selectId != 0 && fish != null)
 		{
 			var end = CameraHelper.Middle.GetScreenPoint(fish.transform.position) ;
 			var start = CameraHelper.Front.GetScreenPoint(transform.position);
 			
-		}
+		}*/
 	}
 	
 	// Update is called once per frame
@@ -48,12 +48,9 @@ public class LockBulletHit : BulletHitHandler {
 	public override void Hit(int id, VGame.Project.FishHunter.FishBounds[] hits)
 	{
 		var env = GameObject.FindObjectOfType<VGame.Project.FishHunter.FishEnvironment>();
-		if(env.Selected != null)
+		if (hits.Any(fish => env.LockFishType == fish.Type))
 		{
-			if(hits.Any( fish => env.Selected == fish.Id))
-			{
-				_Boom();
-			}
+			_Boom();
 		}
 	}
 
