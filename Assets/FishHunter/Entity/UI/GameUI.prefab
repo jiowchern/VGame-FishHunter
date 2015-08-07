@@ -2211,7 +2211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 376, y: 185, z: 0}
+  m_LocalPosition: {x: 395, y: 204, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 443006}
@@ -2691,7 +2691,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 376, y: -185, z: 0}
+  m_LocalPosition: {x: 395, y: -204, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 464690}
@@ -3053,7 +3053,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -248, z: 0}
+  m_LocalPosition: {x: 1, y: -248, z: 0}
   m_LocalScale: {x: .877354383, y: .877354801, z: .877354801}
   m_Children:
   - {fileID: 489412}
@@ -6502,22 +6502,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BulletsSource:
-  - Type: 1
+  - No: 1
     BulletPrefab: {fileID: 173702, guid: 8ce57f74c45ed6f4e93bbb30859216a4, type: 2}
-  - Type: 2
-    BulletPrefab: {fileID: 173702, guid: 6019a9e93200c2e47b33a15fc04458e3, type: 2}
-  - Type: 3
+  - No: 2
     BulletPrefab: {fileID: 100548, guid: 12460918f86dd274b97db2995f36d0d7, type: 2}
-  - Type: 4
-    BulletPrefab: {fileID: 100548, guid: 3ac4fd133b11fa94488e098b5410c5ea, type: 2}
-  - Type: 5
+  - No: 3
     BulletPrefab: {fileID: 143112, guid: 643811eaeb77a5c4c9a6716096d2a5a6, type: 2}
-  - Type: 6
-    BulletPrefab: {fileID: 143112, guid: 344823ae062c0794cad8f6a43c33c8c1, type: 2}
-  - Type: 7
+  - No: 4
     BulletPrefab: {fileID: 187348, guid: 00a2b08f1f979f94eb76b795ade06c08, type: 2}
-  - Type: 8
+  - No: 5
+    BulletPrefab: {fileID: 173702, guid: 6019a9e93200c2e47b33a15fc04458e3, type: 2}
+  - No: 6
+    BulletPrefab: {fileID: 100548, guid: 3ac4fd133b11fa94488e098b5410c5ea, type: 2}
+  - No: 7
+    BulletPrefab: {fileID: 143112, guid: 344823ae062c0794cad8f6a43c33c8c1, type: 2}
+  - No: 8
     BulletPrefab: {fileID: 187348, guid: 1eb043d3429507f499024f39c6fbb95a, type: 2}
+  - No: 9
+    BulletPrefab: {fileID: 187348, guid: 2ae5a069649ce254490cb51940448ffc, type: 2}
+  - No: 10
+    BulletPrefab: {fileID: 173702, guid: 7c87b7b6d9bcf16489e7cb658ab186e0, type: 2}
+  - No: 11
+    BulletPrefab: {fileID: 100548, guid: 92a91c35d5313f04e9e075e77a3340de, type: 2}
+  - No: 12
+    BulletPrefab: {fileID: 143112, guid: a4a273d8a59fbd846910df29d26ce0f4, type: 2}
+  - No: 13
+    BulletPrefab: {fileID: 143112, guid: 2a122699896b0964ebc9f7f228278c80, type: 2}
+  - No: 14
+    BulletPrefab: {fileID: 187348, guid: f4e3f90dd3fa0c04db84bcabde5abfdf, type: 2}
+  - No: 15
+    BulletPrefab: {fileID: 173702, guid: 9a8e16a0a93733246ae791d48cef3d77, type: 2}
+  - No: 16
+    BulletPrefab: {fileID: 100548, guid: 22ff1f362329b4748bacb55e71fef8c7, type: 2}
   PPtr<Object>: {fileID: 448730}
   Gun: {fileID: 478988}
   Behavior: {fileID: 11490020}
@@ -8871,17 +8887,129 @@ MonoBehaviour:
       ObjeckLink: 1400544654
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 11486922}
-      ObjeckLink: -1052658805
-      PropertyPath: mSprite
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.size
       Mode: 0
-    - Object: {fileID: 11453602}
-      ObjeckLink: -1879426372
-      PropertyPath: mDepth
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[0].No
       Mode: 0
-    - Object: {fileID: 11453602}
-      ObjeckLink: -1879426372
-      PropertyPath: mSprite
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[1].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[1].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[2].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[2].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[3].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[3].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[4].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[4].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[5].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[5].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[6].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[6].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[7].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[8].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[8].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[9].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[9].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[10].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[10].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[11].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[11].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[12].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[12].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[13].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[13].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[14].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[14].BulletPrefab
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[15].No
+      Mode: 0
+    - Object: {fileID: 11449648}
+      ObjeckLink: -812621106
+      PropertyPath: BulletsSource.Array.data[15].BulletPrefab
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -9556,7 +9684,7 @@ MonoBehaviour:
   rightType: 1
   bottomType: 1
   topType: 1
-  mSprite: {fileID: 21300000, guid: 86f842e97b7ced840892e628fce06d18, type: 3}
+  mSprite: {fileID: 21300000, guid: 4c5875446b3478f4b9b0c559744bed4a, type: 3}
   mMat: {fileID: 0}
   mShader: {fileID: 4800000, guid: e75727d9555d9d14ca51d91908c681bc, type: 3}
   mBorder: {x: 0, y: 0, z: 0, w: 0}
