@@ -36,6 +36,7 @@ public class BaseFort : MonoBehaviour
 
 	private bool _CanFire;
     private int _CurrentOdds;
+    private bool _CurrentLock;
 
     public BaseFort()
 	{
@@ -150,19 +151,22 @@ public class BaseFort : MonoBehaviour
 
 	private void _UpdateFort()
 	{
-		
+        Lock = FishEnvironment.Instance.Lock;
 		if (_Player != null)
 		{
 			Bullet = _Player.Bullet;
-            Odds = _Player.WeaponOdds;
+            Odds = _Player.WeaponOdds;		    
 		}
-        if (Bullet != _CurrentBullet || Odds != _CurrentOdds)
+        if (Bullet != _CurrentBullet || Odds != _CurrentOdds || Lock != _CurrentLock)
 		{
             Behavior.Idle(Bullet, FishEnvironment.Instance.Lock, Odds);
 			_CurrentBullet = Bullet;
             _CurrentOdds = Odds ;
+		    _CurrentLock = Lock;
 		}
 	}
+
+    public bool Lock { get; set; }
 
     public int Odds { get; set; }
 
