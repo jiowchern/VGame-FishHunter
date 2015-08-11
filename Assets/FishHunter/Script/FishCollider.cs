@@ -1,8 +1,8 @@
-﻿using System;
+﻿
 using System.Linq;
 using UnityEngine;
-using System.Collections;
-using UnityEngine.iOS;
+
+
 using VGame.Extension;
 using VGame.Project.FishHunter;
 
