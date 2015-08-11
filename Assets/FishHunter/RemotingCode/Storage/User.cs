@@ -1,22 +1,15 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="User.cs" company="Regulus Framework">
-//   Regulus Framework
-// </copyright>
-// <summary>
-//   Defines the User type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
-
-#region Test_Region
+﻿#region Test_Region
 
 using System;
 
+
 using Regulus.Framework;
-using Regulus.Game;
+
 using Regulus.Remoting;
 using Regulus.Utility;
 
-using VGame.Project.FishHunter.Common;
+
+
 using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
 using VGame.Project.FishHunter.Stage;
@@ -25,11 +18,11 @@ using VGame.Project.FishHunter.Stage;
 
 namespace VGame.Project.FishHunter.Storage
 {
-	internal class User : Regulus.Game.IUser
+    internal class User : Regulus.Game.IUser
 	{
-		private event OnQuit _QuitEvent;
+        private event Regulus.Game.OnQuit _QuitEvent;
 
-		private event OnNewUser _VerifySuccessEvent;
+        private event Regulus.Game.OnNewUser _VerifySuccessEvent;
 
 		private readonly ISoulBinder _Binder;
 
@@ -42,21 +35,21 @@ namespace VGame.Project.FishHunter.Storage
 		public User(ISoulBinder binder, IStorage storage)
 		{
 			_Storage = storage;
-			this._Binder = binder;
+			_Binder = binder;
 			_Machine = new StageMachine();
 		}
 
-		void Regulus.Game.IUser.OnKick(Guid id)
+        void Regulus.Game.IUser.OnKick(Guid id)
 		{
 		}
 
-		event OnNewUser Regulus.Game.IUser.VerifySuccessEvent
+        event Regulus.Game.OnNewUser Regulus.Game.IUser.VerifySuccessEvent
 		{
 			add { _VerifySuccessEvent += value; }
 			remove { _VerifySuccessEvent -= value; }
 		}
 
-		event OnQuit Regulus.Game.IUser.QuitEvent
+        event Regulus.Game.OnQuit Regulus.Game.IUser.QuitEvent
 		{
 			add { _QuitEvent += value; }
 			remove { _QuitEvent -= value; }

@@ -6,7 +6,7 @@ using  System.Linq;
 
 using VGame.Extension;
 using VGame.Project.FishHunter;
-using VGame.Project.FishHunter.ZsFormula.Rules;
+
 
 public class BaseFort : MonoBehaviour
 {
@@ -30,15 +30,15 @@ public class BaseFort : MonoBehaviour
 
 	private Magazine _Magazine;
 
-	public VGame.Project.FishHunter.Common.Data.BULLET Bullet;    
-	VGame.Project.FishHunter.Common.Data.BULLET _CurrentBullet;
+	public VGame.Project.FishHunter.Common.Data.WEAPON_TYPE Bullet;
+    VGame.Project.FishHunter.Common.Data.WEAPON_TYPE _CurrentBullet;
 	bool _Enable;
 
 	private bool _CanFire;
-    private int _CurrentOdds;
-    private bool _CurrentLock;
+	private int _CurrentOdds;
+	private bool _CurrentLock;
 
-    public BaseFort()
+	public BaseFort()
 	{
 		_Enable = true;
 	}
@@ -47,16 +47,23 @@ public class BaseFort : MonoBehaviour
 		Behavior.FireEvent -= _InFire;
 		Behavior.IdleEvent -= _InIdle;
 
-		if (FishEnvironment.Instance != null)
-			FishEnvironment.Instance.TouchEvent -= _TouchFire;
+	    if (FishEnvironment.Instance != null)
+	    {
+            FishEnvironment.Instance.TouchFireEvent -= TouchFireFire;
+            FishEnvironment.Instance.RotationEvent -= _RotationFort;
+            FishEnvironment.Instance.ClickFireEvent -= _CLickFire;
+	    }
+			
 
 		_Enable = false;
 		if (_Client != null)
 			_Client.User.PlayerProvider.Supply -= _PlayerSupply;
 	}
-	
 
-	void Start () 
+    
+
+
+    void Start () 
 	{
 		if (this.Base == null)
 			this.Base = transform;
@@ -76,12 +83,30 @@ public class BaseFort : MonoBehaviour
 		Behavior.FireEvent += _InFire;
 		Behavior.IdleEvent += _InIdle;
 
-		FishEnvironment.Instance.TouchEvent += _TouchFire;
+
+        FishEnvironment.Instance.ClickFireEvent += _CLickFire;
+		FishEnvironment.Instance.TouchFireEvent += TouchFireFire;
+        FishEnvironment.Instance.RotationEvent += _RotationFort;
 
 
 	}
 
-	private void _TouchFire()
+
+    private void _CLickFire()
+    {
+        if (_CanFire)
+        {
+            int bulletid;
+            if (_Magazine.TryGet(out bulletid))
+            {
+                _CanFire = false;
+                Behavior.Fire(bulletid, Base.rotation * Vector3.right);
+
+            }
+
+        }
+    }
+    private void TouchFireFire()
 	{
 		if (_CanFire)
 		{
@@ -89,9 +114,10 @@ public class BaseFort : MonoBehaviour
 			if (_Magazine.TryGet(out bulletid))
 			{
 				_CanFire = false;
-				var dir = _GetCurrentDirection();
-				_RotationBase(dir);
-				Behavior.Fire(bulletid , dir);
+                var dir = _GetCurrentDirection();
+                _RotationBase(dir);
+                Behavior.Fire(bulletid, dir);
+				
 
 			}
 
@@ -151,30 +177,30 @@ public class BaseFort : MonoBehaviour
 
 	private void _UpdateFort()
 	{
-        Lock = FishEnvironment.Instance.Lock;
+		Lock = FishEnvironment.Instance.Lock;
 		if (_Player != null)
 		{
-			Bullet = _Player.Bullet;
-            Odds = _Player.WeaponOdds;		    
+			Bullet = _Player.WeaponType;
+			Odds = _Player.WeaponOdds;		    
 		}
-        if (Bullet != _CurrentBullet || Odds != _CurrentOdds || Lock != _CurrentLock)
+		if (Bullet != _CurrentBullet || Odds != _CurrentOdds || Lock != _CurrentLock)
 		{
-            Behavior.Idle(Bullet, FishEnvironment.Instance.Lock, Odds);
+			Behavior.Idle(Bullet, FishEnvironment.Instance.Lock, Odds);
 			_CurrentBullet = Bullet;
-            _CurrentOdds = Odds ;
-		    _CurrentLock = Lock;
+			_CurrentOdds = Odds ;
+			_CurrentLock = Lock;
 		}
 	}
 
-    public bool Lock { get; set; }
+	public bool Lock { get; set; }
 
-    public int Odds { get; set; }
+	public int Odds { get; set; }
 
-    private VGame.Project.FishHunter.Common.Data.BULLET _GetCurrentBullet()
+    private VGame.Project.FishHunter.Common.Data.WEAPON_TYPE _GetCurrentBullet()
 	{
 		return _Player != null
-				   ? _Player.Bullet
-				   : VGame.Project.FishHunter.Common.Data.BULLET.WEAPON1;
+				   ? _Player.WeaponType
+                   : VGame.Project.FishHunter.Common.Data.WEAPON_TYPE.NORMAL;
 	}
 
 	
@@ -191,13 +217,24 @@ public class BaseFort : MonoBehaviour
 		return dir;
 	}
 
+    private void _RotationFort(float calibration)
+    {
+        if (_CanFire)
+            _RotationBase(Base.rotation.eulerAngles.z + calibration);
+    }
+
 	private void _RotationBase(Vector3 dir)
 	{
-		var angle = BaseFort._GetAngle(dir, Vector3.right);
-		Base.rotation = Quaternion.Euler(0, 0, angle);
+	    var angle = BaseFort._GetAngle(dir, Vector3.right);
+	    _RotationBase(angle);
 	}
 
-	private GameObject _FindBullet(int bulletType)
+    private void _RotationBase(float angle)
+    {
+        Base.rotation = Quaternion.Euler(0, 0, angle);
+    }
+
+    private GameObject _FindBullet(int bulletType)
 	{
 		return _Player != null
 				   ? (from w in this.BulletsSource where w.No == bulletType select w.BulletPrefab).FirstOrDefault()

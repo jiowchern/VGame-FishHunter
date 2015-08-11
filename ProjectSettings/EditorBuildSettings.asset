@@ -31,3 +31,7 @@ EditorBuildSettings:
     path: Assets/FishHunter/Scene/Game/RandomPath.unity
   - enabled: 1
     path: Assets/FishHunter/Scene/Game/DemoGetAway.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/Sample1/RandomNoReturnToLogin.unity
+  - enabled: 1
+    path: Assets/FishHunter/Scene/Game/Sample1/StartDemo.unity

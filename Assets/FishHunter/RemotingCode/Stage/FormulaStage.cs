@@ -1,19 +1,15 @@
-﻿// --------------------------------------------------------------------------------------------------------------------
-// <copyright file="FormulaStage.cs" company="Regulus Framework">
-//   Regulus Framework
-// </copyright>
-// <summary>
-//   Defines the FormulaStage type.
-// </summary>
-// --------------------------------------------------------------------------------------------------------------------
+﻿
+using System.Collections.Generic;
 
 using Regulus.Game;
 using Regulus.Remoting;
 using Regulus.Utility;
 
-using VGame.Project.FishHunter.Common;
+
+using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
 using VGame.Project.FishHunter.Formula;
+using VGame.Project.FishHunter.ZsFormula;
 
 namespace VGame.Project.FishHunter.Stage
 {
@@ -23,37 +19,72 @@ namespace VGame.Project.FishHunter.Stage
 
 		private readonly ISoulBinder _Binder;
 
-		public FormulaStage(ISoulBinder binder)
+		private ExpansionFeature _ExpansionFeature;
+
+		private readonly List<StageData> _StageDatas;
+
+		public FormulaStage(ISoulBinder binder, ExpansionFeature expansion_feature)
 		{
-			// TODO: Complete member initialization
-			this._Binder = binder;
+			_Binder = binder;
+			_ExpansionFeature = expansion_feature;
+			_StageDatas = new List<StageData>();
 		}
 
-		Value<IFishStage> IFishStageQueryer.Query(long player_id, byte fish_stage)
+		Value<IFishStage> IFishStageQueryer.Query(long player_id, int fish_stage)
 		{
-			switch (fish_stage)
+			switch(fish_stage)
 			{
-				case 200:
-					return null;
 				case 100:
-					return new FishStage(player_id, fish_stage);
+                    return new CsFishStage(player_id, fish_stage);
+				case 2:
+					return new ZsFishStage(player_id, _StageDatas.Find(x => x.StageId == fish_stage));
+                case 111:
+                    return new QuarterStage(player_id, fish_stage);
 				default:
-					return new CsFishStage(player_id, fish_stage);
+                    return new FishStage(player_id, fish_stage);
+					
 			}
 		}
 
 		void IStage.Enter()
 		{
-			this._Binder.Bind<IFishStageQueryer>(this);
+			OnDoneEvent += OnDoneEvent;
+	
+			_InitStageData();
+
+			_Binder.Bind<IFishStageQueryer>(this);
 		}
 
 		void IStage.Leave()
 		{
-			this._Binder.Unbind<IFishStageQueryer>(this);
+			_Binder.Unbind<IFishStageQueryer>(this);
+			
+			OnDoneEvent.Invoke();
 		}
 
 		void IStage.Update()
 		{
+		}
+
+		private Value<StageData> _StroageLoad(int stage_id)
+		{
+			var returnValue = new Value<StageData>();
+
+			var val = _ExpansionFeature.FishStageDataHandler.Load(stage_id);
+
+			val.OnValue += stage_data => { returnValue.SetValue(stage_data ?? null); };
+
+			return returnValue;
+		}
+
+		private void _InitStageData()
+		{
+			foreach(var t in BusinessStage.StageIds)
+			{
+				var data = _StroageLoad(t);
+
+				data.OnValue += data_on_value => _StageDatas.Add(data_on_value);
+			}
 		}
 	}
 }

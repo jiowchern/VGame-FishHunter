@@ -26,7 +26,7 @@ public class FortBehavior : MonoBehaviour
     {
         public int Id;
         public bool Lock;
-        public VGame.Project.FishHunter.Common.Data.BULLET Type;
+        public VGame.Project.FishHunter.Common.Data.WEAPON_TYPE Type;
     }
     
 
@@ -37,7 +37,7 @@ public class FortBehavior : MonoBehaviour
 
         
     }
-    public void Idle(VGame.Project.FishHunter.Common.Data.BULLET bullet  , bool lock_mode,int odds)
+    public void Idle(VGame.Project.FishHunter.Common.Data.WEAPON_TYPE bullet, bool lock_mode, int odds)
     {
         
         var animator = _Animator;

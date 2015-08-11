@@ -33,8 +33,8 @@ public class UIWeapon : MonoBehaviour
 
 		_Powers = new[]
 					  {
-						  VGame.Project.FishHunter.Common.Data.BULLET.WEAPON1,                          
-						  VGame.Project.FishHunter.Common.Data.BULLET.WEAPON2,                          
+						  VGame.Project.FishHunter.Common.Data.WEAPON_TYPE.NORMAL,                          
+						  VGame.Project.FishHunter.Common.Data.WEAPON_TYPE.FREE_POWER,                          
 					  };
 		;
 	}
@@ -72,7 +72,7 @@ public class UIWeapon : MonoBehaviour
 		{
 			WeaponOdds.text = string.Format("x{0}", _Player.WeaponOdds);
 
-			WeaponPower.text = string.Format("{0}", _Player.Bullet.ToString());
+			WeaponPower.text = string.Format("{0}", _Player.WeaponType.ToString());
 		}
 	}
 
@@ -84,7 +84,7 @@ public class UIWeapon : MonoBehaviour
 			return;
 		}
 
-		this._Player.EquipWeapon(this._Player.Bullet, this._NextOdds());
+		this._Player.EquipWeapon(this._Player.WeaponType, this._NextOdds());
 	}
 	
 	private readonly int[] _Oddss;
@@ -115,9 +115,9 @@ public class UIWeapon : MonoBehaviour
 	}
 
 
-	private BULLET[] _Powers;
+    private WEAPON_TYPE[] _Powers;
 	private int _PowerIndex;
-	private BULLET _NextWeapon()
+    private WEAPON_TYPE _NextWeapon()
 	{
 		_PowerIndex ++;
 		_PowerIndex %= _Powers.Length;
@@ -125,7 +125,7 @@ public class UIWeapon : MonoBehaviour
 		return _Powers[_PowerIndex];
 	}
 
-	private BULLET _PrevWeapon()
+    private WEAPON_TYPE _PrevWeapon()
 	{
 		_PowerIndex--;
 		_PowerIndex = (_PowerIndex + _Powers.Length) % _Powers.Length;
