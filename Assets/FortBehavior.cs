@@ -22,12 +22,6 @@ public class FortBehavior : MonoBehaviour
     public event Action<int,int,Vector3> FireEvent;
     public event Action IdleEvent;
 
-    struct WeaponCondition
-    {
-        public int Id;
-        public bool Lock;
-        public VGame.Project.FishHunter.Common.Data.BULLET Type;
-    }
     
 
 
@@ -37,17 +31,25 @@ public class FortBehavior : MonoBehaviour
 
         
     }
-    public void Idle(VGame.Project.FishHunter.Common.Data.BULLET bullet  , bool lock_mode,int odds)
+    public void Idle(VGame.Project.FishHunter.Common.Data.WEAPON_TYPE bullet, bool lock_mode, int odds)
     {
         
         var animator = _Animator;
-        animator.SetInteger("Fort", (int)bullet);
+        animator.SetInteger("Fort", _Find(bullet) );
         animator.SetInteger("Odds", odds);
         animator.SetBool("Lock", lock_mode);
         animator.SetTrigger("Idle");
     }
 
-    
+    private int _Find(WEAPON_TYPE bullet)
+    {
+        if (bullet == WEAPON_TYPE.NORMAL)
+            return 1;
+        if (bullet == WEAPON_TYPE.FREE_POWER)
+            return 2;
+
+        return 1;
+    }
 
 
     void _Fire(int bullet_type)

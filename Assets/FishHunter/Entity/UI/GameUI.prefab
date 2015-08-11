@@ -2211,7 +2211,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 152912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 395, y: 204, z: 0}
+  m_LocalPosition: {x: 342, y: 194, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 443006}
@@ -2691,7 +2691,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 147708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 395, y: -204, z: 0}
+  m_LocalPosition: {x: 342, y: -194, z: 0}
   m_LocalScale: {x: .703812242, y: .703812242, z: .703812242}
   m_Children:
   - {fileID: 464690}
@@ -3053,7 +3053,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: -248, z: 0}
+  m_LocalPosition: {x: 0, y: -248, z: 0}
   m_LocalScale: {x: .877354383, y: .877354801, z: .877354801}
   m_Children:
   - {fileID: 489412}
@@ -8887,130 +8887,6 @@ MonoBehaviour:
       ObjeckLink: 1400544654
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.size
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[0].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[1].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[1].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[2].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[2].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[3].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[3].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[4].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[4].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[5].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[5].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[6].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[6].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[7].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[8].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[8].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[9].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[9].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[10].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[10].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[11].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[11].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[12].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[12].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[13].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[13].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[14].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[14].BulletPrefab
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[15].No
-      Mode: 0
-    - Object: {fileID: 11449648}
-      ObjeckLink: -812621106
-      PropertyPath: BulletsSource.Array.data[15].BulletPrefab
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -9198,8 +9074,8 @@ MonoBehaviour:
   eventReceiverMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  debug: 1
-  useMouse: 0
+  debug: 0
+  useMouse: 1
   useTouch: 1
   allowMultiTouch: 1
   useKeyboard: 0

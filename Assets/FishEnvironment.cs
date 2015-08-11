@@ -44,7 +44,7 @@ namespace VGame.Project.FishHunter
             {
                 return Lock
                        ? _FishType
-                       : VGame.Project.FishHunter.Common.Data.FISH_TYPE.INVALID;
+                       : VGame.Project.FishHunter.Common.Data.FISH_TYPE.ANGEL_FISH;
             }
         }
 
@@ -56,9 +56,14 @@ namespace VGame.Project.FishHunter
                        : 0;
         }}
 
-        public  delegate void TouchCallback();
 
-        public event TouchCallback TouchEvent;
+        public delegate void RotationCallback(float calibration);
+
+        public event RotationCallback RotationEvent;
+        public  delegate void FireCallback();
+
+        public event FireCallback TouchFireEvent;
+        public event FireCallback ClickFireEvent;
 
 
         void OnDestroy()
@@ -76,37 +81,63 @@ namespace VGame.Project.FishHunter
         // Update is called once per frame
         void Update()
         {
-            if (! Input.GetMouseButton((0)))
-                return;
+
+
+            
+
+            if ( _InGame() )
+            {
+
+                _UpdateSelectFromTouch();
+
+                _UpdateKeyOnFire();                        
+
+            }
+            
+        }
+
+        private void _UpdateKeyOnFire()
+        {
+            var horizontal = Input.GetAxis("Horizontal");
+
+            if (horizontal != 0 && RotationEvent != null)
+                RotationEvent(-horizontal);
+                
+            
+            var space = Input.GetKeyUp(KeyCode.Space);
+            if (space && ClickFireEvent != null)
+                ClickFireEvent();
+
+        }
+
+        private bool _UpdateSelectFromTouch()
+        {
+            if (!Input.GetMouseButton((0)))
+                return true;
 
             var touchPosition = Input.mousePosition;
 
             if (UICamera.Raycast(touchPosition))
-                return;
+                return true;
 
-            if ( _InGame() )
+
+            var ray = CameraHelper.Middle.ScreenPointToRay(touchPosition);
+
+            RaycastHit hitInfo;
+            var fish = (from r in Physics.RaycastAll(ray)
+                let collider = r.collider.GetComponent<FishCollider>()
+                where collider != null && collider.Id != 0
+                select new {id = collider.Id, FishType = collider.FishType}).FirstOrDefault();
+
+            if (fish != null && fish.id != 0)
             {
-                
-                var ray = CameraHelper.Middle.ScreenPointToRay(touchPosition);
-
-                RaycastHit hitInfo;
-                var fish = (from r in Physics.RaycastAll(ray)
-                           let collider = r.collider.GetComponent<FishCollider>()
-                           where collider != null && collider.Id != 0
-                           select new {id = collider.Id , FishType = collider.FishType }).FirstOrDefault();
-
-                if (fish != null && fish.id != 0)
-                {
-                    _Selected = fish.id;
-                    _FishType = fish.FishType;
-                }
-                    
-
-                if (TouchEvent != null)
-                    TouchEvent();
-
+                _Selected = fish.id;
+                _FishType = fish.FishType;
             }
-            
+            if (TouchFireEvent != null)
+                TouchFireEvent();
+
+            return false;
         }
 
         private bool _InGame()

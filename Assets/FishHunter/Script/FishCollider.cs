@@ -1,6 +1,8 @@
-﻿using System.Linq;
+﻿
+using System.Linq;
 using UnityEngine;
-using System.Collections;
+
+
 using VGame.Extension;
 using VGame.Project.FishHunter;
 
@@ -76,8 +78,16 @@ public abstract class FishCollider : MonoBehaviour
 	}
 
 	private void _Erase()
-	{        
-		GameObjectPool.Instance.Destroy(gameObject);                
+	{
+		try
+		{
+			GameObjectPool.Instance.Destroy(gameObject);                
+		}
+		catch (MissingReferenceException mre)
+		{
+			Debug.LogWarning(mre.ToString());
+		}
+		
 	}
 
 	void _Initial(int id)
