@@ -20,9 +20,9 @@ public class ModeSelector : MonoBehaviour
         Target.Initial();
     }
 
-    public void RunStandalong()
+    public void RunStandalone()
     {
-        Target.Mode = Client.MODE.STANDALONG;
+        Target.Mode = Client.MODE.Standalone;
         Target.Initial();
     }
 }

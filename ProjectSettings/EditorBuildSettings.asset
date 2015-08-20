@@ -5,31 +5,31 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Start.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Login.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/DemoPlay.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/empty.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/SelectStage.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Play1.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Play2.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Play3.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Demo1.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Demo2.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/Demo3.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/RandomPath.unity
-  - enabled: 0
+  - enabled: 1
     path: Assets/FishHunter/Scene/Game/DemoGetAway.unity
   - enabled: 1
     path: Assets/FishHunter/Scene/Game/Sample1/StartDemo.unity

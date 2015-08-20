@@ -19,8 +19,9 @@ public class CheckClientInitDone : MonoBehaviour
     }
 	
 	// Update is called once per frame
-	void Update () 
-    {
-	
+	void Update ()
+	{
+	    //UnityEngine.Vector2 v;
+	    //var v2 = v.normalized;
 	}
 }

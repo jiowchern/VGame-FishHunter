@@ -22,6 +22,7 @@ public class PathMaker : MonoBehaviour {
 
     private Vector3 _GetEnd()
     {
+        var d = Mathf.Deg2Rad;
         return _Random(_Random(EndPoints));
     }
 
