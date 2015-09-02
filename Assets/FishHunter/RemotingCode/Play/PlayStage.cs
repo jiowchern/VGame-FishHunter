@@ -1,11 +1,11 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
 
 using Regulus.Remoting;
 using Regulus.Utility;
+
 
 using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
@@ -14,6 +14,10 @@ namespace VGame.Project.FishHunter.Play
 {
 	internal class PlayStage : IPlayer, IStage
 	{
+		public delegate void KillCallback(int kill_count);
+
+		public delegate void PassCallback(int pass_stage);
+
 		private event Action<int> _DeathFishEvent;
 
 		private event Action<int> _MoneyEvent;
@@ -30,7 +34,7 @@ namespace VGame.Project.FishHunter.Play
 
 		private readonly IFishStage _FishStage;
 
-		private readonly PlayerRecord _Money;
+		private readonly GamePlayerRecord _Money;
 
 		private readonly Dictionary<int, HitRequest> _Requests;
 
@@ -38,11 +42,11 @@ namespace VGame.Project.FishHunter.Play
 
 		private short _FishIdSn;
 
-		private int _WeaponOdds;
+		private int _WeaponBet;
 
 		private WEAPON_TYPE _WeaponType;
 
-		public PlayStage(ISoulBinder binder, IFishStage fish_stage, PlayerRecord money)
+		public PlayStage(ISoulBinder binder, IFishStage fish_stage, GamePlayerRecord money)
 		{
 			_Fishs = new List<Fish>();
 			_Bullets = new List<Bullet>();
@@ -52,12 +56,12 @@ namespace VGame.Project.FishHunter.Play
 			_DeadFishCount = 0;
 			_Money = money;
 			_WeaponType = WEAPON_TYPE.NORMAL;
-			_WeaponOdds = 10;
+			_WeaponBet = 10;
 		}
 
-		Value<int> IPlayer.Hit(int bulletid, int[] fishids)
+		Value<int> IPlayer.Hit(int bullet_id, int[] fishids)
 		{
-			var hasBullet = _PopBullet(bulletid);
+			var hasBullet = _PopBullet(bullet_id);
 			if(hasBullet == false)
 			{
 				return 0;
@@ -83,7 +87,7 @@ namespace VGame.Project.FishHunter.Play
 				{
 					new RequsetFishData
 					{
-						FishID = fishid, 
+						FishId = fishid, 
 						FishOdds = 1, 
 						FishStatus = FISH_STATUS.NORMAL, 
 						FishType = FISH_TYPE.TROPICAL_FISH
@@ -93,10 +97,9 @@ namespace VGame.Project.FishHunter.Play
 				var weapon = new RequestWeaponData
 				{
 					TotalHits = fishids.Length, 
-					TotalHitOdds = 1, 
-					WepBet = 1, 
-					WepID = bulletid, 
-					WepOdds = _WeaponOdds, 
+					WeaponBet = _WeaponBet, 
+					BulletId = bullet_id, 
+					WeaponOdds = 1, 
 					WeaponType = _WeaponType
 				};
 
@@ -109,17 +112,17 @@ namespace VGame.Project.FishHunter.Play
 
 			if(count == 0)
 			{
-				_PushBullet(bulletid);
+				_PushBullet(bullet_id);
 			}
 
 			Singleton<Log>.Instance.WriteInfo(
 				string.Format(
 					"all WEAPON_TYPE:{0} , targets:{1} , count:{2}", 
-					bulletid, 
+					bullet_id, 
 					string.Join(",", (from id in fishids select id.ToString()).ToArray()), 
 					fishids.Length));
 			Singleton<Log>.Instance.WriteInfo(
-				string.Format("requested WEAPON_TYPE:{0} , targets:{1} , count:{2}", bulletid, logFishs, count));
+				string.Format("requested WEAPON_TYPE:{0} , targets:{1} , count:{2}", bullet_id, logFishs, count));
 			Singleton<Log>.Instance.WriteInfo(
 				string.Format(
 					"request fishs:{0} count:{1} ", 
@@ -147,7 +150,7 @@ namespace VGame.Project.FishHunter.Play
 
 		int IPlayer.WeaponOdds
 		{
-			get { return _WeaponOdds; }
+			get { return _WeaponBet; }
 		}
 
 		WEAPON_TYPE IPlayer.WeaponType
@@ -180,18 +183,27 @@ namespace VGame.Project.FishHunter.Play
 		void IPlayer.EquipWeapon(WEAPON_TYPE weapon_type, int odds)
 		{
 			_WeaponType = weapon_type;
-			_WeaponOdds = odds;
+			_WeaponBet = odds;
 		}
 
 		void IStage.Enter()
 		{
 			_Binder.Bind<IPlayer>(this);
-			_FishStage.OnHitResponseEvent += _Response;
+			_FishStage.OnTotalHitResponseEvent += _FishStage_OnTotalHitResponseEvent;
+		}
+
+		void _FishStage_OnTotalHitResponseEvent(HitResponse[] hit_responses)
+		{
+			foreach(var hit in hit_responses)
+			{
+				_Response(hit);
+			}
+			
 		}
 
 		void IStage.Leave()
 		{
-			_FishStage.OnHitResponseEvent -= _Response;
+			_FishStage.OnTotalHitResponseEvent -= _FishStage_OnTotalHitResponseEvent;
 			_Binder.Unbind<IPlayer>(this);
 		}
 
@@ -199,14 +211,10 @@ namespace VGame.Project.FishHunter.Play
 		{
 		}
 
-		public delegate void PassCallback(int pass_stage);
-
-		public delegate void KillCallback(int kill_count);
-
 		private void _Response(HitResponse obj)
 		{
 			HitRequest request;
-			if(!_Requests.TryGetValue(obj.FishID, out request))
+			if(!_Requests.TryGetValue(obj.FishId, out request))
 			{
 				return;
 			}
@@ -217,19 +225,19 @@ namespace VGame.Project.FishHunter.Play
 					var onDeathFish = _DeathFishEvent;
 					if(onDeathFish != null)
 					{
-						onDeathFish(obj.FishID);
+						onDeathFish(obj.FishId);
 					}
 
-					AddMoney(request.WeaponData.WepBet * request.WeaponData.WepOdds);
+					AddMoney(request.WeaponData.GetTotalBet());
 					_DeadFishCount++;
 					break;
 
 				case FISH_DETERMINATION.SURVIVAL:
-					_PushFish(obj.FishID);
+					_PushFish(obj.FishId);
 					break;
 			}
 
-			_Requests.Remove(obj.FishID);
+			_Requests.Remove(obj.FishId);
 		}
 
 		private void _PushFish(int id)

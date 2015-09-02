@@ -43,8 +43,7 @@ public abstract class FishCollider : MonoBehaviour
 	
 	public FishCollider()
 	{
-		_Polygon = new Regulus.CustomType.Polygon();
-		_Polygon.BuildEdges();     
+		_Polygon = new Regulus.CustomType.Polygon();		
 	}
 
 	protected abstract void _ChangeMaterial();
@@ -175,7 +174,7 @@ public abstract class FishCollider : MonoBehaviour
 
 		if(_TryGetCollider(ref _Polygon))
 		{
-			if(_Polygon.Points.Count > 0 && collider.Points.Count > 0)
+			if(_Polygon.Points.Length > 0 && collider.Points.Length > 0)
 			{
 				var result = Regulus.CustomType.Polygon.Collision(collider, _Polygon, new Regulus.CustomType.Vector2(0, 0));
 				if (result.Intersect || result.WillIntersect)
@@ -210,13 +209,7 @@ public abstract class FishCollider : MonoBehaviour
 
 	private void _SetPolygon(Regulus.CustomType.Polygon polygon, Vector2[] paths)
 	{
-		polygon.Points.Clear();
-		foreach(var p in paths)
-		{
-			polygon.Points.Add( new Regulus.CustomType.Vector2(p.x , p.y));
-		}
-
-		polygon.BuildEdges();
+        polygon.SetPoints( from p in paths select new Regulus.CustomType.Vector2(p.x, p.y) );        
 	}
 
 	

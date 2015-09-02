@@ -1,37 +1,45 @@
-﻿using VGame.Project.FishHunter.Common.Data;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+
+
+using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
+
+
+using Random = Regulus.Utility.Random;
 
 namespace VGame.Project.FishHunter.Stage
 {
     internal class QuarterStage : IFishStage
     {
-        private readonly long _PlayerId;
+        private event Action<HitResponse[]> _OnTotalHitResponseEvent;
+
+        private readonly Guid _AccountId;
 
         private readonly int _FishStage;
 
-        public QuarterStage(long player_id, int fish_stage)
+        public QuarterStage(Guid player_id, int fish_stage)
         {
-            _PlayerId = player_id;
+            _AccountId = player_id;
             _FishStage = fish_stage;
-            
         }
 
-        event System.Action<string> IFishStage.OnHitExceptionEvent
+        event Action<string> IFishStage.OnHitExceptionEvent
         {
-            add {  }
-            remove {  }
+            add { }
+            remove { }
         }
 
-        private event System.Action<Common.Data.HitResponse> _HitResponseEvent;
-        event System.Action<Common.Data.HitResponse> IFishStage.OnHitResponseEvent
+        event Action<HitResponse[]> IFishStage.OnTotalHitResponseEvent
         {
-            add { _HitResponseEvent += value; }
-            remove { _HitResponseEvent -= value; }
+            add { _OnTotalHitResponseEvent += value; }
+            remove { _OnTotalHitResponseEvent -= value; }
         }
 
-        long IFishStage.AccountId
+        Guid IFishStage.AccountId
         {
-            get { return _PlayerId; }
+            get { return _AccountId; }
         }
 
         int IFishStage.FishStage
@@ -39,20 +47,21 @@ namespace VGame.Project.FishHunter.Stage
             get { return _FishStage; }
         }
 
-        void IFishStage.Hit(Common.Data.HitRequest request)
+        void IFishStage.Hit(HitRequest request)
         {
-            foreach(var requsetFishData in request.FishDatas)
-            {
-                var response = new Common.Data.HitResponse();
-
-                response.DieResult = Regulus.Utility.Random.Instance.NextInt(1,4) == 1 ? FISH_DETERMINATION.DEATH : FISH_DETERMINATION.SURVIVAL ;
-                response.FishID = requsetFishData.FishID;
-                response.WepID = request.WeaponData.WepID;            
-                response.SpecialWeaponType = WEAPON_TYPE.NORMAL;            
-
-                _HitResponseEvent(response);    
-            }
-            
+            _OnTotalHitResponseEvent(
+                request.FishDatas.Select(
+                    requset_fish_data => new HitResponse
+                    {
+                        DieResult =
+                            Random.Instance.NextInt(1, 4) == 1 ? FISH_DETERMINATION.DEATH : FISH_DETERMINATION.SURVIVAL, 
+                        FishId = requset_fish_data.FishId, 
+                        WepId = request.WeaponData.BulletId, 
+                        FeedbackWeapons = new[]
+                        {
+                            WEAPON_TYPE.INVALID
+                        }
+                    }).ToArray());
         }
     }
 }

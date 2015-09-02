@@ -1,11 +1,14 @@
 ﻿
 using System;
 
+
 using Regulus.Extension;
 using Regulus.Utility;
 
+
 using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
+
 
 using Random = Regulus.Utility.Random;
 
@@ -15,19 +18,17 @@ namespace VGame.Project.FishHunter.Formula
 	{
 		private event Action<string> _OnHitExceptionEvent;
 
-		private event Action<HitResponse> _OnHitResponseEvent;
+		private readonly Guid _AccountId;
 
-		private readonly long _AccountId;
-
-		private readonly byte _FishStage;
+		private readonly int _FishStage;
 
 		private readonly HitBase _Formula;
 
-		public FishStage(long account, int stage_id)
+		public FishStage(Guid account, int stage_id)
 		{
 			_Formula = new HitTest(Random.Instance);
 			_AccountId = account;
-			_FishStage = (byte)stage_id;
+			_FishStage = stage_id;
 		}
 
 		event Action<string> IFishStage.OnHitExceptionEvent
@@ -36,13 +37,15 @@ namespace VGame.Project.FishHunter.Formula
 			remove { _OnHitExceptionEvent -= value; }
 		}
 
-		event Action<HitResponse> IFishStage.OnHitResponseEvent
+		private event Action<HitResponse[]> _OnTotalHitResponseEvent;
+
+		event Action<HitResponse[]> IFishStage.OnTotalHitResponseEvent
 		{
-			add { _OnHitResponseEvent += value; }
-			remove { _OnHitResponseEvent -= value; }
+			add { this._OnTotalHitResponseEvent += value; }
+			remove { this._OnTotalHitResponseEvent -= value; }
 		}
 
-		long IFishStage.AccountId
+		Guid IFishStage.AccountId
 		{
 			get { return _AccountId; }
 		}
@@ -54,14 +57,14 @@ namespace VGame.Project.FishHunter.Formula
 
 		void IFishStage.Hit(HitRequest request)
 		{
-			var response = _Formula.Request(request);
+			var responses = _Formula.TotalRequest(request);
 
-			_OnHitResponseEvent.Invoke(response);
+			_OnTotalHitResponseEvent.Invoke(responses);
 
-			_MakeLog(request, response);
+			_MakeLog(request, responses);
 		}
 
-		private void _MakeLog(HitRequest request, HitResponse response)
+		private void _MakeLog(HitRequest request, HitResponse[] responses)
 		{
 			var format = "PlayerVisitor:{0}\tStage:{1}\nRequest:{2}\nResponse:{3}";
 
@@ -70,7 +73,7 @@ namespace VGame.Project.FishHunter.Formula
 				_AccountId, 
 				_FishStage, 
 				request.ShowMembers(" "), 
-				response.ShowMembers(" "));
+				responses.ShowMembers(" "));
 
 			Singleton<Log>.Instance.WriteInfo(log);
 		}

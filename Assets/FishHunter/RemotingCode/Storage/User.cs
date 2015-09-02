@@ -1,6 +1,4 @@
-﻿#region Test_Region
-
-using System;
+﻿using System;
 
 
 using Regulus.Framework;
@@ -9,20 +7,17 @@ using Regulus.Remoting;
 using Regulus.Utility;
 
 
-
 using VGame.Project.FishHunter.Common.Data;
 using VGame.Project.FishHunter.Common.GPI;
 using VGame.Project.FishHunter.Stage;
 
-#endregion
-
 namespace VGame.Project.FishHunter.Storage
 {
-    internal class User : Regulus.Game.IUser
-	{
-        private event Regulus.Game.OnQuit _QuitEvent;
+	internal class User : Regulus.Game.IUser
+    {
+		private event Regulus.Game.OnQuit _QuitEvent;
 
-        private event Regulus.Game.OnNewUser _VerifySuccessEvent;
+		private event Regulus.Game.OnNewUser _VerifySuccessEvent;
 
 		private readonly ISoulBinder _Binder;
 
@@ -39,17 +34,17 @@ namespace VGame.Project.FishHunter.Storage
 			_Machine = new StageMachine();
 		}
 
-        void Regulus.Game.IUser.OnKick(Guid id)
+		void Regulus.Game.IUser.OnKick(Guid id)
 		{
 		}
 
-        event Regulus.Game.OnNewUser Regulus.Game.IUser.VerifySuccessEvent
+		event Regulus.Game.OnNewUser Regulus.Game.IUser.VerifySuccessEvent
 		{
 			add { _VerifySuccessEvent += value; }
 			remove { _VerifySuccessEvent -= value; }
 		}
 
-        event Regulus.Game.OnQuit Regulus.Game.IUser.QuitEvent
+		event Regulus.Game.OnQuit Regulus.Game.IUser.QuitEvent
 		{
 			add { _QuitEvent += value; }
 			remove { _QuitEvent -= value; }
@@ -77,16 +72,16 @@ namespace VGame.Project.FishHunter.Storage
 			_AddVerifyToStage(verify);
 		}
 
-		private Verify _CreateVerify()
+		private FishHunter.Verify _CreateVerify()
 		{
 			_Account = null;
-			var verify = new Verify(_Storage);
+			var verify = new FishHunter.Verify(_Storage);
 			return verify;
 		}
 
-		private void _AddVerifyToStage(Verify verify)
+		private void _AddVerifyToStage(FishHunter.Verify verify)
 		{
-			var stage = new Stage.Verify(_Binder, verify);
+			var stage = new Verify(_Binder, verify);
 			stage.DoneEvent += _VerifySuccess;
 			_Machine.Push(stage);
 		}
