@@ -3514,6 +3514,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
+  m_TargetEye: 3
   m_HDR: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -6534,7 +6535,7 @@ MonoBehaviour:
     BulletPrefab: {fileID: 173702, guid: 9a8e16a0a93733246ae791d48cef3d77, type: 2}
   - No: 16
     BulletPrefab: {fileID: 100548, guid: 22ff1f362329b4748bacb55e71fef8c7, type: 2}
-  PPtr<Object>: {fileID: 448730}
+  Base: {fileID: 0}
   Gun: {fileID: 478988}
   Behavior: {fileID: 11490020}
   Bullet: 0
