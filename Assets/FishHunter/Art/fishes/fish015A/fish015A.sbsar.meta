@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 273224c16cb0eb049a01032bc9a134a5
-timeCreated: 1431670420
+timeCreated: 1466253432
 licenseType: Pro
 SubstanceImporter:
   serializedVersion: 5
@@ -8,10 +8,10 @@ SubstanceImporter:
   - serializedVersion: 16
     name: fish015A_body
     prototypeName: work
-    shader: {fileID: 13, guid: 0000000000000000f000000000000000, type: 0}
-    shaderKeywords: 
-    renderQueue: -1
-    lightmapFlags: 5
+    shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+    shaderKeywords: _DETAIL_MULX2 _METALLICGLOSSMAP _NORMALMAP _PARALLAXMAP
+    renderQueue: 2000
+    lightmapFlags: 1
     inputs:
     - name: $randomseed
       value:
@@ -36,14 +36,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Hit_level
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Norm_level
       value:
-        scalar[0]: 2.81999993
+        scalar[0]: 2.82
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -81,20 +81,54 @@ SubstanceImporter:
             offset: {x: 0, y: 0}
         data:
           first:
-            name: _Illum
+            name: _DetailNormalMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _ParallaxMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _OcclusionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _EmissionMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailMask
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _DetailAlbedoMap
+          second:
+            texture: {instanceID: 0}
+            scale: {x: 1, y: 1}
+            offset: {x: 0, y: 0}
+        data:
+          first:
+            name: _MetallicGlossMap
           second:
             texture: {instanceID: 0}
             scale: {x: 1, y: 1}
             offset: {x: 0, y: 0}
       floats:
-        data:
-          first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
-            name: _Shininess
-          second: .078125
         data:
           first:
             name: _SrcBlend
@@ -105,8 +139,16 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Cutoff
+          second: 0.5
+        data:
+          first:
+            name: _Shininess
+          second: 0.078125
+        data:
+          first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -114,7 +156,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -143,15 +185,27 @@ SubstanceImporter:
           first:
             name: _Metallic
           second: 0
+        data:
+          first:
+            name: _Emission
+          second: 1
+        data:
+          first:
+            name: _SelfIllumStrength
+          second: 1
+        data:
+          first:
+            name: _RoomReflectionAmount
+          second: 3
       colors:
         data:
           first:
             name: _EmissionColor
-          second: {r: 0, g: 0, b: 0, a: 1}
+          second: {r: 0, g: 0, b: 0, a: 0}
         data:
           first:
             name: _Color
-          second: {r: .705882311, g: .705882311, b: .705882311, a: 1}
+          second: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
         data:
           first:
             name: _SpecColor
@@ -163,7 +217,7 @@ SubstanceImporter:
         data:
           first:
             name: _ReflectColor
-          second: {r: 0, g: 0, b: 0, a: .501960814}
+          second: {r: 0, g: 0, b: 0, a: 0.5019608}
     textureParameters:
     - name: fish015A_body_diffuse
       alphaSource: 6
@@ -172,6 +226,11 @@ SubstanceImporter:
       wrapMode: 0
     - name: fish015A_body_normal
       alphaSource: 0
+      filterMode: 1
+      aniso: 1
+      wrapMode: 0
+    - name: fish015A_body_output
+      alphaSource: 7
       filterMode: 1
       aniso: 1
       wrapMode: 0
@@ -222,14 +281,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Hit_level
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Norm_level
       value:
-        scalar[0]: 2.81999993
+        scalar[0]: 2.82
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -261,14 +320,6 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
-            name: _Shininess
-          second: .078125
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
@@ -277,8 +328,16 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Cutoff
+          second: 0.5
+        data:
+          first:
+            name: _Shininess
+          second: 0.078125
+        data:
+          first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -286,7 +345,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -323,7 +382,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .941176474, g: .941176474, b: .941176474, a: 1}
+          second: {r: 0.9411765, g: 0.9411765, b: 0.9411765, a: 1}
         data:
           first:
             name: _SpecColor
@@ -386,14 +445,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Hit_level
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Norm_level
       value:
-        scalar[0]: 2.81999993
+        scalar[0]: 2.82
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -425,14 +484,6 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
-            name: _Shininess
-          second: .078125
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
@@ -441,8 +492,16 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Cutoff
+          second: 0.5
+        data:
+          first:
+            name: _Shininess
+          second: 0.078125
+        data:
+          first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -450,7 +509,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -487,7 +546,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .683823526, g: .683823526, b: .683823526, a: 1}
+          second: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
         data:
           first:
             name: _SpecColor
@@ -550,14 +609,14 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Hit_level
       value:
-        scalar[0]: .649999976
+        scalar[0]: 0.65
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Norm_level
       value:
-        scalar[0]: 2.81999993
+        scalar[0]: 2.82
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -603,14 +662,6 @@ SubstanceImporter:
       floats:
         data:
           first:
-            name: _Cutoff
-          second: .5
-        data:
-          first:
-            name: _Shininess
-          second: .078125
-        data:
-          first:
             name: _SrcBlend
           second: 1
         data:
@@ -619,8 +670,16 @@ SubstanceImporter:
           second: 0
         data:
           first:
+            name: _Cutoff
+          second: 0.5
+        data:
+          first:
+            name: _Shininess
+          second: 0.078125
+        data:
+          first:
             name: _Parallax
-          second: .0199999996
+          second: 0.02
         data:
           first:
             name: _ZWrite
@@ -628,7 +687,7 @@ SubstanceImporter:
         data:
           first:
             name: _Glossiness
-          second: .5
+          second: 0.5
         data:
           first:
             name: _BumpScale
@@ -665,7 +724,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .705882311, g: .705882311, b: .705882311, a: 1}
+          second: {r: 0.7058823, g: 0.7058823, b: 0.7058823, a: 1}
         data:
           first:
             name: _SpecColor

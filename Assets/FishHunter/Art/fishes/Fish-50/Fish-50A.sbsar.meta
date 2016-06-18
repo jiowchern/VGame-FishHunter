@@ -1,16 +1,17 @@
 fileFormatVersion: 2
 guid: 263b653d9fe1de744a88014cea99cf71
-timeCreated: 1433816526
+timeCreated: 1466253869
 licenseType: Pro
 SubstanceImporter:
   serializedVersion: 5
   materialInstances:
-  - serializedVersion: 15
+  - serializedVersion: 16
     name: Fish50_Att
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
     renderQueue: -1
+    lightmapFlags: 5
     inputs:
     - name: Dirt_level
       value:
@@ -21,7 +22,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Att_color
       value:
-        scalar[0]: .699999988
+        scalar[0]: 0.7
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -54,7 +55,7 @@ SubstanceImporter:
         data:
           first:
             name: _Shininess
-          second: .0661035925
+          second: 0.06610359
         data:
           first:
             name: _EmissionLM
@@ -63,7 +64,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .683823526, g: .683823526, b: .683823526, a: 1}
+          second: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
         data:
           first:
             name: _SpecColor
@@ -87,12 +88,13 @@ SubstanceImporter:
       textureHeight: 512
       textureFormat: 0
       loadingBehavior: 1
-  - serializedVersion: 15
+  - serializedVersion: 16
     name: Fish50_Dif
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
     renderQueue: -1
+    lightmapFlags: 1
     inputs:
     - name: Dirt_level
       value:
@@ -103,7 +105,7 @@ SubstanceImporter:
         texture: {instanceID: 0}
     - name: Att_color
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -136,7 +138,11 @@ SubstanceImporter:
         data:
           first:
             name: _Shininess
-          second: .0661035925
+          second: 0.06610359
+        data:
+          first:
+            name: _Emission
+          second: 1
         data:
           first:
             name: _EmissionLM
@@ -145,7 +151,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .683823526, g: .683823526, b: .683823526, a: 1}
+          second: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
         data:
           first:
             name: _SpecColor
@@ -173,23 +179,24 @@ SubstanceImporter:
       textureHeight: 512
       textureFormat: 0
       loadingBehavior: 1
-  - serializedVersion: 15
+  - serializedVersion: 16
     name: Fish50_dirty
     prototypeName: Unity_output
     shader: {fileID: 12, guid: 0000000000000000f000000000000000, type: 0}
     shaderKeywords: 
     renderQueue: -1
+    lightmapFlags: 5
     inputs:
     - name: Dirt_level
       value:
-        scalar[0]: .300000012
+        scalar[0]: 0.3
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
         texture: {instanceID: 0}
     - name: Att_color
       value:
-        scalar[0]: .5
+        scalar[0]: 0.5
         scalar[1]: 0
         scalar[2]: 0
         scalar[3]: 0
@@ -222,7 +229,7 @@ SubstanceImporter:
         data:
           first:
             name: _Shininess
-          second: .0661035925
+          second: 0.06610359
         data:
           first:
             name: _EmissionLM
@@ -231,7 +238,7 @@ SubstanceImporter:
         data:
           first:
             name: _Color
-          second: {r: .683823526, g: .683823526, b: .683823526, a: 1}
+          second: {r: 0.6838235, g: 0.6838235, b: 0.6838235, a: 1}
         data:
           first:
             name: _SpecColor

@@ -13,6 +13,7 @@ public class KickHandler : MonoBehaviour {
         _Client = Client.Instance;
         if (_Client != null)
         {
+            
             _Client.User.AccountStatusProvider.Supply += AccountStatusProvider_Supply;
             _Client.User.Remoting.ConnectProvider.Supply += ConnectProvider_Supply;
         }
